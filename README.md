@@ -1,1 +1,1 @@
-# cdw-workshop
+= Cloudera Data Warehouse - Workshop Student Guide
