@@ -8,16 +8,16 @@
 
 == Introduction
 
-Working for GE Aircraft Engine, the company wants to increase competitive advantage in two key ways:
-(1) Engineer better, more fault tolerant aircraft engines.
-(2) Be proactive in predictive maintenance on engines, and faster discovery-to-fix in new engine designs.
+Working for GE Aircraft Engine, the company wants to increase competitive advantage in two key ways: +
+(1) Engineer better, more fault tolerant aircraft engines. +
+(2) Be proactive in predictive maintenance on engines, and faster discovery-to-fix in new engine designs. +
 
-This will be a three phase plan:
-(1) Phase One:  Understand how our current engines contribute to airline flight delays and fix for future engines.
-(2) Phase Two:  Implement an ongoing reporting service to support ongoing engineering efforts to continuously improve engines based on delay data.
-(3) Phase Three:  Move to real-time analysis to fix things before they break both in engines already sold, and in new engine designs.
+This will be a three phase plan: +
+(1) Phase One:  Understand how our current engines contribute to airline flight delays and fix for future engines. +
+(2) Phase Two:  Implement an ongoing reporting service to support ongoing engineering efforts to continuously improve engines based on delay data. +
+(3) Phase Three:  Move to real-time analysis to fix things before they break both in engines already sold, and in new engine designs. +
 
-To do this, we’re going to build a data warehouse & data lakehouse to create reports that engineers can use to improve our engines.  The following people will get to work:
+To do this, we’re going to build a data warehouse & data lakehouse to create reports that engineers can use to improve our engines.  The following people will get to work: +
 == High-Level Steps
 Below are the high-level steps for what we will be doing in the workshop. +
 (1) [Step 1 & 2]: General introduction to CDW to get ourselves oriented for the workshop.  +
