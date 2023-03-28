@@ -18,7 +18,9 @@ This will be a three phase plan: +
 *(3) Phase Three:*  Move to real-time analysis to fix things before they break both in engines already sold, and in new engine designs. +
 
 To do this, we’re going to build a data warehouse & data lakehouse to create reports that engineers can use to improve our engines.  The following people will get to work: +
+
 == High-Level Steps
+
 Below are the high-level steps for what we will be doing in the workshop. +
 (1) [Step 1 & 2]: General introduction to CDW to get ourselves oriented for the workshop.  +
     . As an Admin: Create and enable the BI analyst team with a Virtual Warehouse
