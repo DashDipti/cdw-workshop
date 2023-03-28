@@ -2,6 +2,67 @@
 
 '''
 
-Version : 2.0.0 `27th March 2023` +
+Version : 1.0.0 `27th March 2023` +
 
 '''
+
+== Introduction
+
+== High-Level Steps
+Below are the high-level steps for what we will be doing in the workshop. +
+(1) General introduction to CDW to get ourselves oriented for the workshop.  +
+(2) Create CDF workflow and run it to ingest data into S3. +
+(3) Create Iceberg Table using Cloudera Data Warehouse (CDW/Hue). +
+(4) Create CDE job and run it to ingest data into iceberg table. +
+(5) Use Cloudera Data Viz to create a simple dashboard on Iceberg table. +
+(6) Run the CDE job with updated ticker (NVDA). +
+(7) Use/Test Iceberg time travel features. +
+
+== Pre-requisites
+
+. Laptop with a supported OS (Windows 7 not supported) or MacBook.
+. A modern browser - Google Chrome (IE, Firefox, Safari not supported).
+. Wi-Fi Internet connection.
+. Git installed.
+
+
+
+== Step 1: XXXXX
+
+=== Step 1(a): Query Iceberg Tables in Hue and Cloudera Data Visualization
+
+=== Step 1(a): For Reading only (Optional): Iceberg Architecture
+
+
+
+=== Notes
+
+
+*Note*: Higlight
+[,sql]
+----
+
+CREATE TABLE IF NOT EXISTS <user>_stocks.stock_intraday_1min (
+  interv STRING,
+  output_size STRING,
+  time_zone STRING,
+  open DECIMAL(8,4),
+  high DECIMAL(8,4),
+  low DECIMAL(8,4),
+  close DECIMAL(8,4),
+  volume BIGINT)
+PARTITIONED BY (
+  ticker STRING,
+  last_refreshed string,
+  refreshed_at string)
+STORED AS iceberg;
+----
+
+____
+(user)_stock_dataflow +
+____
+
+image:images/step5/8.PNG[]  +
+
+Let parameters be the default ones. Click `Next`.
+
