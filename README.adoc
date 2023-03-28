@@ -24,18 +24,18 @@ To do this, we’re going to build a data warehouse & data lakehouse to create r
 Below are the high-level steps for what we will be doing in the workshop. +
 *(1) [Step 1 & 2]:* General introduction to CDW to get ourselves oriented for the workshop.  +
 
-    . As an Admin: Create and enable the BI analyst team with a Virtual Warehouse
-    . As a BI Analyst:  Get familiar with CDW on CDP, and set up our first VW to start working
-    . As a BI Analyst:  Wrangle our first set of data - sent to us as a series of .csv files exported from “somewhere else”
-    . As an Admin: Monitor the VW and watch as it scales up and down, suspends, etc.
-    . As a BI Analyst:  Start digging into the data - looking for “needle in a haystack” - running a complex query that will find which engines seem to be correlated to airplane delays for any reason.
+    (a) As an Admin: Create and enable the BI analyst team with a Virtual Warehouse
+    (b) As a BI Analyst:  Get familiar with CDW on CDP, and set up our first VW to start working
+    (c) As a BI Analyst:  Wrangle our first set of data - sent to us as a series of .csv files exported from “somewhere else”
+    (d) As an Admin: Monitor the VW and watch as it scales up and down, suspends, etc.
+    (e) As a BI Analyst:  Start digging into the data - looking for “needle in a haystack” - running a complex query that will find which engines seem to be correlated to airplane delays for any reason.
 
 *(2) [Step 3]:* CDF workflow and run it to ingest data into S3. +
 
-    . As a BI Analyst: Start curating data and building a data lakehouse to improve quality by tweaking data, performance by optimizing schema structures, and ensure reliability and trustworthyness of the data through snapshots, time travel, and rollback
-    . Create Hive ACID tables and tweak data for consistency (ex: airline name changes - ensure reporting is consistent with the new name to avoid end user confusion, a new airline joins our customer list, make sure they’re tracked for future data collection, etc.)
-    . Migrate Tables to Iceberg (We want snapshot and rollback)
-    . Create new Iceberg tables (we want partitioning)
+    (a) As a BI Analyst: Start curating data and building a data lakehouse to improve quality by tweaking data, performance by optimizing schema structures, and ensure reliability and trustworthyness of the data through snapshots, time travel, and rollback
+    (b) Create Hive ACID tables and tweak data for consistency (ex: airline name changes - ensure reporting is consistent with the new name to avoid end user confusion, a new airline joins our customer list, make sure they’re tracked for future data collection, etc.)
+    (c) Migrate Tables to Iceberg (We want snapshot and rollback)
+    (d) Create new Iceberg tables (we want partitioning)
 
 *(3) [Step 4]:* Iceberg Table using Cloudera Data Warehouse (CDW/Hue). +
 *(4) [Step 5,6 & 7]:* CDE job and run it to ingest data into iceberg table. +
