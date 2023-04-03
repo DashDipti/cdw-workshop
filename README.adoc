@@ -2,8 +2,6 @@
 
 image::images/misc/UC.PNG[]
 
-image::images/step0/banner-impact24.PNG[]
-
 '''
 
 Version : 1.0.0 `27th March 2023` +
