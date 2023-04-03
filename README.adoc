@@ -194,6 +194,17 @@ Make sure that 4 tables (`airlines_csv`, `airports_csv`, `flights_csv`, `planes_
 
 image:images/step3/32-2.png[] 
 
+=== 3.3 Run the following DDL in HUE for the CDW Virtual Warehouse - `meta-cdw-impala-workshop-vw` +
+
+- Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for `meta-cdw-impala-workshop-vw` as shown in the screenshot below.
+image:images/step3/33-1.png[] 
+
+- Make sure that you click to get `Impala` instead of `default` in the HUE browser as shown below and then click refresh button image:images/step3/33-2refresh.png[].
+
+
+
+
+
 
 
 
