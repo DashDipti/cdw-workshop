@@ -138,7 +138,14 @@ CREATE DATABASE ${user_id}_airlines;
 
 image:images/step3/32.png[]  +
 
-Note that 2 databases are created.
+- Run the following to see that 2 databases are created.
+[,sql]
+----
+
+SHOW DATABASES;
+----
+
+image:images/step3/33.png[] 
 
 === 3.2 Run the following DDL in HUE for the CDW Virtual Warehouse - 
 
