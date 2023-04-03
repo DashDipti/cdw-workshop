@@ -124,8 +124,10 @@ The objective of this step is to create External tables on top of raw CSV files 
 - Click on the 'Hue' button on the right upper corner of `` as shown in the screenshot below. +
 image:images/step3/31.png[]  +
 
-- Create new databases
 
+
+- Create new databases.
+Enter the following query and then make sure that you enter the user assigned to you. In the screenshot the user is `wuser00`.
 [,sql]
 ----
 
@@ -134,6 +136,9 @@ CREATE DATABASE ${user_id}_airlines_raw;
 CREATE DATABASE ${user_id}_airlines;
 ----
 
+image:images/step3/32.png[]  +
+
+Note that 2 databases are created.
 
 === 3.2 Run the following DDL in HUE for the CDW Virtual Warehouse - 
 
