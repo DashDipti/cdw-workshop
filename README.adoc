@@ -1,8 +1,9 @@
 = [Underconstruction] 
-image:images/misc/UC.PNG[]  +
+image:images\misc\UC.PNG[]  +
 = Cloudera Data Warehouse - Workshop Student Guide
 
 '''
+
 
 Version : 1.0.0 `27th March 2023` +
 
