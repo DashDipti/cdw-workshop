@@ -39,7 +39,7 @@ image::images/misc/ER1.PNG[]
 == High-Level Steps
 
 Below are the high-level steps for what we will be doing in the workshop. +
-*(1) [Step 1 & 2]:* General introduction to CDW to get ourselves oriented for the workshop.  +
+*[Step 1 & 2]:* General introduction to CDW to get ourselves oriented for the workshop.  +
 
     (a) As an Admin: Create and enable the BI analyst team with a Virtual Warehouse.
     (b) As a BI Analyst:  Get familiar with CDW on CDP, and set up our first VW to start working.
@@ -47,7 +47,7 @@ Below are the high-level steps for what we will be doing in the workshop. +
     (d) As an Admin: Monitor the VW and watch as it scales up and down, suspends, etc.
     (e) As a BI Analyst:  Start digging into the data - looking for “needle in a haystack” - running a complex query that will find which engines seem to be correlated to airplane delays for any reason.
 
-*(2) [Step 3]:* Set it up. +
+*[Step 3]:* Set it up. +
 
     (a) As an Admin: Create and enable the BI analyst team with a Virtual Warehouse.
     (b) As a BI Analyst:  Get familiar with CDW on CDP, and set up our first VW to start working.
@@ -55,21 +55,21 @@ Below are the high-level steps for what we will be doing in the workshop. +
     (d) As an Admin: Monitor the VW and watch as it scales up and down, suspends, etc.
     (e) As a BI Analyst:  Start digging into the data - looking for “needle in a haystack” - running a complex query that will find which engines seem to be correlated to airplane delays for any reason.
 
-*(3) [Step 4]:* Making it better. +
+*[Step 4]:* Making it better. +
 
     (a) As a BI Analyst: Start curating data and building a data lakehouse to improve quality by tweaking data, performance by optimizing schema structures, and ensure reliability and trustworthyness of the data through snapshots, time travel, and rollback.
     (b) Create Hive ACID tables and tweak data for consistency (ex: airline name changes - ensure reporting is consistent with the new name to avoid end user confusion, a new airline joins our customer list, make sure they’re tracked for future data collection, etc..).
     (c) Migrate Tables to Iceberg (We want snapshot and rollback).
     (d) Create new Iceberg tables (we want partitioning).
 
-*(4) [Step 5]:* Optimizing for production. +
+*[Step 5]:* Optimizing for production. +
 
     (a) Loading more data - change partitioning to maintain performance  (NOTE:  Ongoing ELT = CDE?).
     (b) Bad data is loaded - use time travel to detect, and rollback to resolve.
     (c) Introduce materialized views to support scaling to 1000’s of simultaneous users.
     (d) As an admin:  Monitor, report, kill queries that run amock, etc.
     
-*(5) [Step 6]:* Security & Governance. +
+*[Step 6]:* Security & Governance. +
 
     (a) Check on the lineage to enable governance/audit.
     (b) Row level security to make sure only relevant party can see data.
@@ -84,9 +84,38 @@ Below are the high-level steps for what we will be doing in the workshop. +
 
 == Step 1: XXXXX
 
-=== Step 1(a): Query Iceberg Tables in Hue and Cloudera Data Visualization
+=== Step 1(a): You'll need the following
 
-=== Step 1(a): For Reading only (Optional): Iceberg Architecture
+=== Step 1(b): Setting Workload Password
+
+You will need to define your workload password that will be used to acess non-SSO interfaces. You may read more about it here (https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html).
+Please keep it with you. If you have forgotten it, you will be able to repeat this process and define another one.
+
+. Click on your `user name (Ex: wuser00@workshop.com`) at the lower left corner.
+. Click on the `Profile` option.
+
+image:images/step1b/1.PNG[]  +
+
+. Click option `Set Workload Password`.
+. Enter a suitable `Password` and `Confirm Password`.
+. Click button `Set Workload Password`.
+
+
+image:images/step1b/2.PNG[]  +
+
+image::images/step1b/3.PNG[]
+
+{blank} +
+
+Check that you got the message - `Workload password is currently set` or alternatively, look for a message next to `Workload Password` which says `(Workload password is currently set)`
+
+image::images/step1b/4.PNG[]
+
+
+
+
+
+== Step 2: Cloudera Data Warehouse - Introduction [NOTHIN TO BE DONE HERE, BUT TO READ/OBSERVE]
 
 
 
