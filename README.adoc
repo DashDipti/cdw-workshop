@@ -1,5 +1,5 @@
 = [Underconstruction] 
-image:images/misc/uc.png[]  +
+image:images/misc/UC.PNG[]  +
 = Cloudera Data Warehouse - Workshop Student Guide
 
 '''
