@@ -1,15 +1,16 @@
+= [Underconstruction] 
 = Cloudera Data Warehouse - Workshop Student Guide
 
 '''
 
-[Underconstruction] Version : 1.0.0 `27th March 2023` +
+Version : 1.0.0 `27th March 2023` +
 
 '''
 == Pre-requisites
 
 . Laptop with a supported OS (Windows 7 not supported) or MacBook.
 . A modern browser - Google Chrome (IE, Firefox, Safari not supported).
-. Wi-Fi Internet connection.
+
 
 == Preface
 
