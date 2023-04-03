@@ -121,7 +121,17 @@ The objective of this step is to create External tables on top of raw CSV files 
 
 3.1 Open Hue for CDW Virtual Warehouse - `meta-cdw-hive-workshop-vw` +
 
+- Click on the 'Hue' button on the right upper corner of `` as shown in the screenshot below.
 image:images/step3/31.png[]  +
+
+- Create new databases
+[,sql]
+----
+
+CREATE DATABASE ${user_id}_airlines_raw;
+
+CREATE DATABASE ${user_id}_airlines;
+----
 
 
 3.2 Run the following DDL in HUE for the CDW Virtual Warehouse - 
