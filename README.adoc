@@ -125,6 +125,7 @@ The objective of this step is to create External tables on top of raw CSV files 
 image:images/step3/31.png[]  +
 
 - Create new databases
+
 [,sql]
 ----
 
