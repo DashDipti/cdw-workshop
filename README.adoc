@@ -128,6 +128,7 @@ image:images/step3/31-1.png[]  +
 
 - Create new databases.
 Enter the following query and then make sure that you enter the user assigned to you. In the screenshot the user is `wuser00`.
+
 [,sql]
 ----
 
@@ -139,6 +140,7 @@ CREATE DATABASE ${user_id}_airlines;
 image:images/step3/31-2.png[]  +
 
 - There may be many databases, look for the 2 that start with your <user_id>. Run the following to see that 2 databases that you created.
+
 [,sql]
 ----
 
@@ -151,6 +153,7 @@ image:images/step3/31-3.png[]
 This will create External Tables on CSV Data Files that have been uploaded previously by your instructor in AWS S3. This provides a fast way to allow SQL layer on top of data in cloud storage.
 
 - Copy paste the following into HUE.
+
 [,sql]
 ----
 
