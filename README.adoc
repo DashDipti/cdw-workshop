@@ -141,7 +141,7 @@ image:images/step3/31-2.png[]  +
 
 - There may be many databases, look for the 2 that start with your <user_id>. Run the following to see that 2 databases that you created.
 
-[,sql]
+[source, sql]
 ----
 
 SHOW DATABASES;
@@ -162,7 +162,6 @@ CREATE EXTERNAL TABLE ${user_id}_airlines_raw.flights_csv(month int, dayofmonth 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' 
 STORED AS TEXTFILE LOCATION 's3a://meta-workshop/my-data/meta-cdw-workshop/airlines-raw/airlines-csv/flights' tblproperties("skip.header.line.count"="1");
 
-
 drop table if exists ${user_id}_airlines_raw.planes_csv;
 CREATE EXTERNAL TABLE ${user_id}_airlines_raw.planes_csv(tailnum string, owner_type string, manufacturer string, issue_date string, model string, status string, aircraft_type string, engine_type string, year int) 
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' 
@@ -178,7 +177,7 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'
 STORED AS TEXTFILE LOCATION 's3a://meta-workshop/my-data/meta-cdw-workshop/airlines-raw/airlines-csv/airports' tblproperties("skip.header.line.count"="1");
 ----
 
-
+Notice the following screenshot corresponding to the above SQL.
 image:images/step3/32-1.png[] 
 
 
