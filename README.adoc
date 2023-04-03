@@ -180,6 +180,29 @@ STORED AS TEXTFILE LOCATION 's3a://meta-workshop/my-data/meta-cdw-workshop/airli
 Notice the following screenshot corresponding to the above SQL.
 image:images/step3/32-1.png[] 
 
+- Check all the tables were created.
+
+[source, sql]
+----
+
+USE ${user_id}_airlines_raw;
+
+SHOW TABLES;
+----
+
+Make sure that 4 tables (`airlines_csv`, `airports_csv`, `flights_csv`, `planes_csv`) are created as shown below. 
+
+image:images/step3/32-2.png[] 
+
+
+
+
+
+
+
+
+
+
 
 
 === Notes
