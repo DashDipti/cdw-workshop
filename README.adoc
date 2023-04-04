@@ -502,8 +502,14 @@ tblproperties ('format-version'='2');
 SHOW CREATE TABLE ${user_id}_airlines.flights;
 
 ----
+image:images/step4/43-1.png[] + 
 
-The `SHOW CREATE TABLE` command is the unformatted version of 'DESCRIBE FORMATTED' command. Pay attention to the `PARTITIONED BY SPEC`, where we have partitioned the `flights` table using `year` column. 
+The `SHOW CREATE TABLE` command is the unformatted version of 'DESCRIBE FORMATTED' command. Pay attention to the `PARTITIONED BY SPEC`, where we have partitioned the `flights` table using `year` column. +
+
+image:images/step4/43-2.png[] +  
+
+image:images/step4/43-3.png[] +  
+
 
 - We insert data into this table it will write data together within the same partition (ie. all 2006 data is written to the same location, all 2005 data is written to the same location, etc.) +
 
