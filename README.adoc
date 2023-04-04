@@ -914,6 +914,16 @@ image:images/step6/6-6.png[] +
 - You should now see the tables and materialized views that have been created in the `<user_id>_airlines` database.  Click on *`flights`* in the `Name` column to view more details on the table. +
 image:images/step6/6-7.png[] + 
 
+- This page shows information about the `flights` table such as the table owner, when the table was created, when it was last accessed, and other properties.  Below the summary details is the Overview tab which shows the lineage - hover over the flights click on the “i” icon that appears to see more detail on this table.
+image:images/step6/6-8.png[] + 
+
+The lineage shows: +
+** [blue box] `flights`` data file residing in an s3 folder.
+** [green box] is showing how the `flights_csv` Hive table is created, this table was created and points to the data location of `flights` (blue box) s3 folder. 
+** [orange box] is showing the `flights Iceberg` table and how it is created, it uses data from flights_csv Hive table (CTAS) 
+** [red box] Traffic_cancel_airlines is a Materialized View that uses data from the flights Iceberg table.
+
+
 [source, sql]
 ----
 
