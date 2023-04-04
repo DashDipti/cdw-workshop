@@ -112,7 +112,7 @@ Check that you got the message - `Workload password is currently set` or alterna
 image:images/step1b/4.PNG[] +
 
 
-== Step 2: Cloudera Data Warehouse - Introduction [NOTHIN TO BE DONE HERE, BUT TO READ/OBSERVE]
+== Step 2: Cloudera Data Warehouse - Introduction [NOTHING TO BE DONE HERE, BUT TO READ/OBSERVE]
 In this step you'll explore how to take advantage of CDW.
 
 == Step 3: Cloudera Data Warehouse - Raw Layer (Direct Cloud Object Storage Access)
@@ -121,7 +121,7 @@ The objective of this step is to create External tables on top of raw CSV files 
 
 === 3.1 Open Hue for CDW Virtual Warehouse - `meta-cdw-hive-workshop-vw` +
 
-- Click on the 'Hue' button on the right upper corner of `` as shown in the screenshot below. +
+- Click on the `Hue` image:images/step3/hue.png[] +button on the right upper corner of `meta-cdw-hive-workshop-vw` as shown in the screenshot below. +
 image:images/step3/31-1.png[] +
 
 
