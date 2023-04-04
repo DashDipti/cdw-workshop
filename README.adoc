@@ -735,12 +735,12 @@ DESCRIBE HISTORY ${user_id}_airlines.flights;
 
 image:images/step5/52-2.png[] +
 
-In the output there should be 3 Snapshots, described below.  Also, keep in mind we have been reading/writing data from/to the Iceberg table from both Hive & Impala which is indicated by the () in the callouts below.  This is important aspect of Iceberg Tables is that they support multi-function analytics - ie. many engines can work with Iceberg tables (Cloudera Data Warehouse [Hive & Impala], Cloudera Data Engineering [Spark], Cloudera Machine Learning [Spark], Cloudera DataFlow [NiFi], and DataHub Clusters).
+In the output there should be *3 Snapshots*, described below.  Note that we have been reading/writing data from/to the Iceberg table from both Hive & Impala which is indicated by the () in the callouts below.  It is an important aspect of Iceberg Tables that they support `multi-function analytics` - ie. many engines can work with Iceberg tables (Cloudera Data Warehouse [Hive & Impala], Cloudera Data Engineering [Spark], Cloudera Machine Learning [Spark], Cloudera DataFlow [NiFi], and DataHub Clusters).
 
 - Get the details of the `snapshots` and store it in a notepad.
 image:images/step5/52-3.png[] +
 
-image:images/step5/52-3.png[] +
+image:images/step5/52-4.png[] +
 
 === 5.3 Iceberg Time Travel [Table Maintenance] +
 
