@@ -455,3 +455,22 @@ image:images/step4/421-2.png[] +
 
 
 ==== 4.2.2 (Option 2): Use Create Table as Select (CTAS) +
+- Run the following SQL to create `airports` table using CTAS. Notice the syntax to create an Iceberg Table within Hive is `Stored by Iceberg`. +
+
+[source, sql]
+----
+
+drop table if exists ${user_id}_airlines.airports;
+CREATE EXTERNAL TABLE ${user_id}_airlines.airports
+STORED BY ICEBERG AS
+  SELECT * FROM ${user_id}_airlines_raw.airports_csv;
+
+DESCRIBE FORMATTED ${user_id}_airlines.airports;
+
+----
+
+Just like the previous case look for:  `Table Type`, `Location` (location of where table data is stored), `SerDe Library`, and in Table Parameters look for properties `MIGRATED_TO_ICEBERG`, `storage_handler`, `metadata_location`, and `table_type`.
+
+image:images/step4/422-3.png[] +  
+
+image:images/step4/422-4.png[] +  
