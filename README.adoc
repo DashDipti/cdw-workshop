@@ -851,14 +851,53 @@ image:images/step5/56-6.png[] +
 - This plan shows that this query needs to Read flights (86M rows) and airlines (1.5K rows) with hash join, group and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
 image:images/step5/56-7.png[] +
 
+- Click on the `Editor` option on the left side as shown. +
+image:images/step5/56-8.png[] +
+
+- Create Materialized View (MV) - Queries will transparently be rewritten, when possible, to use the MV instead of the base tables.  Copy/paste the following, highlight the entire block, and execute. +
+
+[source, sql]
+----
+
+DROP MATERIALIZED VIEW IF EXISTS ${user_id}_airlines.traffic_cancel_airlines;
+CREATE MATERIALIZED VIEW ${user_id}_airlines.traffic_cancel_airlines
+as SELECT airlines.code AS code,  MIN(airlines.description) AS description,
+          flights.month AS month,
+          sum(flights.cancelled) AS cancelled,
+          count(flights.diverted) AS diverted
+FROM ${user_id}_airlines.flights flights JOIN ${user_id}_airlines.airlines airlines ON (flights.uniquecarrier = airlines.code)
+group by airlines.code, flights.month;
+
+-- show MV
+SHOW MATERIALIZED VIEWS in ${user_id}_airlines;
 
 
+----
+
+image:images/step5/56-9.png[] +
+
+- Run Dashboard Query again to see usage of the MV - Copy/paste the following, make sure to highlight the entire block, and execute the following.  This time an `Order By` was added to make this query have to do more work.
 
 
+[source, sql]
+----
+
+SET hive.query.results.cache.enabled=false;
+SELECT airlines.code AS code,  MIN(airlines.description) AS description,
+          flights.month AS month,
+          sum(flights.cancelled) AS cancelled
+FROM ${user_id}_airlines.flights flights , ${user_id}_airlines.airlines airlines 
+WHERE flights.uniquecarrier = airlines.code
+group by airlines.code, flights.month
+order by airlines.code;
 
 
+----
 
+image:images/step5/56-10.png[] +
 
+== [WARNING - TO BE FILLED LATER] The below section is missing now where one needs to take screenshot and add for the Visual Explain part. 
+image:images/step5/56-11.png[] + This image is the image of the query plan which is missing.
 
 
 
