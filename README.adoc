@@ -350,3 +350,65 @@ In the output look for the following. +
 (c) SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe` +
 
 image:images/step4/41-10.png[] + 
+
+
+- Create `airlines` table in `Hive` table format and `orc` file format. This table should also be fully `ACID` capable. We will use `Create Table As Select (CTAS)`. Since, `airlines` table can change we need the ability to `Insert/Update/Delete` records. +
+
+
+[source, sql]
+----
+
+drop table if exists ${user_id}_airlines.airlines_orc;
+CREATE TABLE ${user_id}_airlines.airlines_orc
+STORED AS ORC
+AS
+  SELECT * FROM ${user_id}_airlines_raw.airlines_csv;
+
+----
+
+- Run the following query to check data in the `airlines_orc` table and it should return only 1 row for code 'UA'. +
+
+
+[source, sql]
+----
+
+SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
+
+----
+
+- We shall now add a new record to the `airlines_orc` table to see some Hive ACID capabilities. +
+
+
+[source, sql]
+----
+
+INSERT INTO ${user_id}_airlines.airlines_orc VALUES("PAW","Paradise Air");
+
+----
+
+- Let's update an existing record to change the descritpion of 'United Airlines' to 'Adrenaline Airlines' to see more of the ACID capabalities provided by Hive ACID. Run the following SQL. +
+
+
+[source, sql]
+----
+
+drop table if exists ${user_id}_airlines.airlines_dim_updates;
+CREATE EXTERNAL TABLE ${user_id}_airlines.airlines_dim_updates(code string, description string) tblproperties("external.table.purge"="true");
+
+INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("UA","Adrenaline Airlines");
+INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("XX","Get Out of My Airway!");
+
+-- Merge inserted records into Airlines_orc table
+MERGE INTO ${user_id}_airlines.airlines_orc USING (SELECT * FROM ${user_id}_airlines.airlines_dim_updates) AS s
+  ON s.code = airlines_orc.code
+  WHEN MATCHED THEN UPDATE SET description = s.description
+  WHEN NOT MATCHED THEN INSERT VALUES (s.code,s.description);
+
+SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PA");
+
+
+----
+
+The final “SELECT” statement should return the following result - codes “XX” and “PA” were inserted rows, and code “UA” which had its description value changed from “United Air Lines Inc.” to “Adrenaline Airlines”.
+
+
