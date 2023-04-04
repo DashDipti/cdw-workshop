@@ -944,7 +944,7 @@ image:images/step6/6-13.png[] +
     (a) `Select User`: <user_id> +
     (b) `Access Types`: select +
     (c) `Row Level Filter`:  uniquecarrier="UA" +
-    
+
 Click  *`Add`* button to accept this Policy. +
 
 image:images/step6/6-14.png[] + 
