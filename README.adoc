@@ -546,7 +546,9 @@ image:images/step4/43-5.png[] +
 
 image:images/step4/43-6.png[] + 
 
-=== Recap of what we have done so far and below screenshot summarizes the same.
+== [Recap] 
+
+Below is the summary of what we have done so far in the form of a screenshot.
 
 image:images/step4/updatedERD.png[] +
 
