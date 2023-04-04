@@ -423,7 +423,32 @@ image:images/step4/41-14.png[] +
 If you already have created a Data Warehouse using the Hive Table Format, but would like to take advantage of the features offered in the Iceberg Table Format, you have 2 options. We will see both the options as a part of this step. +
 
 ==== 4.2.1 (Option 1): Utilize the table Migration feature +
+- Run the following SQL and note what happens next. +
 
+
+[source, sql]
+----
+
+ALTER TABLE ${user_id}_airlines.planes
+SET TBLPROPERTIES ('storage_handler'='org.apache.iceberg.mr.hive.HiveIcebergStorageHandler');
+
+DESCRIBE FORMATTED ${user_id}_airlines.planes;
+
+----
+
+The following happened.
+(a). This migration to Iceberg happened in-place & there was no re-writing of data that occurred as part of this process.  It retained the File Format of `parquet` for the Iceberg table as well.  There was a Metadata file that is created, which you can see when you run the `DESCRIBE FORMATTED`. +
+(b). In the output look for the following fields - look for the following (see image with highlighted fields) key values: 
+    `Table Type`, `Location` (location of where table data is stored), `SerDe Library`, and in Table Parameters look for properties `MIGRATED_TO_ICEBERG`, `storage_handler`, `metadata_location`, and `table_type`. +
+    `Location` - Data is stored in cloud storage and in this case AWS S3 in the same location as the Hive Table Format. +
+    `Table Type`: Indicates that it is an `EXTERNAL TABLE`. +
+    `MIGRATED_TO_ICEBERG`: Indicates that the table has migrated to `ICEBERG`. +
+    `table_type`: Indicates `ICEBERG` table format. +
+    `metadata_location`: Indicates the location of `metadata` which is path to cloud storage. +
+    `storage_handler`: +
+    `SerDe Library`: +
+
+    
 
 
 ==== 4.2.2 (Option 2): Use Create Table as Select (CTAS) +
