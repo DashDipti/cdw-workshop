@@ -345,9 +345,9 @@ DESCRIBE FORMATTED ${user_id}_airlines.planes;
 image:images/step4/41-9.png[] + 
 
 In the output look for the following. +
-Location: `s3a://meta-workshop/my-data/warehouse/tablespace/external/hive/wuser00_airlines.db/planes`
-Table Type: `EXTERNAL_TABLE`
-SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe`
+Location: `s3a://meta-workshop/my-data/warehouse/tablespace/external/hive/wuser00_airlines.db/planes` +
+Table Type: `EXTERNAL_TABLE` +
+SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe` +
 
 image:images/step4/41-10.png[] + 
 
