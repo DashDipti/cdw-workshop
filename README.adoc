@@ -772,19 +772,97 @@ image:images/step5/53-1.png[] +
 image:images/step5/53-2.png[] +
 
 
-- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. In our case the value was `2023-04-04 06:51:14.360000000`.
+- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2023-04-04 06:51:14.360000000`. Then execute the higlighted query only (1st query).
 image:images/step5/53-3.png[] +
 
-- From the notepad just copy the second value of the snapshot id. . In our case the value was `6341506406760449831`.
+- From the notepad just copy the second value of the snapshot id. . In our case the value was `6341506406760449831`. Paste it in the `snapshot_id` box. Then execute the higlighted query only (2nd query).
 image:images/step5/53-4.png[] +
 
-=== 5.4 Iceberg Rollback [Table Maintenance]  +
+=== 5.4 (Don't Run, FYI ONLY) - Iceberg Rollback [Table Maintenance]  +
+- Sometimes data can be loaded incorrectly, due to many common issues - missing fields, only part of the data was loaded, bad data, etc.  In situations like this data would need to be removed, corrected and reloaded.  Iceberg can help with the Rollback command to remove the “unwanted” data.  This leverages Snapshot IDs to perform this action by using a simple ALTER TABLE command as follows.  We will *`NOT RUN`* this command in this lab. +
 
+[source, sql]
+----
 
-=== 5.5 Iceberg Rollback [Table Maintenance] +
+-- ALTER TABLE ${user_id}_airlines.flights EXECUTE ROLLBACK(${snapshot_id});
 
+----
+
+=== 5.5 (Don't Run, FYI ONLY) - Iceberg Rollback [Table Maintenance] +
+- As time passes it might make sense to expire old Snapshots, instead of the Snapshot ID you use the Timestamp to expire old Snapshots.  You can do this manually by running a simple ALTER TABLE command as follows. We will *`NOT RUN`* this command in this lab. +
+
+[source, sql]
+----
+
+-- Expire Snapshots up to the specified timestamp 
+-- BE CAREFUL: Once you run this you will not be able to Time Travel for any Snapshots that you Expire ALTER TABLE ${user_id}_airlines.flights 
+-- ALTER TABLE ${user_id}_airlines_maint.flights EXECUTE expire_snapshots('${create_ts}');
+
+----
 
 === 5.6 Materialized Views [Performance Optimization] +
+- This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `meta-cdw-hive-workshop-vw`. Click on the 'Hue' button on the right upper corner of `` as shown in the screenshot below. +
+
+image:images/step5/56-1.png[] +
+
+
+- Copy/paste the following, make sure to highlight the entire block, and execute the following. +
+
+[source, sql]
+----
+
+SET hive.query.results.cache.enabled=false;
+
+drop table  if exists ${user_id}_airlines.airlines;
+CREATE EXTERNAL TABLE ${user_id}_airlines.airlines (code string, description string) STORED BY ICEBERG STORED AS ORC TBLPROPERTIES ('format-version' = '2');
+
+INSERT INTO ${user_id}_airlines.airlines SELECT * FROM ${user_id}_airlines_raw.airlines_csv;
+
+SELECT airlines.code AS code,  MIN(airlines.description) AS description,
+          flights.month AS month,
+          sum(flights.cancelled) AS cancelled
+FROM ${user_id}_airlines.flights flights , ${user_id}_airlines.airlines airlines 
+WHERE flights.uniquecarrier = airlines.code
+group by airlines.code, flights.month;
+
+
+
+----
+
+image:images/step5/56-2.png[] +
+
+*Note*: Hive has built in performance improvements, such as a Query Cache that stores results of queries run so that similar queries don’t have to retrieve data, they can just get the results from the cache.  In this step we are turning that off using the “SET” statement, this will ensure when we look at the query plan we will not retrieve the data from the cache. +
+*Note*: with this query you are combining an Iceberg Table Format (flight table) with a Hive Table Format (airlines_orc table) in the same query.
+
+- Let’s take a look at the Query Plan that was used to execute this query. On the left side click on `Jobs`, as shown in the screenshot below.  +
+
+image:images/step5/56-3.png[] +
+
+- Then click on `Queries`. This is where an Admin will go when - a query has run amok and then figures out what to do next.  In our case for this lab we’d like to look at the query we just executed to see how it ran and the steps taken to execute the query.  Administrators would also be able to perform other monitoring and maintenance tasks for what is running (or has been run).  Monitoring and maintenance tasks could include: cancel (kill) queries, see what is running, analyze whether queries that have been executed are optimized, etc.
+
+image:images/step5/56-4.png[] +
+
+- Click on the first query as shown below. +
+image:images/step5/56-5.png[] +
+
+- This is where you can analyze queries at a deep level.  For this lab let’s take a look at the Explain details, click on Visual Explain tab. +
+image:images/step5/56-6.png[] +
+
+- This plan shows that this query needs to Read flights (86M rows) and airlines (1.5K rows) with hash join, group and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
+image:images/step5/56-7.png[] +
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
