@@ -642,10 +642,21 @@ image:images/step5/51-2.png[] +
 Check for the following where now the partition is by `year, month`. +
 image:images/step5/51-3.png[] +
 
+Load new data into the flights table using the NEW partition definition. +
+
+[source, sql]
+----
+
+INSERT INTO ${user_id}_airlines.flights 
+SELECT * FROM ${user_id}_airlines_raw.flights_csv 
+WHERE year = 2007;
+
+
+----
 
 
 - Open HUE for the CDW `Impala` Virtual Warehouse - `meta-cdw-impala-workshop-vw` +
-image:images/step5/5-2.png[] +
+image:images/step5/51-5.png[] +
 
 === 5.2 Iceberg Snapshots [Table Maintenance] +
 
