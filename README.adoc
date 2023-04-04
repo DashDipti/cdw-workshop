@@ -75,13 +75,6 @@ Below are the high-level steps for what we will be doing in the workshop. +
     (b) Row level security to make sure only relevant party can see data.
 
 
-== Introduction
-
-. Laptop with a supported OS (Windows 7 not supported) or MacBook.
-. A modern browser - Google Chrome (IE, Firefox, Safari not supported).
-. Wi-Fi Internet connection.
-
-
 == Step 1: XXXXX
 
 === Step 1(a): You'll need the following
