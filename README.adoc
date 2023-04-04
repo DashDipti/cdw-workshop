@@ -511,10 +511,6 @@ The `SHOW CREATE TABLE` command is the unformatted version of 'DESCRIBE FORMATTE
 [source, sql]
 ----
 
-INSERT INTO ${user_id}_airlines.flights
- SELECT * FROM ${user_id}_airlines_raw.flights_csv
- WHERE year <= 2006;
-
 SELECT year, count(*) 
 FROM ${user_id}_airlines.flights
 GROUP BY year
