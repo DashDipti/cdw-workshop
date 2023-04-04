@@ -875,7 +875,7 @@ SHOW MATERIALIZED VIEWS in ${user_id}_airlines;
 
 image:images/step5/56-9.png[] +
 
-- Run Dashboard Query again to see usage of the MV - Copy/paste the following, make sure to highlight the entire block, and execute the following.  This time an `Order By` was added to make this query have to do more work.
+- Run Dashboard Query again to see usage of the MV - Copy/paste the following, make sure to highlight the entire block, and execute the following.  This time an `order by` was added to make this query have to do more work.
 
 
 [source, sql]
@@ -896,13 +896,15 @@ order by airlines.code;
 image:images/step5/56-10.png[] +
 
 == [WARNING - TO BE FILLED LATER] The below section is missing now where one needs to take screenshot and add for the Visual Explain part. 
-image:images/step5/56-11.png[] + This image is the image of the query plan which is missing.
+image:images/step5/56-11.png[] + This image is the image of the query plan which is missing. +
 
 
 
+== Step 6: Data Security & Governance +
 
+In this step you will experience the combination of what the Data Warehouse and the Shared Data Experience (SDX) offers.  SDX enables you to provide Security and Governance tooling to ensure that you will be able to manage what is in the CDP Platform without having to stitch together multiple tools. Read more about SDX by clicking here.
 
-
+https://www.google.com[Google]
 
 
 
