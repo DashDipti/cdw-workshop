@@ -551,7 +551,8 @@ image:images/step4/43-6.png[] +
 image:images/step4/updatedERD.png[] +
 
 *(1).* Created a Raw Layer by defining Tables that point to CSV data files in an S3 bucket. We were then immediately able to query and run analytics against that data. +
-*(2).* Created a Curated Layer to be the basis of our Data Lakehouse.
+*(2).* Created a Curated Layer to be the basis of our Data Lakehouse. +
+
     *(2.1).* Created the `planes` table in Hive table format stored in `Parquet` to improve performance of querying this from the Raw CSV data due to how the data is stored. Migrated, `in-place` - no data rewrite, the planes table from Hive table format to Iceberg table format using the Migration utility (Alter Table statement). +
     *(2.2).* Created the `airlines_orc` table in Hive table format stored in `ORC` to improve performance of querying this from the Raw CSV data due to how the data is stored. Took advantage of the Hive `ACID` capabilities to Insert, Update, Delete, and Merge data into this table.  Here we created a staging table to write new incoming data to be used to update the `airlines_orc` table with (Merge command). +
     *(2.3).* Created the `airports` table in Iceberg Table Format using a `CTAS` statement querying the Raw CSV data to take advantage of the features of Iceberg. +
