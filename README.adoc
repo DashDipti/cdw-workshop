@@ -476,7 +476,7 @@ image:images/step4/422-4.png[] +
 
 
 === 4.3 Create Iceberg Table (Partitioned, Parquet File Format) +
-- In this step we will create a partitioned table, in `Iceberg` Table Format, stored in `Parquet` File Format.  Other than that we could specify other file formats that are supported for Iceberg which are: `ORC and Avro`. +
+- In this step we will create a partitioned table, in `Iceberg` *Table Format*, stored in `Parquet` *File Format*.  Other than that we could specify other file formats that are supported for Iceberg which are: `ORC and Avro`. +
 
 
 [source, sql]
@@ -541,7 +541,7 @@ ORDER BY year desc;
 
 image:images/step4/43-5.png[] + 
 
-- Now, make sure that the following 5 tables are created up until this point as shown in the screenshot below. +
+- Now, make sure that the following *5 tables* are created up until this point as shown in the screenshot below. +
 
 image:images/step4/43-6.png[] + 
 
@@ -621,7 +621,7 @@ In this Step we will take a look at some of the performance optimization and tab
 - Open HUE for the CDW `Hive` Virtual Warehouse - `meta-cdw-hive-workshop-vw`
 image:images/step5/51-1.png[] +
 
-- One of the key features for Iceberg tables is the ability to evolve the partition that is being used over time. +
+- One of the key features for Iceberg tables is the ability to evolve the partition that is being used *over time*. +
 
 
 [source, sql]
@@ -641,7 +641,7 @@ image:images/step5/51-2.png[] +
 - Check for the following where now the partition is by `year, month`. +
 image:images/step5/51-3.png[] +
 
-- Load new data into the flights table using the NEW partition definition. +
+- Load new data into the flights table using the *NEW* partition definition. +
 
 [source, sql]
 ----
@@ -734,7 +734,7 @@ DESCRIBE HISTORY ${user_id}_airlines.flights;
 
 image:images/step5/52-2.png[] +
 
-In the output there should be *3 Snapshots*, described below.  Note that we have been reading/writing data from/to the Iceberg table from both Hive & Impala which is indicated by the () in the callouts below.  It is an important aspect of Iceberg Tables that they support `multi-function analytics` - ie. many engines can work with Iceberg tables (Cloudera Data Warehouse [Hive & Impala], Cloudera Data Engineering [Spark], Cloudera Machine Learning [Spark], Cloudera DataFlow [NiFi], and DataHub Clusters).
+In the output there should be *3 Snapshots*, described below.  Note that we have been reading/writing data from/to the Iceberg table from both Hive & Impala. It is an important aspect of Iceberg Tables that they support `multi-function analytics` - ie. many engines can work with Iceberg tables (`Cloudera Data Warehouse [Hive & Impala]`, `Cloudera Data Engineering [Spark]`, `Cloudera Machine Learning [Spark]`, `Cloudera DataFlow [NiFi]`, and `DataHub Clusters`).
 
 - Get the details of the `snapshots` and store it in a notepad. +
 image:images/step5/52-3.png[] +
