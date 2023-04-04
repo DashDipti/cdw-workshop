@@ -918,10 +918,10 @@ image:images/step6/6-7.png[] +
 image:images/step6/6-8.png[] + 
 
 The lineage shows: +
-** [blue box] `flights` data file residing in an s3 folder. +
-** [green box] is showing how the `flights_csv` Hive table is created, this table was created and points to the data location of `flights` (blue box) s3 folder. +
-** [orange box] is showing the `flights Iceberg` table and how it is created, it uses data from flights_csv Hive table (CTAS). +
-** [red box] Traffic_cancel_airlines is a Materialized View that uses data from the flights Iceberg table. +
+[blue box] `flights` data file residing in an s3 folder. +
+[green box] is showing how the `flights_csv` Hive table is created, this table was created and points to the data location of `flights` (blue box) s3 folder. +
+[orange box] is showing the `flights Iceberg` table and how it is created, it uses data from flights_csv Hive table (CTAS). +
+[red box] Traffic_cancel_airlines is a Materialized View that uses data from the flights Iceberg table. +
 
 
 [source, sql]
