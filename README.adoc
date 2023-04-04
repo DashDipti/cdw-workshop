@@ -663,7 +663,9 @@ image:images/step5/impala-1.png[] +
 image:images/step5/impala-2.png[] +
 image:images/step5/impala-3.png[] +
 
-- Copy/paste the following in the HUE Editor, but *`DO NOT`* execute the query.
+- Copy/paste the following in the HUE Editor, but *`DO NOT`* execute the query. +
+
+
 [source, sql]
 ----
 
@@ -672,14 +674,39 @@ FROM ${user_id}_airlines.flights
 WHERE year = 2006 AND month = 12
 GROUP BY year, month
 ORDER BY year desc, month asc;
-INSERT INTO ${user_id}_airlines.flights 
-SELECT * FROM ${user_id}_airlines_raw.flights_csv 
-WHERE year = 2007;
 
 
 ----
 
 - Run `Explain Plans` against some typical analytic queries we might run to see what happens with this new Partition. +
+image:images/step5/51-6.png[] +
+
+image:images/step5/51-7.png[] +
+
+
+
+
+
+- Copy/paste the following in the HUE Editor, but *`DO NOT`* execute the query. +
+
+
+[source, sql]
+----
+
+SELECT year, month, count(*) 
+FROM ${user_id}_airlines.flights
+WHERE year = 2007 AND month = 12
+GROUP BY year, month
+ORDER BY year desc, month asc;
+
+
+----
+
+- Run `Explain Plans` against some typical analytic queries we might run to see what happens with this new Partition. +
+image:images/step5/51-8.png[] +
+
+In the output notice the amount of data that needs to be scanned for this query, about 32MB, is significantly less than that of the first, 138MB.  This shows an important capability of Iceberg, Partition Pruning.  Meaning that much less data is scanned for this query and only the selected month of data needs to be processed.  This should result in much faster query execution times. +
+image:images/step5/51-9.png[] +
 
 
 === 5.2 Iceberg Snapshots [Table Maintenance] +
