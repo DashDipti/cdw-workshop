@@ -88,7 +88,7 @@ Below are the high-level steps for what we will be doing in the workshop. +
 
 === Step 1(b): Setting Workload Password
 
-You will need to define your workload password that will be used to acess non-SSO interfaces. You may read more about it here (https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html).
+You will need to define your workload password that will be used to acess non-SSO interfaces. You may read more about it https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html[here].
 Please keep it with you. If you have forgotten it, you will be able to repeat this process and define another one.
 
 . Click on your `user name (Ex: wuser00@workshop.com`) at the lower left corner.
@@ -904,7 +904,7 @@ image:images/step5/56-11.png[] + This image is the image of the query plan which
 
 In this step you will experience the combination of what the Data Warehouse and the Shared Data Experience (SDX) offers.  SDX enables you to provide Security and Governance tooling to ensure that you will be able to manage what is in the CDP Platform without having to stitch together multiple tools. Read more about SDX by clicking https://www.cloudera.com/products/sdx.html[here].
 
-https://www.google.com[Google]
+
 
 
 
