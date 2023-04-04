@@ -276,7 +276,7 @@ In this step we will take steps to make use of Hive and Iceberg Table formats to
 
 
 === 4.1 Curated layer creation +
-- Make sure that you are using the HUE of `meta-cdw-hive-workshop-vw`. Else, click on HUE and go to the HUE browser. +
+- Make sure that you are using the HUE of `meta-cdw-hive-workshop-vw`. Else, click on `HUE` and go to the HUE browser. +
 image:images/step4/41-1.png[] + 
 
 - Create `planes` table in `Hive` table format and stored in `parquet` file format.
@@ -309,7 +309,7 @@ INSERT INTO ${user_id}_airlines.planes
 
 image:images/step4/41-3.png[] + 
 
-- Switch to '<user_id>_airlines' database by clicking the `<` option to the left of `default` database. Click on `<user_id>_airlines` database. You should see the `planes` table. +
+- Switch to `<user_id>_airlines` database by clicking the `<` option to the left of `default` database. Click on `<user_id>_airlines` database. You should see the `planes` table. +
 
 image:images/step4/41-4.png[] + 
 
@@ -391,7 +391,7 @@ INSERT INTO ${user_id}_airlines.airlines_orc VALUES("PAW","Paradise Air");
 ----
 image:images/step4/41-13.png[] + 
 
-- Let's update an existing record to change the descritpion of 'United Airlines' to 'Adrenaline Airlines' to see more of the ACID capabalities provided by Hive ACID. Run the following SQL. +
+- Let's update an existing record to change the descritpion of `United Airlines` to `Adrenaline Airlines` to see more of the `ACID` capabalities provided by Hive ACID. Run the following SQL. +
 
 
 [source, sql]
@@ -414,7 +414,7 @@ SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
 
 ----
 
-The final “SELECT” statement should return the following result - codes “XX” and “PAW” were inserted rows, and code “UA” which had its description value changed from “United Air Lines Inc.” to “Adrenaline Airlines”.
+The final `SELECT` statement should return the following result - codes `XX` and `PAW` were inserted rows, and code `UA` which had its description value changed from `United Air Lines Inc.` to `Adrenaline Airlines`.
 image:images/step4/41-14.png[] + 
 
 
