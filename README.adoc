@@ -476,7 +476,7 @@ image:images/step4/422-4.png[] +
 
 
 === 4.3 Create Iceberg Table (Partitioned, Parquet File Format) +
-- In this step we will create a partitioned table, in Iceberg Table Format, stored in Parquet File Format.  Other than that we could specify other file Formats that are supported for Iceberg which are: ORC and Avro. +
+- In this step we will create a partitioned table, in `Iceberg` Table Format, stored in `Parquet` File Format.  Other than that we could specify other file formats that are supported for Iceberg which are: `ORC and Avro`. +
 
 
 [source, sql]
