@@ -279,6 +279,8 @@ b. Migrate over time from Hive to Iceberg Table format and hence have the choice
 image:images/step4/41-1.png[] + 
 
 - Create `planes` table in `Hive` table format and stored in `parquet` file format. +
+
+
 [source, sql]
 ----
 
@@ -294,6 +296,8 @@ TBLPROPERTIES ('external.table.purge'='true');
 ----
 
 - Load `planes` table with data from the Raw layer table `planes_csv`. +
+
+
 [source, sql]
 ----
 
