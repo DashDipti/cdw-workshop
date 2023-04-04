@@ -771,10 +771,10 @@ image:images/step5/53-1.png[] +
 image:images/step5/53-2.png[] +
 
 
-- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2023-04-04 06:51:14.360000000`. Then execute the higlighted query only (1st query).
+- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2023-04-04 06:51:14.360000000`. Then execute the higlighted query only (*1st query*).
 image:images/step5/53-3.png[] +
 
-- From the notepad just copy the second value of the snapshot id. . In our case the value was `6341506406760449831`. Paste it in the `snapshot_id` box. Then execute the higlighted query only (2nd query).
+- From the notepad just copy the second value of the snapshot id. In our case the value was `6341506406760449831`. Paste it in the `snapshot_id` box. Then execute the higlighted query only (*2nd query*).
 image:images/step5/53-4.png[] +
 
 === 5.4 (Don't Run, FYI ONLY) - Iceberg Rollback [Table Maintenance]  +
@@ -800,7 +800,7 @@ image:images/step5/53-4.png[] +
 ----
 
 === 5.6 Materialized Views [Performance Optimization] +
-- This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `meta-cdw-hive-workshop-vw`. Click on the 'Hue' button on the right upper corner of `` as shown in the screenshot below. +
+- This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `meta-cdw-hive-workshop-vw`. Click on the `Hue` button on the right upper corner of `meta-cdw-hive-workshop-vw` as shown in the screenshot below. +
 
 image:images/step5/56-1.png[] +
 
@@ -830,30 +830,30 @@ group by airlines.code, flights.month;
 
 image:images/step5/56-2.png[] +
 
-*Note*: Hive has built in performance improvements, such as a Query Cache that stores results of queries run so that similar queries don’t have to retrieve data, they can just get the results from the cache.  In this step we are turning that off using the “SET” statement, this will ensure when we look at the query plan we will not retrieve the data from the cache. +
-*Note*: with this query you are combining an Iceberg Table Format (flight table) with a Hive Table Format (airlines_orc table) in the same query.
+*Note*: Hive has built in performance improvements, such as a Query Cache that stores results of queries run so that similar queries don’t have to retrieve data, they can just get the results from the cache.  In this step we are turning that off using the *SET* statement, this will ensure when we look at the query plan we will not retrieve the data from the cache. +
+*Note*: With this query you are combining an Iceberg Table Format (`flight` table) with a Hive Table Format (`airlines ORC` table) in the same query.
 
 - Let’s take a look at the Query Plan that was used to execute this query. On the left side click on `Jobs`, as shown in the screenshot below.  +
 
 image:images/step5/56-3.png[] +
 
-- Then click on `Queries`. This is where an Admin will go when - a query has run amok and then figures out what to do next.  In our case for this lab we’d like to look at the query we just executed to see how it ran and the steps taken to execute the query.  Administrators would also be able to perform other monitoring and maintenance tasks for what is running (or has been run).  Monitoring and maintenance tasks could include: cancel (kill) queries, see what is running, analyze whether queries that have been executed are optimized, etc.
+- Then click on `Queries`. This is where an Admin will go when he wants to investigate the queries.  In our case for this lab we’d like to look at the query we just executed to see how it ran and the steps taken to execute the query.  Administrators would also be able to perform other monitoring and maintenance tasks for what is running (or has been run).  Monitoring and maintenance tasks could include: cancel (kill) queries, see what is running, analyze whether queries that have been executed are optimized, etc.
 
 image:images/step5/56-4.png[] +
 
-- Click on the first query as shown below. +
+- Click on the first query as shown below. Make sure that this is the latest query. You can look at the `Start Time' field here to know if it's the latest or not. +
 image:images/step5/56-5.png[] +
 
-- This is where you can analyze queries at a deep level.  For this lab let’s take a look at the Explain details, click on Visual Explain tab. +
+- This is where you can analyze queries at a deep level.  For this lab let’s take a look at the explain details, by clicking on `Visual Explain` tab. +
 image:images/step5/56-6.png[] +
 
-- This plan shows that this query needs to Read flights (86M rows) and airlines (1.5K rows) with hash join, group and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
+- This plan shows that this query needs to Read `flights` (86M rows) and `airlines` (1.5K rows) with hash join, group and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
 image:images/step5/56-7.png[] +
 
 - Click on the `Editor` option on the left side as shown. +
 image:images/step5/56-8.png[] +
 
-- Create Materialized View (MV) - Queries will transparently be rewritten, when possible, to use the MV instead of the base tables.  Copy/paste the following, highlight the entire block, and execute. +
+- *Create Materialized View (MV)* - Queries will transparently be rewritten, when possible, to use the MV instead of the base tables.  Copy/paste the following, highlight the entire block, and execute. +
 
 [source, sql]
 ----
