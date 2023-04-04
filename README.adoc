@@ -902,7 +902,7 @@ image:images/step5/56-11.png[] + This image is the image of the query plan which
 
 == Step 6: Data Security & Governance +
 
-In this step you will experience the combination of what the Data Warehouse and the Shared Data Experience (SDX) offers.  SDX enables you to provide Security and Governance tooling to ensure that you will be able to manage what is in the CDP Platform without having to stitch together multiple tools. Read more about SDX by clicking here.
+In this step you will experience the combination of what the Data Warehouse and the Shared Data Experience (SDX) offers.  SDX enables you to provide Security and Governance tooling to ensure that you will be able to manage what is in the CDP Platform without having to stitch together multiple tools. Read more about SDX by clicking https://www.cloudera.com/products/sdx.html[here].
 
 https://www.google.com[Google]
 
