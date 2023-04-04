@@ -639,10 +639,10 @@ SHOW CREATE TABLE ${user_id}_airlines.flights;
 
 image:images/step5/51-2.png[] +
 
-Check for the following where now the partition is by `year, month`. +
+- Check for the following where now the partition is by `year, month`. +
 image:images/step5/51-3.png[] +
 
-Load new data into the flights table using the NEW partition definition. +
+- Load new data into the flights table using the NEW partition definition. +
 
 [source, sql]
 ----
@@ -658,7 +658,7 @@ image:images/step5/51-4.png[] +
 - Open HUE for the CDW `Impala` Virtual Warehouse - `meta-cdw-impala-workshop-vw`. +
 image:images/step5/51-5.png[] +
 
-In the Hue editor look make sure `Impala` is selected as the engine else follow the screenshot to change it to impala. +
+- In the Hue editor look make sure `Impala` is selected as the engine else follow the screenshot to change it to impala. +
 image:images/step5/impala-1.png[] +
 image:images/step5/impala-2.png[] +
 image:images/step5/impala-3.png[] +
