@@ -366,6 +366,8 @@ AS
 
 ----
 
+image:images/step4/41-11.png[] + 
+
 - Run the following query to check data in the `airlines_orc` table and it should return only 1 row for code 'UA'. +
 
 
