@@ -377,6 +377,7 @@ image:images/step4/41-11.png[] +
 SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
 
 ----
+image:images/step4/41-12.png[] + 
 
 - We shall now add a new record to the `airlines_orc` table to see some Hive ACID capabilities. +
 
@@ -387,6 +388,7 @@ SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
 INSERT INTO ${user_id}_airlines.airlines_orc VALUES("PAW","Paradise Air");
 
 ----
+image:images/step4/41-13.png[] + 
 
 - Let's update an existing record to change the descritpion of 'United Airlines' to 'Adrenaline Airlines' to see more of the ACID capabalities provided by Hive ACID. Run the following SQL. +
 
@@ -406,11 +408,11 @@ MERGE INTO ${user_id}_airlines.airlines_orc USING (SELECT * FROM ${user_id}_airl
   WHEN MATCHED THEN UPDATE SET description = s.description
   WHEN NOT MATCHED THEN INSERT VALUES (s.code,s.description);
 
-SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PA");
+SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
 
 
 ----
 
-The final “SELECT” statement should return the following result - codes “XX” and “PA” were inserted rows, and code “UA” which had its description value changed from “United Air Lines Inc.” to “Adrenaline Airlines”.
-
+The final “SELECT” statement should return the following result - codes “XX” and “PAW” were inserted rows, and code “UA” which had its description value changed from “United Air Lines Inc.” to “Adrenaline Airlines”.
+image:images/step4/41-14.png[] + 
 
