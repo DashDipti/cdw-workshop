@@ -306,6 +306,7 @@ INSERT INTO ${user_id}_airlines.planes
 
 - Run the SQL to see if the `planes` table was loaded correctly. Since, `parquet` uses highly efficient column-wise compression which occupies much disk space than CSV file and hence makes it faster to scan data in the `parquet` file. +
 
+
 [source, sql]
 ----
 
