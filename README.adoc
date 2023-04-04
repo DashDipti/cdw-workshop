@@ -544,4 +544,4 @@ image:images/step4/43-5.png[] +
 
 - Now, make sure that the following 5 tables are created up until this point as shown in the screenshot below. +
 
-image:images/step4/43-5.png[] + 
+image:images/step4/43-6.png[] + 
