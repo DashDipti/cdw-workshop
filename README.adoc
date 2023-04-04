@@ -94,22 +94,22 @@ Please keep it with you. If you have forgotten it, you will be able to repeat th
 . Click on your `user name (Ex: wuser00@workshop.com`) at the lower left corner.
 . Click on the `Profile` option.
 
-image:images/step1b/1.PNG[]  +
+image:images/step1b/1.PNG[] +
 
 . Click option `Set Workload Password`.
 . Enter a suitable `Password` and `Confirm Password`.
 . Click button `Set Workload Password`.
 
 
-image:images/step1b/2.PNG[]  +
+image:images/step1b/2.PNG[] +
 
-image::images/step1b/3.PNG[]
+image::images/step1b/3.PNG[] +
 
 {blank} +
 
 Check that you got the message - `Workload password is currently set` or alternatively, look for a message next to `Workload Password` which says `(Workload password is currently set)`
 
-image::images/step1b/4.PNG[]
+image::images/step1b/4.PNG[] +
 
 
 == Step 2: Cloudera Data Warehouse - Introduction [NOTHIN TO BE DONE HERE, BUT TO READ/OBSERVE]
@@ -122,7 +122,7 @@ The objective of this step is to create External tables on top of raw CSV files 
 === 3.1 Open Hue for CDW Virtual Warehouse - `meta-cdw-hive-workshop-vw` +
 
 - Click on the 'Hue' button on the right upper corner of `` as shown in the screenshot below. +
-image:images/step3/31-1.png[]  +
+image:images/step3/31-1.png[] +
 
 
 
@@ -147,7 +147,7 @@ image:images/step3/31-2.png[]  +
 SHOW DATABASES;
 ----
 
-image:images/step3/31-3.png[] 
+image:images/step3/31-3.png[] + 
 
 === 3.2 Run the following DDL in HUE for the CDW Virtual Warehouse - `meta-cdw-hive-workshop-vw` +
 This will create External Tables on CSV Data Files that have been uploaded previously by your instructor in AWS S3. This provides a fast way to allow SQL layer on top of data in cloud storage.
@@ -178,7 +178,7 @@ STORED AS TEXTFILE LOCATION 's3a://meta-workshop/my-data/meta-cdw-workshop/airli
 ----
 
 Notice the following screenshot corresponding to the above SQL.
-image:images/step3/32-1.png[] 
+image:images/step3/32-1.png[] + 
 
 - Check all the tables were created.
 
@@ -197,7 +197,7 @@ image:images/step3/32-2.png[]
 === 3.3 Run the following DDL in HUE for the CDW Virtual Warehouse - `meta-cdw-impala-workshop-vw`. +
 
 - Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for `meta-cdw-impala-workshop-vw` as shown in the screenshot below.
-image:images/step3/33-1.png[] 
+image:images/step3/33-1.png[] +
 
 - Make sure that you click to get `Impala` instead of `default` in the HUE browser as shown below and then click refresh button image:images/step3/33-2refresh.png[]. +
 Now, copy paste the following in the HUE browser and click on Run as shown below.
@@ -208,13 +208,13 @@ Now, copy paste the following in the HUE browser and click on Run as shown below
 select count(*) from ${user_id}_airlines_raw.flights_csv;
 ----
 
-image:images/step3/33-2.png[] 
+image:images/step3/33-2.png[] + 
 
 Notice that while the query is executing, continue to the next step.  Once the query returns you will see the following in the Results - the flights_csv table has over 86 million records.
-image:images/step3/33-3.png[] 
+image:images/step3/33-3.png[] +
 
 - Go back to the CDP Console and observe the Impala Virtual Warehouse `meta-cdw-impala-workshop-vw`. +
-image:images/step3/33-4.png[] 
+image:images/step3/33-4.png[] +
 
 Here, you'll notice that the warehouse is now at a state where it is not executing any queries and hence, the node count would be low and as the users will run their queries it will scale up or down depending upon the need of resources or lack of it when queries are not run.
 
@@ -257,13 +257,80 @@ WHERE planes_csv.tailnum IN
 
 ----
 
-image:images/step3/33-5.png[] 
+image:images/step3/33-5.png[] +
 
 - Go back to the CDP console to observe the behaviour of scaling up/down of virtual warehouse. +
-image:images/step3/33-6.png[] 
+image:images/step3/33-6.png[] +
 
 - Check in the Hue browser and the query show up the result as following. Observe the amount of time taken to run this query. +
-image:images/step3/33-7.png[] 
+image:images/step3/33-7.png[] + 
+
+
+
+== Step 4: Data Lakehouse - Hive & Iceberg Table Format +
+In this step we will take steps to make use of Hive and Iceberg Table formats to provide us with best of both world scenarios in our Data Lakehouse. We will - +
+a. Create a curated layer from RAW CSV Tables (Created in Step 3). Curated layer will be created in <user_id>_airlines - This will be our 'Data Lakehouse'. Data Lakehouse will be combination of 2 Table Formats (Hive & Iceberg).
+b. Migrate over time from Hive to Iceberg Table format and hence have the choice to not have to migrate everything at once.
+c. 
+
+
+=== 4.1 Curated layer creation +
+- Make sure that you are using the HUE of `meta-cdw-hive-workshop-vw`. Else, click on HUE and go to the HUE browser +
+image:images/step4/41-1.png[] + 
+
+- Create `planes` table in `Hive` table format and stored in `parquet` file format. +
+[source, sql]
+----
+
+drop table if exists ${user_id}_airlines.planes;
+
+CREATE EXTERNAL TABLE ${user_id}_airlines.planes (
+  tailnum STRING, owner_type STRING, manufacturer STRING, issue_date STRING,
+  model STRING, status STRING, aircraft_type STRING,  engine_type STRING, year INT 
+) 
+STORED AS PARQUET 
+TBLPROPERTIES ('external.table.purge'='true');
+----
+
+- Load `planes` table with data from the Raw layer table `planes_csv`. +
+[source, sql]
+----
+
+INSERT INTO ${user_id}_airlines.planes
+  SELECT * FROM ${user_id}_airlines_raw.planes_csv;
+----
+
+- Switch to '<user_id>_airlines' database by clicking the `<` option to the left of `default` database. Click on `<user_id>_airlines` database. You should see the `planes` table. +
+
+- Run the SQL to see if the `planes` table was loaded correctly. Since, `parquet` uses highly efficient column-wise compression which occupies much disk space than CSV file and hence makes it faster to scan data in the `parquet` file. +
+
+[source, sql]
+----
+
+SELECT * FROM ${user_id}_airlines.planes LIMIT 100;
+----
+
+Scroll down to see more values for the data.
+
+- Execute the following command. +
+[source, sql]
+----
+
+DESCRIBE FORMATTED ${user_id}_airlines.planes;
+----
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
