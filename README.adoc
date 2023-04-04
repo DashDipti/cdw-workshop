@@ -613,3 +613,16 @@ WHERE planes.tailnum IN
 
 image:images/step4/recap-5.png[] +
 The Data Lakehouse DW query performs significantly better than same query running against the CSV data. +
+
+
+== Step 5: Performance Optimizations & Table maintenance Using Impala VW +
+In this Step we will take a look at some of the performance optimization and table maintenance tasks that can be performed to ensure the best possible TCO, while ensuring the best performance. +
+
+- Open HUE for the CDW `Hive` Virtual Warehouse - `meta-cdw-hive-workshop-vw`
+image:images/step5/5-1.png[] +
+
+
+
+
+- Open HUE for the CDW `Impala` Virtual Warehouse - `meta-cdw-impala-workshop-vw` +
+image:images/step5/5-2.png[] +
