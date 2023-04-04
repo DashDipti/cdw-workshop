@@ -269,13 +269,13 @@ image:images/step3/33-7.png[] +
 
 == Step 4: Data Lakehouse - Hive & Iceberg Table Format +
 In this step we will take steps to make use of Hive and Iceberg Table formats to provide us with best of both world scenarios in our Data Lakehouse. We will - +
-a. Create a curated layer from RAW CSV Tables (Created in Step 3). Curated layer will be created in <user_id>_airlines - This will be our 'Data Lakehouse'. Data Lakehouse will be combination of 2 Table Formats (Hive & Iceberg).
+a. Create a curated layer from RAW CSV Tables (Created in Step 3). Curated layer will be created in <user_id>_airlines - This will be our 'Data Lakehouse'. Data Lakehouse will be combination of 2 Table Formats (Hive & Iceberg). +
 b. Migrate over time from Hive to Iceberg Table format and hence have the choice to not have to migrate everything at once.
 
 
 
 === 4.1 Curated layer creation +
-- Make sure that you are using the HUE of `meta-cdw-hive-workshop-vw`. Else, click on HUE and go to the HUE browser +
+- Make sure that you are using the HUE of `meta-cdw-hive-workshop-vw`. Else, click on HUE and go to the HUE browser. +
 image:images/step4/41-1.png[] + 
 
 - Create `planes` table in `Hive` table format and stored in `parquet` file format.
@@ -293,6 +293,8 @@ STORED AS PARQUET
 TBLPROPERTIES ('external.table.purge'='true');
 
 ----
+image:images/step4/41-2.png[] + 
+
 
 - Load `planes` table with data from the Raw layer table `planes_csv`.
 
@@ -304,7 +306,15 @@ INSERT INTO ${user_id}_airlines.planes
 
 ----
 
+image:images/step4/41-3.png[] + 
+
 - Switch to '<user_id>_airlines' database by clicking the `<` option to the left of `default` database. Click on `<user_id>_airlines` database. You should see the `planes` table. +
+
+image:images/step4/41-4.png[] + 
+
+image:images/step4/41-5.png[] +
+
+image:images/step4/41-6.png[] +
 
 - Run the SQL to see if the `planes` table was loaded correctly. Since, `parquet` uses highly efficient column-wise compression which occupies much disk space than CSV file and hence makes it faster to scan data in the `parquet` file. +
 
@@ -318,6 +328,10 @@ SELECT * FROM ${user_id}_airlines.planes LIMIT 100;
 
 Scroll down to see more values for the data.
 
+image:images/step4/41-7.png[] +
+
+image:images/step4/41-8.png[] +
+
 - Execute the following command. +
 
 
@@ -327,8 +341,8 @@ Scroll down to see more values for the data.
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
-
-
+image:images/step4/41-9.png[] + 
+image:images/step4/41-10.png[] + 
 
 
 
