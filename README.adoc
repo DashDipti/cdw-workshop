@@ -278,8 +278,7 @@ b. Migrate over time from Hive to Iceberg Table format and hence have the choice
 - Make sure that you are using the HUE of `meta-cdw-hive-workshop-vw`. Else, click on HUE and go to the HUE browser +
 image:images/step4/41-1.png[] + 
 
-- Create `planes` table in `Hive` table format and stored in `parquet` file format. +
-
+- Create `planes` table in `Hive` table format and stored in `parquet` file format.
 
 [source, sql]
 ----
@@ -295,8 +294,7 @@ TBLPROPERTIES ('external.table.purge'='true');
 
 ----
 
-- Load `planes` table with data from the Raw layer table `planes_csv`. +
-
+- Load `planes` table with data from the Raw layer table `planes_csv`.
 
 [source, sql]
 ----
