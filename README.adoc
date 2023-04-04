@@ -317,6 +317,8 @@ SELECT * FROM ${user_id}_airlines.planes LIMIT 100;
 Scroll down to see more values for the data.
 
 - Execute the following command. +
+
+
 [source, sql]
 ----
 
