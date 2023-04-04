@@ -474,3 +474,63 @@ Just like the previous case look for:  `Table Type`, `Location` (location of whe
 image:images/step4/422-3.png[] +  
 
 image:images/step4/422-4.png[] +  
+
+
+=== 4.3 Create Iceberg Table (Partitioned, Parquet File Format) +
+- In this step we will create a partitioned table, in Iceberg Table Format, stored in Parquet File Format.  Other than that we could specify other file Formats that are supported for Iceberg which are: ORC and Avro. +
+
+
+[source, sql]
+----
+
+drop table if exists ${user_id}_airlines.flights;
+CREATE EXTERNAL TABLE ${user_id}_airlines.flights (
+ month int, dayofmonth int, 
+ dayofweek int, deptime int, crsdeptime int, arrtime int, 
+ crsarrtime int, uniquecarrier string, flightnum int, tailnum string, 
+ actualelapsedtime int, crselapsedtime int, airtime int, arrdelay int, 
+ depdelay int, origin string, dest string, distance int, taxiin int, 
+ taxiout int, cancelled int, cancellationcode string, diverted string, 
+ carrierdelay int, weatherdelay int, nasdelay int, securitydelay int, 
+ lateaircraftdelay int
+) 
+PARTITIONED BY (year int)
+STORED BY ICEBERG 
+STORED AS PARQUET
+tblproperties ('format-version'='2');
+
+SHOW CREATE TABLE ${user_id}_airlines.flights;
+
+----
+
+The `SHOW CREATE TABLE` command is the unformatted version of 'DESCRIBE FORMATTED' command. Pay attention to the `PARTITIONED BY SPEC`, where we have partitioned the `flights` table using `year` column. 
+
+- We insert data into this table it will write data together within the same partition (ie. all 2006 data is written to the same location, all 2005 data is written to the same location, etc.) +
+
+
+[source, sql]
+----
+
+INSERT INTO ${user_id}_airlines.flights
+ SELECT * FROM ${user_id}_airlines_raw.flights_csv
+ WHERE year <= 2006;
+
+SELECT year, count(*) 
+FROM ${user_id}_airlines.flights
+GROUP BY year
+ORDER BY year desc;
+
+----
+
+- Run the following SQL and notice that each of the years have a range of data within a few million flights (each record in the flights table counts as a flight). +
+
+
+[source, sql]
+----
+
+SELECT year, count(*) 
+FROM ${user_id}_airlines.flights
+GROUP BY year
+ORDER BY year desc;
+
+----
