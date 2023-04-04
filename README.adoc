@@ -435,6 +435,7 @@ SET TBLPROPERTIES ('storage_handler'='org.apache.iceberg.mr.hive.HiveIcebergStor
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
+image:images/step4/421-1.png[] + 
 
 The following happened. +
 *(a).* This migration to Iceberg happened in-place & there was no re-writing of data that occurred as part of this process.  It retained the File Format of `parquet` for the Iceberg table as well.  There was a Metadata file that is created, which you can see when you run the `DESCRIBE FORMATTED`. +
@@ -447,10 +448,10 @@ The following happened. +
 `MIGRATED_TO_ICEBERG`: Indicates that the table has migrated to `ICEBERG`. +
 `table_type`: Indicates `ICEBERG` table format. +
 `metadata_location`: Indicates the location of `metadata` which is path to cloud storage. +
-`storage_handler`: +
-`SerDe Library`: +
+`storage_handler`: `org.apache.iceberg.mr.hive.HiveIcebergStorageHandler`. +
+`SerDe Library`: `org.apache.iceberg.mr.hive.HiveIcebergSerDe`. +
 
-    
+image:images/step4/421-2.png[] +  
 
 
 ==== 4.2.2 (Option 2): Use Create Table as Select (CTAS) +
