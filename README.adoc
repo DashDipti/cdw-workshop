@@ -103,13 +103,13 @@ image:images/step1b/1.PNG[] +
 
 image:images/step1b/2.PNG[] +
 
-image::images/step1b/3.PNG[] +
+image:images/step1b/3.PNG[] +
 
 {blank} +
 
 Check that you got the message - `Workload password is currently set` or alternatively, look for a message next to `Workload Password` which says `(Workload password is currently set)`
 
-image::images/step1b/4.PNG[] +
+image:images/step1b/4.PNG[] +
 
 
 == Step 2: Cloudera Data Warehouse - Introduction [NOTHIN TO BE DONE HERE, BUT TO READ/OBSERVE]
