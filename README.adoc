@@ -560,7 +560,7 @@ image:images/step4/updatedERD.png[] +
 ** *(2.3).* Created the `airports` table in Iceberg Table Format using a `CTAS` statement querying the Raw CSV data to take advantage of the features of Iceberg. +
 ** *(2.4).* Created the flights table in Iceberg Table Format and partitioned the table by the year column. Inserted data into the table up to year 2006.
     
-- As a final step here let's run the same analytic query we ran against the Raw layer now in our Data Lakehouse DW, to see what happens with performance. 
+As a final step here let's run the same analytic query we ran against the Raw layer now in our Data Lakehouse DW, to see what happens with performance. 
 From the cloudera console click on -  `meta-cdw-impala-workshop-vw`. +
 
 image:images/step4/recap-1.png[] + 
@@ -568,6 +568,6 @@ image:images/step4/recap-1.png[] +
 - Make sure that 'Unified Analytics' is *NOT* selected.+
 image:images/step4/recap-2.png[] + 
 
-Instead click on the `Editor` option in the left top corner and select `Impala` editor. +
+- Instead click on the `Editor` option in the left top corner and select `Impala` editor. +
 image:images/step4/recap-3.png[] +
 image:images/step4/recap-4.png[] +
