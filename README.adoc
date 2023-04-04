@@ -901,7 +901,7 @@ In this step you will experience the combination of what the Data Warehouse and 
 image:images/step6/6-1.png[] + 
 image:images/step6/6-2.png[] + 
 
-- Change the radio button to select appropriate data lake. In this case it is `meta-workshop`. +
+- Change the radio button to select appropriate data lake. In this case it is `meta-workshop-dl`. +
 image:images/step6/6-3.png[] + 
 
 - Filter for Assets we created - below the Data Lakes on the left of the screen under Filters, select `TYPE` to be `Hive Table`.  The right side of the screen will update to reflect this selection. +
@@ -923,11 +923,44 @@ The lineage shows: +
 *[orange box]*- is showing the `flights Iceberg` table and how it is created, it uses data from flights_csv Hive table (CTAS). +
 *[red box]* - `traffic_cancel_airlines` is a Materialized View that uses data from the flights Iceberg table. +
 
+- Click on the Policy tab to see what security policies have been applied on this table. Click on the arrow next `all - database, table` `Policy Name` to the number as shown in the screenshot+
+image:images/step6/6-9.png[] + 
+
+- It will open `Ranger` which is for access management. Using Security (Ranger) - we can modify and create security policies for the various CDP Data Services. Click on `Hadoop SQL` link in the upper right corner - to view the security policies in place for CDW.  Here, will stick to the CDW related security features. +
+image:images/step6/6-10.png[] + 
+
+- This screen shows the general Access related security policies - who has access to which Data Lakehouse databases, tables, views, etc.  Click on the `Row Level Filter` tab to see the policies to restrict access to portions of data. +
+image:images/step6/6-11.png[] + 
+image:images/step6/6-12.png[] + 
+
+- There are currently no policies defined.  Click on the `Add New Policy` button on top right corner. +
+image:images/step6/6-13.png[] + 
+
+- Fill out the form as follows. +
+`Policy Name`: <user_id>_RowLevelFilter (Ex: wuser00_RowLevelFilter) +
+`Hive Database`: <user_id>_airlines (Ex: wuser00_airlines) +
+`Hive Table`: flights (start typing, once you see this table in the list, select it) +
+`Row Filtering Conditions`:
+    `Select User`: <user_id> +
+    `Access Types`: select +
+    `Row Level Filter`:  uniquecarrier="UA" +
+Click  'Add' button to accept this Policy. +
+
+image:images/step6/6-14.png[] + 
+
+- The new policy is added to the “Row Level Filter” policies (as below). +
+image:images/step6/6-15.png[] + 
+
+- Test the policy is working - Open `HUE`` for the CDW Impala Virtual Warehouse - `meta-cdw-impala-workshop-vw` and execute the following query. +
 
 [source, sql]
 ----
 
-
-
+SELECT uniquecarrier, count(*)
+FROM ${user_id}_airlines.flights
+GROUP BY uniquecarrier;
 
 ----
+
+- You should now only see 1 row returned for this query - after the policy was applied you will only be able to access uniquecarrier = “UA” and no other carriers.
+image:images/step6/6-16.png[] + 
