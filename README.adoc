@@ -139,7 +139,7 @@ CREATE DATABASE ${user_id}_airlines;
 
 image:images/step3/31-2.png[]  +
 
-- There may be many databases, look for the 2 that start with your *`<user_id>`*. Run the following to see that 2 databases that you created.
+- There may be many databases, look for the 2 that start with your *`<user_id>`*. Run the following SQL to see the 2 databases that you created just now.
 
 [source, sql]
 ----
@@ -180,7 +180,7 @@ STORED AS TEXTFILE LOCATION 's3a://meta-workshop/my-data/meta-cdw-workshop/airli
 Notice the following screenshot corresponding to the above SQL.
 image:images/step3/32-1.png[] + 
 
-- Check all the tables were created.
+- Check all the 4 tables were created.
 
 [source, sql]
 ----
@@ -196,7 +196,7 @@ image:images/step3/32-2.png[]
 
 === 3.3 Run the following DDL in HUE for the CDW Virtual Warehouse - `meta-cdw-impala-workshop-vw`. +
 
-- Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for `meta-cdw-impala-workshop-vw` as shown in the screenshot below.
+- Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for *`meta-cdw-impala-workshop-vw`* as shown in the screenshot below.
 image:images/step3/33-1.png[] +
 
 - Make sure that you click to get `Impala` instead of `default` in the HUE browser as shown below and then click refresh button image:images/step3/33-2refresh.png[]. +
@@ -271,8 +271,8 @@ image:images/step3/33-7.png[] +
 In this step we will take steps to make use of Hive and Iceberg Table formats to provide us with best of both world scenarios in our Data Lakehouse. We will - +
 4.1 Create a curated layer from RAW CSV Tables (Created in Step 3). Curated layer will be created in <user_id>_airlines - This will be our 'Data Lakehouse'. Data Lakehouse will be combination of 2 Table Formats (Hive & Iceberg). +
 4.2 Migrate over time from Hive to Iceberg Table format and hence have the choice to not have to migrate everything at once.
-    4.2.1 Utilize the table Migration feature
-    4.2.2 Use Create Table as Select (CTAS)
+    ** 4.2.1 Utilize the table Migration feature
+    ** 4.2.2 Use Create Table as Select (CTAS)
 
 
 
