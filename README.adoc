@@ -330,6 +330,7 @@ Scroll down to see more values for the data.
 
 image:images/step4/41-7.png[] +
 
+Scroll down to see more values. 
 image:images/step4/41-8.png[] +
 
 - Execute the following command. +
@@ -342,6 +343,12 @@ DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
 image:images/step4/41-9.png[] + 
+
+In the output look for the following. +
+Location: `s3a://meta-workshop/my-data/warehouse/tablespace/external/hive/wuser00_airlines.db/planes`
+Table Type: `EXTERNAL_TABLE`
+SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe`
+
 image:images/step4/41-10.png[] + 
 
 
