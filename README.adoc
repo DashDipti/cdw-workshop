@@ -290,6 +290,7 @@ CREATE EXTERNAL TABLE ${user_id}_airlines.planes (
 ) 
 STORED AS PARQUET 
 TBLPROPERTIES ('external.table.purge'='true');
+
 ----
 
 - Load `planes` table with data from the Raw layer table `planes_csv`. +
@@ -298,6 +299,7 @@ TBLPROPERTIES ('external.table.purge'='true');
 
 INSERT INTO ${user_id}_airlines.planes
   SELECT * FROM ${user_id}_airlines_raw.planes_csv;
+
 ----
 
 - Switch to '<user_id>_airlines' database by clicking the `<` option to the left of `default` database. Click on `<user_id>_airlines` database. You should see the `planes` table. +
@@ -308,6 +310,7 @@ INSERT INTO ${user_id}_airlines.planes
 ----
 
 SELECT * FROM ${user_id}_airlines.planes LIMIT 100;
+
 ----
 
 Scroll down to see more values for the data.
@@ -317,6 +320,7 @@ Scroll down to see more values for the data.
 ----
 
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
+
 ----
 
 
