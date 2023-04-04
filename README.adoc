@@ -653,10 +653,34 @@ WHERE year = 2007;
 
 
 ----
+image:images/step5/51-4.png[] +
 
-
-- Open HUE for the CDW `Impala` Virtual Warehouse - `meta-cdw-impala-workshop-vw` +
+- Open HUE for the CDW `Impala` Virtual Warehouse - `meta-cdw-impala-workshop-vw`. +
 image:images/step5/51-5.png[] +
+
+In the Hue editor look make sure `Impala` is selected as the engine else follow the screenshot to change it to impala. +
+image:images/step5/impala-1.png[] +
+image:images/step5/impala-2.png[] +
+image:images/step5/impala-3.png[] +
+
+- Copy/paste the following in the HUE Editor, but *`DO NOT`* execute the query.
+[source, sql]
+----
+
+SELECT year, month, count(*) 
+FROM ${user_id}_airlines.flights
+WHERE year = 2006 AND month = 12
+GROUP BY year, month
+ORDER BY year desc, month asc;
+INSERT INTO ${user_id}_airlines.flights 
+SELECT * FROM ${user_id}_airlines_raw.flights_csv 
+WHERE year = 2007;
+
+
+----
+
+- Run `Explain Plans` against some typical analytic queries we might run to see what happens with this new Partition. +
+
 
 === 5.2 Iceberg Snapshots [Table Maintenance] +
 
