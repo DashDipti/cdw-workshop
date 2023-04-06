@@ -75,13 +75,13 @@ Below are the high-level steps for what we will be doing in the workshop. +
     (b) Row level security to make sure only relevant party can see data.
 
 
-== Step 1: XXXXX
+== Step 1: Getting Started
 
 === Step 1(a): You'll need the following
 
 In this Lab you will login to CDP and complete your user setup. +
 
-Please make sure that you are working on the browser (Chrome) in *INCOGNITIO MODE* only for the entirety of the workshop.
+Please make sure that you are working on the browser (Chrome) image:images/step1a/chrome.png[] in *INCOGNITIO MODE* image:images/step1a/incog.png[] only for the entirety of the workshop. +
 
 (a) `Workshop Login Page`: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login Page] +
 (b) `Workshop Login Username`: \____________________ (Your Instructor would provide this) +
