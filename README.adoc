@@ -79,7 +79,36 @@ Below are the high-level steps for what we will be doing in the workshop. +
 
 === Step 1(a): You'll need the following
 
-=== Step 1(b): Setting Workload Password
+In this Lab you will login to CDP and complete your user setup. +
+===== Lab Setup
+You'll will be provided with a Login.  Please enter your details below for reference throughout these lab exercises.
+WORKSHOP LOGIN URL: Click Here_____________________________________ 
+Must be on VPN
+Use Incognito Browser window
+Login: 
+User (Workload User): _____________________________________
+Password: _____________________________________	
+
+The Workshop Admin will provide you with the location where the CSV files are located for the Lab exercises.
+S3: 
+Bucket: _____________________________________	(ie. s3a://bucket-name)
+
+The Workshop Admin will provide you with the Data Lake name.
+Data Lake: 
+Data Lake Name: _____________________________________
+
+In the labs when you see:
+${user_id} or <user_id> - this will indicate to use your User (Workload User) provided for you to login to CDP
+${bucket} - this will indicate to use the bucket provided to you
+
+
+=== Step 1(b): Define Workload Password
+
+Please use the login url: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] Enter the `Username` and `Password` shared by your instructor. (Note: Note that your username would be something like wuser00@workshop.com and not just wuser00). +
+image:images/step1b/1-1.PNG[] +
+
+You should be able to get the following home page of CDP Public Cloud.
+image:images/step1b/1-2.PNG[] +
 
 You will need to define your workload password that will be used to acess non-SSO interfaces. You may read more about it https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html[here].
 Please keep it with you. If you have forgotten it, you will be able to repeat this process and define another one.
