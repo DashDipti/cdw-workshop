@@ -1013,6 +1013,9 @@ image:images/step6/6-16.png[] +
 = THANK YOU
 
 
+[.text-center]
+THANK YOU
+
 [source, sql]
 ----
 
