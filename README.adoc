@@ -1012,7 +1012,7 @@ image:images/step6/6-16.png[] +
 [source, sql]
 ----
 
-
+-- END OF WORKSHOP. THANK YOU.
 
 ----
-image:images/misc/thankyou.png[] + 
+image:images/misc/thankyou1.png[] + 
