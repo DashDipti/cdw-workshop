@@ -83,7 +83,6 @@ WARNING: Please make sure that you are working on the browser (Chrome) image:ima
 
 Please note the following: +
 
-`Workshop Login Page`: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login Page] +
 (a) `Workshop Login Username`: \____________________ _(Your Instructor would provide this)_ +
 (b) `Workshop Login Password`: \____________________ _(Your Instructor would provide this)_ +
 (c) `CDP Workload User`: \____________________ _(Your Instructor would provide this)_ +
@@ -100,7 +99,7 @@ In the labs when you see: +
 === Step 1(b): Define CDP Workload Password
 
 Please use the login url: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login]. +
-Enter the `Username` and `Password` shared by your instructor. (Note: Note that your username would be something like wuser00@workshop.com and not just wuser00). +
+Enter the `Workshop Login Username` and `Workshop Login Password` shared by your instructor. (Note: Note that your username would be something like wuser00@workshop.com and not just wuser00). +
 image:images/step1b/1-1.PNG[] +
 
 You should be able to get the following home page of CDP Public Cloud.
