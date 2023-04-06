@@ -80,31 +80,29 @@ Below are the high-level steps for what we will be doing in the workshop. +
 === Step 1(a): You'll need the following
 
 In this Lab you will login to CDP and complete your user setup. +
-===== Lab Setup
-You'll will be provided with a Login.  Please enter your details below for reference throughout these lab exercises.
-WORKSHOP LOGIN URL: Click Here_____________________________________ 
-Must be on VPN
-Use Incognito Browser window
-Login: 
-User (Workload User): _____________________________________
-Password: _____________________________________	
 
-The Workshop Admin will provide you with the location where the CSV files are located for the Lab exercises.
-S3: 
-Bucket: _____________________________________	(ie. s3a://bucket-name)
+Please make sure that you are working on the browser (Chrome) in *INCOGNITIO MODE* only for the entirety of the workshop.
 
-The Workshop Admin will provide you with the Data Lake name.
-Data Lake: 
-Data Lake Name: _____________________________________
+(a) Workshop Login Page: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login Page] +
+(b) Workshop Login Username: ___________________+ (Your Instructor would provide this) +
+(c) Workshop Login Password: ___________________+ (Your Instructor would provide this) +
+(d) CDP Workload User:  ___________________+ (Your Instructor would provide this) +
+(e) CDP Workload Password: ___________________+ (You will set it in Step 1(b) of the workshop) +
 
-In the labs when you see:
-${user_id} or <user_id> - this will indicate to use your User (Workload User) provided for you to login to CDP
-${bucket} - this will indicate to use the bucket provided to you
+(f) Hive Virtual Warehouse Name: ___________________+ (Your Instructor would provide this) +
+(g) Impala Virtual Warehouse Name: ___________________+ (Your Instructor would provide this) +
+(h) S3 Bucket: ___________________+ (Your Instructor would provide this) +
+
+In the labs when you see: +
+${user_id} or <user_id> - this will indicate to use your User (`Workshop Login Username`) as item (d) above. +
+${bucket} - this will indicate to use the bucket provided to you as item (h) above. +
 
 
-=== Step 1(b): Define Workload Password
 
-Please use the login url: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] Enter the `Username` and `Password` shared by your instructor. (Note: Note that your username would be something like wuser00@workshop.com and not just wuser00). +
+=== Step 1(b): Define CDP Workload Password
+
+Please use the login url: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login]. +
+Enter the `Username` and `Password` shared by your instructor. (Note: Note that your username would be something like wuser00@workshop.com and not just wuser00). +
 image:images/step1b/1-1.PNG[] +
 
 You should be able to get the following home page of CDP Public Cloud.
