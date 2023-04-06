@@ -1010,7 +1010,7 @@ GROUP BY uniquecarrier;
 image:images/step6/6-16.png[] + 
 
 
-= THANK YOU
+=                                       THANK YOU
 
 
 [source, sql]
