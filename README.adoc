@@ -101,7 +101,7 @@ In the labs when you see: +
 Please use the login url: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login]. +
 Enter the `Workshop Login Username` and `Workshop Login Password` shared by your instructor. +
 
-(*Note*: Note that your username would be something like wuser00@workshop.com and not just wuser00). +
+(*Note*: Note that your username would be something like `wuser00@workshop.com` and not just `wuser00`). +
 image:images/step1b/1-1.PNG[] +
 
 You should be able to get the following home page of CDP Public Cloud.
