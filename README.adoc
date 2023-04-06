@@ -87,7 +87,7 @@ Please note the following: +
 (a) `Workshop Login Username`: \____________________ (Your Instructor would provide this) +
 (b) `Workshop Login Password`: \____________________ (Your Instructor would provide this) +
 (c) `CDP Workload User`: \____________________ (Your Instructor would provide this) +
-(d) `CDP Workload Password`: \_____________________ (*You will* set it in Step 1(b) of the workshop) +
+(d) `CDP Workload Password`: \_____________________ (*`You will`* set it in Step 1(b) of the workshop) +
 (e) `Hive Virtual Warehouse Name`: \____________________ (Your Instructor would provide this) +
 (f) `Impala Virtual Warehouse Name`: \____________________ (Your Instructor would provide this) +
 (g) `S3 Bucket`: \____________________ (Your Instructor would provide this) +
