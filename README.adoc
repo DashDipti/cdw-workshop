@@ -145,11 +145,7 @@ Click the below for *`Detailed Documentation(s)`*: +
 (c) https://docs.cloudera.com/cdp-private-cloud/latest/index.html[CDP Private Cloud Getting Started]
 
 === Step 2(b): Navigating Cloudera Data Warehouse (CDW)
-[,sql]
-----
 
-
-----
 
 == Step 3: Cloudera Data Warehouse - Raw Layer (Direct Cloud Object Storage Access)
 
