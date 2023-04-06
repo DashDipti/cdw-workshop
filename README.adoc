@@ -80,6 +80,7 @@ Below are the high-level steps for what we will be doing in the workshop. +
 === Step 1(a): You'll need the following
 
 In this Lab you will login to CDP and complete your user setup. +
+
 WARNING: Wolpertingers are known to nest in server racks.   Enter at your own risk.
 
 Please make sure that you are working on the browser (Chrome) image:images/step1a/chrome.png[] in *INCOGNITIO MODE* image:images/step1a/incog.png[] only for the entirety of the workshop. +
