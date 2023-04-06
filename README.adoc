@@ -131,7 +131,7 @@ Check that you got the message - `Workload password is currently set` or alterna
 image:images/step1b/4.PNG[] +
 
 
-== Step 2: (Don’t Run, FYI ONLY) Cloudera Data Warehouse - Introduction
+== Step 2: (Optional) Cloudera Data Warehouse - Introduction
 In this step you'll explore how to take advantage of CDW.
 
 === Step 2(a): Useful Information for Self Reads/Tours
