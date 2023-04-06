@@ -131,10 +131,14 @@ Check that you got the message - `Workload password is currently set` or alterna
 image:images/step1b/4.PNG[] +
 
 
-== Step 2: (Optional) Cloudera Data Warehouse - Introduction
+== Step 2: (Optional) Cloudera Data Warehouse - Introduction +
 In this step you'll explore how to take advantage of CDW.
 
-=== Step 2(a): Useful Information for Self Reads/Tours
+=== Step 2(a): Navigating Cloudera Data Warehouse (CDW) +
+
+WARNING: INSTRUCTOR WILL WALK YOU THROUGH THE ENVIRONMENT. +
+
+=== Step 2(b): Useful Information for Self Reads/Tours
 Click the below for *`Virtual Tour`* Experience(s): +
 (a) https://www.cloudera.com/users/cdp-tour-cdw-intro.html[CDW Virtual Tour] +
 (b) https://www.cloudera.com/users.html#tours[Virtual Tour of CDP & Other Data Services] +
@@ -144,7 +148,7 @@ Click the below for *`Detailed Documentation(s)`*: +
 (b) https://docs.cloudera.com/data-warehouse/cloud/index.html[CDP Public Cloud Data Warehouse] +
 (c) https://docs.cloudera.com/cdp-private-cloud/latest/index.html[CDP Private Cloud Getting Started]
 
-=== Step 2(b): Navigating Cloudera Data Warehouse (CDW)
+
 
 
 == Step 3: Cloudera Data Warehouse - Raw Layer (Direct Cloud Object Storage Access)
