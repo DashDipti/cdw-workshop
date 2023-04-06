@@ -84,13 +84,13 @@ WARNING: Please make sure that you are working on the browser (Chrome) image:ima
 Please note the following: +
 
 `Workshop Login Page`: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login Page] +
-(a) `Workshop Login Username`: \____________________ (Your Instructor would provide this) +
-(b) `Workshop Login Password`: \____________________ (Your Instructor would provide this) +
-(c) `CDP Workload User`: \____________________ (Your Instructor would provide this) +
-(d) `CDP Workload Password`: \_____________________ (*`You will`* set it in Step 1(b) of the workshop) +
-(e) `Hive Virtual Warehouse Name`: \____________________ (Your Instructor would provide this) +
-(f) `Impala Virtual Warehouse Name`: \____________________ (Your Instructor would provide this) +
-(g) `S3 Bucket`: \____________________ (Your Instructor would provide this) +
+(a) `Workshop Login Username`: \____________________ _(Your Instructor would provide this)_ +
+(b) `Workshop Login Password`: \____________________ _(Your Instructor would provide this)_ +
+(c) `CDP Workload User`: \____________________ _(Your Instructor would provide this)_ +
+(d) `CDP Workload Password`: \_____________________ _(*`You will`* set it in Step 1(b) of the workshop)_ +
+(e) `Hive Virtual Warehouse Name`: \____________________ _(Your Instructor would provide this)_ +
+(f) `Impala Virtual Warehouse Name`: \____________________ _(Your Instructor would provide this)_ +
+(g) `S3 Bucket`: \____________________ _(Your Instructor would provide this)_ +
 
 In the labs when you see: +
 `${user_id}` or `<user_id>` - this will indicate to use your User (`CDP Workload User`) as item *(c)* above. +
