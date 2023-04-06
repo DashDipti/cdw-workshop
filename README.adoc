@@ -107,7 +107,7 @@ image:images/step1b/1-1.PNG[] +
 You should be able to get the following home page of CDP Public Cloud.
 image:images/step1b/1-2.PNG[] +
 
-You will need to define your workload password that will be used to acess non-SSO interfaces. You may read more about it https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html[here].
+You will need to define your `CDP Workload Password` that will be used to acess non-SSO interfaces. You may read more about it https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html[here].
 Please keep it with you. If you have forgotten it, you will be able to repeat this process and define another one.
 
 . Click on your `user name (Ex: wuser00@workshop.com`) at the lower left corner.
@@ -133,6 +133,10 @@ image:images/step1b/4.PNG[] +
 
 == Step 2: (Don’t Run, FYI ONLY) Cloudera Data Warehouse - Introduction
 In this step you'll explore how to take advantage of CDW.
+
+=== Step 2(a): Useful Information for Self Reads/Tours
+
+=== Step 2(b): Navigating Cloudera Data Warehouse (CDW)
 
 == Step 3: Cloudera Data Warehouse - Raw Layer (Direct Cloud Object Storage Access)
 
