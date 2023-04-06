@@ -87,7 +87,7 @@ Please make sure that you are working on the browser (Chrome) in *INCOGNITIO MOD
 (b) `Workshop Login Username`: \\____________________  (Your Instructor would provide this) +
 (c) `Workshop Login Password`: \_____________________  (Your Instructor would provide this) +
 (d) `CDP Workload User`:  \_____________________ (Your Instructor would provide this) +
-(e) `CDP Workload Password`: \_____________________ (You will set it in Step 1(b) of the workshop) +
+(e) `CDP Workload Password`: \_____________________ (*You will* set it in Step 1(b) of the workshop) +
 (f) `Hive Virtual Warehouse Name`: \_____________________ (Your Instructor would provide this) +
 (g) `Impala Virtual Warehouse Name`: \_____________________ (Your Instructor would provide this) +
 (h) `S3 Bucket`: \_____________________ (Your Instructor would provide this) +
