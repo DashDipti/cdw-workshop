@@ -1161,12 +1161,18 @@ image:images/step7/51.png[] +
 
 - Let's build 1st visual - `Top 25 Routes by Avg Departure Delay`. CDV will add a Table visual displaying a sample of the data from the Dataset as the default visualization when you create a new Dashboard or new Visuals on the Dashboard (see New Dashboard screen above).  The next step is to modify (Edit) the default visualization to suit your needs.   +
 
-- Pick the Visual Type - select the Stacked Bar chart visual. +
+- Pick the Visual Type - Select the `Stacked Bar` chart visual on the top right as shown below. Make sure `Build` is selected for it to appear in the right side. +
 image:images/step7/52.png[] +
 
+- Find `Route` under `Dimensions -> flights`. Drag to `X-Axis`. Similarly, find `DepDelay` under `Measures -> flights`. Drag to `Y-Axis`. By default the aggergation selected is average and hence you would see `avg(Depdelay)`. +
 image:images/step7/53.png[] +
+
+-  Click on the arrow next to `avg(Depdelay)`. Enter `25` against the text box labeled `Top K`. Click on 'REFRESH VISUAL'. +
 image:images/step7/54.png[] +
 image:images/step7/55.png[] +
+
+- Click `enter title` and enter the title based on your user id as - `<user_id>- Routes with Highest Avg. Departure Delays`. Then click on `SAVE`.
+image:images/step7/56.png[] +
 
 
 [source, sql]
