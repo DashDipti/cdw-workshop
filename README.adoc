@@ -1064,36 +1064,50 @@ image:images/step7/13.png[] +
 image:images/step7/14.png[] +
 
 - Click on the `+` icon next to `flights` table option. +
-image:images/step7/15.png[] + 
+image:images/step7/15.png[] +
 
 - Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `planes`.  
-image:images/step7/16.png[] + 
+image:images/step7/16.png[] +
 
 - Then click on the `join` icon and see that there are 2 join options `tailnum` & `year`. Click on `EDIT JOIN` and then remove the `year` join by clicking little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`. +
-image:images/step7/17.png[] + 
-image:images/step7/18.png[] + 
-image:images/step7/19.png[] + 
-image:images/step7/20.png[] + 
-image:images/step7/21.png[] + 
+image:images/step7/17.png[] +
+image:images/step7/18.png[] +
+image:images/step7/19.png[] +
+image:images/step7/20.png[] +
+image:images/step7/21.png[] +
 
-- Now we will creare join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `airlines`. +
-image:images/step7/22.png[] + 
-image:images/step7/23.png[] + 
+- Now we will creare join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airlines`. +
+image:images/step7/22.png[] +
+image:images/step7/23.png[] +
 
 - Make sure you select the column `uniquecarrier` from `flights` and column `code` from `airlines` table. Click `APPLY`. +
-image:images/step7/24.png[] + 
-image:images/step7/25.png[] + 
+image:images/step7/24.png[] +
+image:images/step7/25.png[] +
 
-- Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `airports`. +
-image:images/step7/26.png[] + 
+- Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airports`. +
+image:images/step7/26.png[] +
 
+- Make sure you select the column `origin` from `flights` and column `iata` from `airports` table. Click `APPLY`. +
+image:images/step7/27.png[] +
 
-image:images/step7/27.png[] + 
-image:images/step7/28.png[] + 
-image:images/step7/29.png[] + 
-image:images/step7/30.png[] + 
-image:images/step7/31.png[] + 
-image:images/step7/32.png[] + 
+- Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airports`. +
+image:images/step7/28.png[] +
+
+- Make sure you select the column `dest` from `flights` and column `iata` from `airports` table. Click `APPLY`. Then click on `SAVE`. +
+image:images/step7/29.png[] +
+image:images/step7/30.png[] +
+
+- Click on `Fields` column on the left windwo pane. The click on `EDIT FIELDS`. +
+image:images/step7/31.png[] +
+image:images/step7/32.png[] +
+
+- Make sure that you click on the highlighted area to change `#` (measures icon) next to each column to `Dim` (dimension icon). The columns are as following. +
+`flights` table: Columns (`month`, `dayofmonth`, `dayofweek`, `deptime`, `crsdeptime`, `arrtime`, `crsarrtime`, `flightnum` & `year`) +
+`planes` table: `All columns` +
+`airports` table: `All columns` +
+`airports_1` table: `All columns` +
+
+- Click on 'SHOW DATA'.
 image:images/step7/33.png[] + 
 image:images/step7/34.png[] +
 image:images/step7/35.png[] +
