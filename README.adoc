@@ -1130,7 +1130,7 @@ image:images/step7/41.png[] +
 image:images/step7/42.png[] +
 image:images/step7/43.png[] +
 
-- Change the `Display Name` to `Route`. Then click on `Expression` and enter the following in the `Expression` editor.  Click on `APPLY`.
+- Change the `Display Name` to `Route`. Then click on `Expression` and enter the following in the `Expression` editor.  Click on `APPLY`. +
 [source, sql]
 ----
 
@@ -1140,7 +1140,7 @@ concat([Origin], '-', [Dest])
 image:images/step7/44.png[] +
 image:images/step7/45.png[] +
 
-- Click on `SAVE`. We have completed the step of data modeling and now we will created data visualization.
+- Click on `SAVE`. We have completed the step of data modeling and now we will created data visualization. +
 image:images/step7/46.png[] +
 image:images/step7/47.png[] +
 
