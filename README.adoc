@@ -1102,10 +1102,10 @@ image:images/step7/31.png[] +
 image:images/step7/32.png[] +
 
 - Make sure that you click on the highlighted area to change `#` (measures icon) next to each column to `Dim` (dimension icon). The columns are as following. +
-`flights` table: Columns (`month`, `dayofmonth`, `dayofweek`, `deptime`, `crsdeptime`, `arrtime`, `crsarrtime`, `flightnum` & `year`) +
-`planes` table: `All columns` +
-`airports` table: `All columns` +
-`airports_1` table: `All columns` +
+a. `flights` table: Columns (`month`, `dayofmonth`, `dayofweek`, `deptime`, `crsdeptime`, `arrtime`, `crsarrtime`, `flightnum` & `year`) +
+b. `planes` table: `All columns` +
+c. `airports` table: `All columns` +
+d. `airports_1` table: `All columns` +
 
 - Click on 'SHOW DATA'.
 image:images/step7/33.png[] + 
