@@ -1097,6 +1097,8 @@ image:images/step7/28.png[] +
 image:images/step7/29.png[] +
 image:images/step7/30.png[] +
 
+- Verify that youh have the joins which are as following. You can do so by clicking the image:images/step7/joinicon.png[] `join` icon.
+
 - Click on `SHOW DATA`.
 image:images/step7/30showdata-1.png[] + 
 image:images/step7/30showdata-2.png[] +
