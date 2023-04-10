@@ -1140,9 +1140,11 @@ concat([Origin], '-', [Dest])
 image:images/step7/44.png[] +
 image:images/step7/45.png[] +
 
--
+- Click on `SAVE`. We have completed the step of data modeling and now we will created data visualization.
 image:images/step7/46.png[] +
 image:images/step7/47.png[] +
+
+
 
 
 [source, sql]
