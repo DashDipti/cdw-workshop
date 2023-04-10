@@ -1009,6 +1009,61 @@ image:images/step6/6-16.png[] +
 
 
 
+== Step 7: Cloudera Data Visualization +
+
+
+
+image:images/step7/1.png[] + 
+image:images/step7/2.png[] + 
+image:images/step7/3.png[] + 
+image:images/step7/4.png[] + 
+image:images/step7/5.png[] + 
+image:images/step7/6.png[] + 
+image:images/step7/7.png[] + 
+image:images/step7/8.png[] + 
+image:images/step7/9.png[] + 
+image:images/step7/10.png[] + 
+image:images/step7/11.png[] + 
+image:images/step7/12.png[] + 
+image:images/step7/13.png[] + 
+image:images/step7/14.png[] + 
+image:images/step7/15.png[] + 
+image:images/step7/16.png[] + 
+image:images/step7/17.png[] + 
+image:images/step7/18.png[] + 
+image:images/step7/19.png[] + 
+image:images/step7/20.png[] + 
+image:images/step7/21.png[] + 
+image:images/step7/22.png[] + 
+image:images/step7/23.png[] + 
+image:images/step7/24.png[] + 
+image:images/step7/25.png[] + 
+image:images/step7/26.png[] + 
+image:images/step7/27.png[] + 
+image:images/step7/28.png[] + 
+image:images/step7/29.png[] + 
+image:images/step7/30.png[] + 
+image:images/step7/31.png[] + 
+image:images/step7/32.png[] + 
+image:images/step7/33.png[] + 
+image:images/step7/34.png[] +
+image:images/step7/35.png[] +
+image:images/step7/36.png[] +
+image:images/step7/37.png[] +
+image:images/step7/38.png[] +
+image:images/step7/39.png[] +
+image:images/step7/40.png[] +
+image:images/step7/41.png[] +
+image:images/step7/42.png[] +
+image:images/step7/43.png[] +
+image:images/step7/44.png[] +
+image:images/step7/45.png[] +
+image:images/step7/46.png[] +
+image:images/step7/47.png[] +
+
+
+
+
 [source, sql]
 ----
 
