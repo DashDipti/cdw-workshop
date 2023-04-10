@@ -1041,7 +1041,6 @@ image:images/step7/6.png[] +
 
 - You will see your connection in the list of connections on the left menu. On the right side of the screen you will see Datasets and the Connection Explorer. Click on `NEW DATASET`. +
 image:images/step7/7.png[] +
- 
 image:images/step7/8.png[] +
 
 - Fill the details as following and click `CREATE`. +
