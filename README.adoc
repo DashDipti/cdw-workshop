@@ -1114,14 +1114,19 @@ c. `airports` table: `All columns` +
 d. `airports_1` table: `All columns` +
 
 
-
 image:images/step7/35.png[] +
 image:images/step7/36.png[] +
 image:images/step7/37.png[] +
+
+- Click on `TITLE CASE`. And notice that the column names changes to be `Camel case`. Click on the `pencil` icon next to `Depdelay` icon. +
 image:images/step7/38.png[] +
 image:images/step7/39.png[] +
+
+- Change the `Default Aggregation` to `Average`. Click on the `Display Format` and then change `Category` to be `Integer`. Check mark the box next the `Use 1000 separator`. Click on `APPLY`. +
 image:images/step7/40.png[] +
 image:images/step7/41.png[] +
+
+- 
 image:images/step7/42.png[] +
 image:images/step7/43.png[] +
 image:images/step7/44.png[] +
