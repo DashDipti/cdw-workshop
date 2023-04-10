@@ -1146,7 +1146,7 @@ image:images/step7/45.png[] +
 image:images/step7/46.png[] +
 
 
-=== Step 7(b): Data Visualization - Dashboard +
+=== Step 7(b): Creating Dashboard +
 
 - Now we will create a dashboard page to based on the data model that we just created. Click on `NEW DASHBOARD`. +
 
