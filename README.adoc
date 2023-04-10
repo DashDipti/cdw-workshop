@@ -1043,16 +1043,18 @@ image:images/step7/6.png[] +
 image:images/step7/7.png[] +
 image:images/step7/8.png[] +
 
-- Fill the details as following and click `CREATE`. +
+- Fill the details as following and click `CREATE`. `airline_logistics` gets created +
     Dataset title - `airline_logistics`. +
     Dataset Source - Select `From Table` (however, you could choose to directly enter a SQL statement instead). +
     Select Database - `<user_id>_airlines` (Make Sure you select the database that is associated with your <user_id>). +
     Select Table - `flights`.
     
-
 image:images/step7/9.png[] + 
 image:images/step7/10.png[] + 
+
+- 
 image:images/step7/11.png[] + 
+
 image:images/step7/12.png[] + 
 image:images/step7/13.png[] + 
 image:images/step7/14.png[] + 
