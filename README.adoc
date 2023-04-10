@@ -1101,12 +1101,7 @@ image:images/step7/30.png[] +
 image:images/step7/30showdata-1.png[] + 
 image:images/step7/30showdata-2.png[] +
 
-- Click on `Fields` column on the left window pane. The click on `EDIT FIELDS`. +
-image:images/step7/31.png[] +
-image:images/step7/32.png[] +
-
-
-- Make sure that you click on the highlighted area to change `#` (measures icon) next to each column to `Dim` (dimension icon). The columns are as following. +
+- Click on `Fields` column on the left window pane. The click on `EDIT FIELDS`. Make sure that you click on the highlighted area to change `#` (measures icon) next to each column to `Dim` (dimension icon). The columns are as following. +
 a. `flights` table: Columns (`month`, `dayofmonth`, `dayofweek`, `deptime`, `crsdeptime`, `arrtime`, `crsarrtime`, `flightnum` & `year`) +
 b. `planes` table: `All columns` +
 c. `airports` table: `All columns` +
