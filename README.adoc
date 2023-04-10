@@ -1107,7 +1107,7 @@ image:images/step7/30.png[] +
 image:images/step7/30showdata-1.png[] + 
 image:images/step7/30showdata-2.png[] +
 
-- Click on `Fields` column on the left window pane. The click on `EDIT FIELDS`. Make sure that you click on the highlighted area to change `#` (measures icon) next to each column to `Dim` (dimension icon). The columns are as following. +
+- Click on `Fields` column on the left window pane. Then click on `EDIT FIELDS`. Make sure that you click on the highlighted area to change `#` (measures icon) next to each column to `Dim` (dimension icon). The columns are as following. +
 a. `flights` table: Columns (`month`, `dayofmonth`, `dayofweek`, `deptime`, `crsdeptime`, `arrtime`, `crsarrtime`, `flightnum` & `year`) +
 b. `planes` table: `All columns` +
 c. `airports` table: `All columns` +
@@ -1126,15 +1126,23 @@ image:images/step7/39.png[] +
 image:images/step7/40.png[] +
 image:images/step7/41.png[] +
 
-- 
+- Click on `down arrow` shown against the `Origin` column and the click on `Clone`. A column `Copy of Origin` is created. Click on the 'pencil' icon next to it. +
 image:images/step7/42.png[] +
 image:images/step7/43.png[] +
+
+- Change the `Display Name` to `Route`. Then click on `Expression` and enter the following in the `Expression` editor.  Click on `APPLY`.
+[source, sql]
+----
+
+concat([Origin], '-', [Dest])
+----
+
 image:images/step7/44.png[] +
 image:images/step7/45.png[] +
+
+-
 image:images/step7/46.png[] +
 image:images/step7/47.png[] +
-
-
 
 
 [source, sql]
