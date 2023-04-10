@@ -1167,7 +1167,7 @@ image:images/step7/52.png[] +
 - Find `Route` under `Dimensions -> flights`. Drag to `X-Axis`. Similarly, find `DepDelay` under `Measures -> flights`. Drag to `Y-Axis`. By default the aggergation selected is average and hence you would see `avg(Depdelay)`. +
 image:images/step7/53.png[] +
 
--  Click on the arrow next to `avg(Depdelay)`. Enter `25` against the text box labeled `Top K`. Click on 'REFRESH VISUAL'. +
+-  Click on the arrow next to `avg(Depdelay)`. Enter `25` against the text box labeled `Top K`. Click on `REFRESH VISUAL`. +
 image:images/step7/54.png[] +
 image:images/step7/55.png[] +
 
