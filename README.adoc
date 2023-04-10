@@ -1152,7 +1152,7 @@ image:images/step7/46.png[] +
 
 image:images/step7/47.png[] +
 
-- You will see the following
+- You will see the following.
 image:images/step7/50.png[] +
 
 - A quick overview of the screen that you are seeing is as following. On the right side of the screen there will be a VISUALS menu.  At the top of this menu, there is a series of Visual Types to choose from.  There will be 30+ various visuals to choose from.  Below the Visual Types you will see what are called Shelves.  The Shelves that are present depend on the Visual Type that is selected.  Shelves with a `*` are required, all other Shelves are optional.  On the far right of the page there is a DATA menu, which identifies the Connection & Dataset used for this visual.  Underneath that is the Fields from the Dataset broken down by Dimensions and Measures.  With each of these Categories you can see that it is subdivided by each Table in the Dataset. +
@@ -1161,6 +1161,12 @@ image:images/step7/51.png[] +
 
 - Let's build 1st visual - `Top 25 Routes by Avg Departure Delay`. CDV will add a Table visual displaying a sample of the data from the Dataset as the default visualization when you create a new Dashboard or new Visuals on the Dashboard (see New Dashboard screen above).  The next step is to modify (Edit) the default visualization to suit your needs.   +
 
+- Pick the Visual Type - select the Stacked Bar chart visual. +
+image:images/step7/52.png[] +
+
+image:images/step7/53.png[] +
+image:images/step7/54.png[] +
+image:images/step7/55.png[] +
 
 
 [source, sql]
