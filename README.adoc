@@ -1011,7 +1011,9 @@ image:images/step6/6-16.png[] +
 
 == Step 7: Cloudera Data Visualization +
 
-In this step you will build a Logistics Dashboard using Cloudera Data Visualization.  The Dashboard will include details about flight delays and cancellations.
+In this step you will build a Logistics Dashboard using Cloudera Data Visualization.  The Dashboard will include details about flight delays and cancellations. But first we will start with Data Modeling.
+
+=== Step 7(a): Data Modeling +
 - If you are not on the CDP home page, then go there and click on the following CDW icon to go into Cloudera Data Warehouse. +
 image:images/step7/0.png[] +
 
@@ -1142,6 +1144,12 @@ image:images/step7/45.png[] +
 
 - Click on `SAVE`. We have completed the step of data modeling and now we will created data visualization. +
 image:images/step7/46.png[] +
+
+
+=== Step 7(b): Data Visualization - Dashboard +
+
+- Now we will create a dashboard page to based on the data model that we just created. Click on `NEW DASHBOARD`. +
+
 image:images/step7/47.png[] +
 
 
