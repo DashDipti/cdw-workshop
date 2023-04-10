@@ -1049,16 +1049,23 @@ image:images/step7/8.png[] +
     Select Database - `<user_id>_airlines` (Make Sure you select the database that is associated with your <user_id>). +
     Select Table - `flights`.
     
-image:images/step7/9.png[] + 
-image:images/step7/10.png[] + 
+image:images/step7/9.png[] +
 
-- 
-image:images/step7/11.png[] + 
+- Edit the Dataset - click on `airline_logistics` on the right of the screen.  This will open the details page, showing you information about the Dataset, such as connection details, and options that are set. Click on `Fields` option in the left window pane. +
+image:images/step7/10.png[] +
+image:images/step7/11.png[] +
+image:images/step7/12.png[] +
 
-image:images/step7/12.png[] + 
+
+- Click on `Data Model` - for our Dataset we need to join additional data to the flights table including the `planes`, `airlines`, and `airports` tables. +
 image:images/step7/13.png[] + 
-image:images/step7/14.png[] + 
+
+- Click on `EDIT DATA MODEL`. +
+image:images/step7/14.png[] +
+
+- Click on the `+` icon next to `flights` table option. +
 image:images/step7/15.png[] + 
+
 image:images/step7/16.png[] + 
 image:images/step7/17.png[] + 
 image:images/step7/18.png[] + 
