@@ -1107,7 +1107,7 @@ b. `planes` table: `All columns` +
 c. `airports` table: `All columns` +
 d. `airports_1` table: `All columns` +
 
-- Click on 'SHOW DATA'.
+- Click on `SHOW DATA`.
 image:images/step7/33.png[] + 
 image:images/step7/34.png[] +
 image:images/step7/35.png[] +
