@@ -1018,14 +1018,28 @@ image:images/step7/0.png[] +
 - Then click on `Data Visualization` option in the left window pane. You'll see an option `Data VIZ` next to the data-viz application with the name `meta-workshop-dataviz`. It should open a new window.+
 image:images/step7/1.png[] + 
 
-- There are 4 areas of CDV - `HOME, SQL, VISUALS, DATA`` - these are the tabs at the top of the screen in the black bar to the right of the Cloudera Data Visualization banner.
+- There are 4 areas of CDV - `HOME, SQL, VISUALS, DATA` - these are the tabs at the top of the screen in the black bar to the right of the Cloudera Data Visualization banner.
 image:images/step7/2.png[] + 
 
-- 
+- Build a Dataset (aka. Metadata Layer or Data Model) - click on DATA in the top banner.  A Dataset is a Semantic Layer where you can create a business view on top of the data - data is not copied; this is just a logical layer. +
 image:images/step7/3.png[] + 
+
+- Create a connection - click on the NEW CONNECTION button on the left menu. Enter the details as shown in the screenshot. +
+    Connection type: `CDW Impala` +
+    Connection name: `<user_id>-airlines-lakehouse` (Ex-`wuser00-airlines-lakehouse`) +
+    CDW Warehouse: `Make Sure you select the warehouse that is associated with your <user_id>` +
+    Hostname or IP address: Gets automatically selected +
+    Port: Gets automatically filled up +
+    Username: Gets automatically filled up +
+    Passowrd: Blank +
+
 image:images/step7/4.png[] + 
+
+- Click on `TEST` & then `CONNECT`.
 image:images/step7/5.png[] + 
 image:images/step7/6.png[] + 
+
+
 image:images/step7/7.png[] + 
 image:images/step7/8.png[] + 
 image:images/step7/9.png[] + 
