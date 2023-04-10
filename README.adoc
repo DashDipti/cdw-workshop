@@ -1098,8 +1098,8 @@ image:images/step7/29.png[] +
 image:images/step7/30.png[] +
 
 - Verify that you have the joins which are as following. You can do so by clicking the image:images/step7/joinicon.png[] `join` icon. +
-    flights.tailnum ... planes.tailnum +
-    flights.uniquecarrier ... airlines.code +
+    flights.tailnum -- planes.tailnum +
+    flights.uniquecarrier -- airlines.code +
     flights.origin -- airports.iata +
     flights.dest -- airports_1.iata +
 
