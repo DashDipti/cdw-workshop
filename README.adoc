@@ -1069,19 +1069,25 @@ image:images/step7/15.png[] +
 - Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `planes`.  
 image:images/step7/16.png[] + 
 
-- Then click on the `join` icon and see that there are 2 join options `tailnum` & 'year'. Click on `EDIT JOIN` and then remove the `year` join by clicking little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`.
+- Then click on the `join` icon and see that there are 2 join options `tailnum` & `year`. Click on `EDIT JOIN` and then remove the `year` join by clicking little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`. +
 image:images/step7/17.png[] + 
 image:images/step7/18.png[] + 
 image:images/step7/19.png[] + 
 image:images/step7/20.png[] + 
 image:images/step7/21.png[] + 
 
-- 
+- Now we will creare join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `airlines`. +
 image:images/step7/22.png[] + 
 image:images/step7/23.png[] + 
+
+- Make sure you select the column `uniquecarrier` from `flights` and column `code` from `airlines` table. Click `APPLY`. +
 image:images/step7/24.png[] + 
 image:images/step7/25.png[] + 
+
+- Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `airports`. +
 image:images/step7/26.png[] + 
+
+
 image:images/step7/27.png[] + 
 image:images/step7/28.png[] + 
 image:images/step7/29.png[] + 
