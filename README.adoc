@@ -1066,12 +1066,17 @@ image:images/step7/14.png[] +
 - Click on the `+` icon next to `flights` table option. +
 image:images/step7/15.png[] + 
 
+- Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `planes`.  
 image:images/step7/16.png[] + 
+
+- Then click on the `join` icon and see that there are 2 join options `tailnum` & 'year'. Click on `EDIT JOIN` and then remove the `year` join by clicking little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`.
 image:images/step7/17.png[] + 
 image:images/step7/18.png[] + 
 image:images/step7/19.png[] + 
 image:images/step7/20.png[] + 
 image:images/step7/21.png[] + 
+
+- 
 image:images/step7/22.png[] + 
 image:images/step7/23.png[] + 
 image:images/step7/24.png[] + 
