@@ -675,7 +675,7 @@ image:images/step5/51-2.png[] +
 - Check for the following where now the partition is by `year, month`. +
 image:images/step5/51-3.png[] +
 
-- Load new data into the flights table using the *NEW* partition definition. +
+- Load new data into the flights table using the *NEW* partition definition. `This query will take a while to run`. +
 
 [source, sql]
 ----
