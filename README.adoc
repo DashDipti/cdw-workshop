@@ -943,7 +943,7 @@ In this step you will experience the combination of what the Data Warehouse and 
 image:images/step6/6-1.png[] + 
 image:images/step6/6-2.png[] + 
 
-- Change the radio button to select appropriate data lake. In this case it is `meta-workshop-dl`. +
+- Change the radio button to select appropriate data lake. In this case it is `emeaworkshop-environ`. +
 image:images/step6/6-3.png[] + 
 
 - Filter for Assets we created - below the Data Lakes on the left of the screen under Filters, select `TYPE` to be `Hive Table`.  The right side of the screen will update to reflect this selection. +
