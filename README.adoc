@@ -380,11 +380,11 @@ DESCRIBE FORMATTED ${user_id}_airlines.planes;
 image:images/step4/41-9.png[] + 
 
 In the output look for the following. +
-(a) Location: `s3a://meta-workshop/my-data/warehouse/tablespace/external/hive/wuser00_airlines.db/planes` +
+(a) Location: `s3a://emeaworkshop/my-data/warehouse/tablespace/external/hive/wuser00_airlines.db/planes` +
 (b) Table Type: `EXTERNAL_TABLE` +
 (c) SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe` +
 
-image:images/step4/41-10-Replace.png[] + 
+image:images/step4/41-10.png[] + 
 
 
 - Create `airlines` table in `Hive` table format and `orc` file format. This table should also be fully `ACID` capable. We will use `Create Table As Select (CTAS)`. Since, `airlines` table can change we need the ability to `Insert/Update/Delete` records. +
