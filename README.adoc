@@ -836,7 +836,7 @@ image:images/step5/53-4.png[] +
 === 5.6 Materialized Views [Performance Optimization] +
 - This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `1-10hive`. Click on the `Hue` button on the right upper corner of `1-10hive` as shown in the screenshot below. +
 
-image:images/step5/56-1.png[] +
+image:images/step5/56-1hive.png[] +
 
 
 - Copy/paste the following, make sure to highlight the entire block, and execute the following. +
