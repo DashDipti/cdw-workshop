@@ -484,7 +484,7 @@ The following happened. +
 `storage_handler`: `org.apache.iceberg.mr.hive.HiveIcebergStorageHandler`. +
 `SerDe Library`: `org.apache.iceberg.mr.hive.HiveIcebergSerDe`. +
 
-image:images/step4/421-2-Replace.png[] +  
+image:images/step4/421-2.png[] +  
 
 
 ==== 4.2.2 (Option 2): Use Create Table as Select (CTAS) +
