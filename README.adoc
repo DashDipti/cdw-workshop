@@ -929,7 +929,6 @@ order by airlines.code;
 
 image:images/step5/56-10.png[] +
 
-== [WARNING - TO BE FILLED LATER] The below section is missing now where one needs to take screenshot and add for the Visual Explain part. 
 - Let’s take a look at the Query Plan that was used to execute this query. On the left menu select `Jobs`. On the Jobs Browser - select the `Queries` tab to the right of the `Job` browser header. Hover over & click on the Query just executed (should be the first row). Click on `Visual Explain` tab. With query rewrite the materialized view is used and the new plan just reads the MV and sorts the data vs. reading `flights (86M rows)` and `airlines (1.5K rows)` with hash join, group and sorts.  This results in significant reduction in run time for this query. +
 
 image:images/step5/56-11.png[] + This image is the image of the query plan which is missing. +
