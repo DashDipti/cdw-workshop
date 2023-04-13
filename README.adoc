@@ -1078,7 +1078,7 @@ image:images/step7/18.png[] +
 image:images/step7/19-1.png[] +
 image:images/step7/19-2.png[] +
 image:images/step7/20.png[] +
-image:images/step7/21.png[] +
+
 
 - Now we will creare join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airlines`. +
 image:images/step7/22.png[] +
