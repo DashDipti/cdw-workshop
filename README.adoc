@@ -156,7 +156,7 @@ The objective of this step is to create External tables on top of raw CSV files 
 === 3.1 Open Hue for CDW Virtual Warehouse - `meta-cdw-hive-workshop-vw` +
 
 - Click on the image:images/step3/hue.png[] button on the right upper corner of `meta-cdw-hive-workshop-vw` as shown in the screenshot below. +
-image:images/step3/31-1.png[] +
+image:images/step3/31-1.png[]-Replace +
 
 
 
@@ -244,7 +244,7 @@ select count(*) from ${user_id}_airlines_raw.flights_csv;
 
 image:images/step3/33-2.png[] + 
 
-Notice that while the query is executing, continue to the next step.  Once the query returns you will see the following in the Results - the flights_csv table has over 86 million records.
+Notice that while the query is executing, continue to the next step.  Once the query returns you will see the following in the Results - `the flights_csv table has over 86 million records`.
 image:images/step3/33-3.png[] +
 
 - Go back to the CDP Console and observe the Impala Virtual Warehouse `meta-cdw-impala-workshop-vw`. +
