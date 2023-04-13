@@ -294,7 +294,7 @@ WHERE planes_csv.tailnum IN
 image:images/step3/33-5.png[] +
 
 - Go back to the CDP console to observe the behaviour of scaling up/down of virtual warehouse. +
-image:images/step3/33-6-Replace.png[] +
+image:images/step3/33-6.png[] +
 
 - Check in the Hue browser and the query show up the result as following. Observe the amount of time taken to run this query. +
 image:images/step3/33-7.png[] + 
