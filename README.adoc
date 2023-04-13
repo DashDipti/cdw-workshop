@@ -689,7 +689,7 @@ WHERE year = 2007;
 image:images/step5/51-4.png[] +
 
 - Open HUE for the CDW `Impala` Virtual Warehouse - `1-10impala`. +
-image:images/step5/51-5.png[] +
+image:images/step5/51-5impala.png[] +
 
 - In the Hue editor look make sure `Impala` is selected as the engine else follow the screenshot to change it to impala. +
 image:images/step5/impala-1.png[] +
