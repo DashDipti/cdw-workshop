@@ -506,7 +506,7 @@ Just like the previous case look for:  `Table Type`, `Location` (location of whe
 
 image:images/step4/422-3.png[] +  
 
-image:images/step4/422-4-Replace.png[] +  
+image:images/step4/422-4.png[] +  
 
 
 === 4.3 Create Iceberg Table (Partitioned, Parquet File Format) +
