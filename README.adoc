@@ -231,7 +231,7 @@ image:images/step3/32-2.png[]
 === 3.3 Run the following DDL in HUE for the CDW Virtual Warehouse - `1-10impala`. +
 
 - Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for *`1-10impala`* as shown in the screenshot below.
-image:images/step3/33-1-Replace.png[] +
+image:images/step3/33-1.png[] +
 
 - Make sure that you click to get `Impala` instead of `default` in the HUE browser as shown below and then click refresh button image:images/step3/33-2refresh.png[]. +
 Now, copy paste the following in the HUE browser and click on Run as shown below.
