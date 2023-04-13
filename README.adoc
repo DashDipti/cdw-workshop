@@ -1107,7 +1107,7 @@ image:images/step7/30.png[] +
     `flights.origin` -- `airports.iata` +
     `flights.dest` -- `airports_1.iata` +
 
-- Click on `SHOW DATA`.
+- Click on `SHOW DATA`. And then click on `SAVE`.
 image:images/step7/30showdata-1.png[] + 
 image:images/step7/30showdata-2.png[] +
 
