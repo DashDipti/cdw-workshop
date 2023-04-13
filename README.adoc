@@ -541,10 +541,10 @@ The `SHOW CREATE TABLE` command is the unformatted version of `DESCRIBE FORMATTE
 
 image:images/step4/43-2.png[] +  
 
-image:images/step4/43-3-Replace.png[] +  
+image:images/step4/43-3.png[] +  
 
 
-- We insert data into this table it will write data together within the same partition (ie. all 2006 data is written to the same location, all 2005 data is written to the same location, etc.). This command will take some time to run. +
+- We insert data into this table it will write data together within the same partition (ie. all 2006 data is written to the same location, all 2005 data is written to the same location, etc.). `This command will take some time to run`. +
 
 
 [source, sql]
