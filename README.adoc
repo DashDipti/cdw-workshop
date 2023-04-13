@@ -1075,7 +1075,8 @@ image:images/step7/16.png[] +
 - Then click on the image:images/step7/joinicon.png[] `join` icon and see that there are 2 join options `tailnum` & `year`. Click on `EDIT JOIN` and then remove the `year` join by clicking little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`. +
 image:images/step7/17.png[] +
 image:images/step7/18.png[] +
-image:images/step7/19.png[] +
+image:images/step7/19-1.png[] +
+image:images/step7/19-2.png[] +
 image:images/step7/20.png[] +
 image:images/step7/21.png[] +
 
