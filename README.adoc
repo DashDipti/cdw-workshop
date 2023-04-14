@@ -525,7 +525,7 @@ DESCRIBE FORMATTED ${user_id}_airlines.airports;
 
 ----
 
-Just like the previous case look for:  `Table Type`, `Location` (location of where table data is stored), `SerDe Library`, and in Table Parameters look for properties `MIGRATED_TO_ICEBERG`, `storage_handler`, `metadata_location`, and `table_type`.
+Look for:  `Table Type`, `Location` (location of where table data is stored), `SerDe Library`, and in Table Parameters look for properties `storage_handler`, `metadata_location`, and `table_type`.
 
 image:images/step4/422-3.png[] +  
 
