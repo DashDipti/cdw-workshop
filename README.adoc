@@ -257,6 +257,8 @@ image:images/step3/32-2.png[]
 image:images/step3/33-1.png[] +
 
 - Make sure that you click to get `Impala` instead of `default` in the HUE browser as shown below and then click refresh button image:images/step3/33-2refresh.png[]. +
+image:images/step3/33-1a.png[] +
+
 Now, copy paste the following in the HUE browser and click on Run as shown below.
 
 [source, sql]
