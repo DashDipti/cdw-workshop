@@ -16,7 +16,7 @@ Version : 1.0.0 `27th March 2023` +
 4. https://bit.ly/3nATx2R[End-to-End Workshop (GitHub)]. +
 5. https://[End-to-End Workshop (Recording)]. +
 
-6. https://github.com/mmehra12/Impact24[Partner Handbook]. +
+*6. https://github.com/mmehra12/Impact24[Partner Handbook].* +
 
 
 == Pre-requisites
