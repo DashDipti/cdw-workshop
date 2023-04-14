@@ -103,7 +103,7 @@ In the labs when you see: +
 
 === Step 1(b): Define CDP Workload Password
 
-Please use the login url: bit.ly/3TZqmTs[Workshop login]. +
+Please use the login URL: bit.ly/3TZqmTs[Workshop login]. +
 Enter the `Workshop Login Username` and `Workshop Login Password` shared by your instructor. +
 
 (*Note*: Note that your username would be something like `wuser00@workshop.com` and not just `wuser00`). +
