@@ -14,7 +14,7 @@ Version : 1.0.0 `27th March 2023` +
 
 == Preface
 
-Working for GE Aircraft Engine, the company wants to increase competitive advantage in two keyways: +
+Working for an Aircraft Engine company, the company wants to increase competitive advantage in two keyways: +
 (1) Engineer better, more fault tolerant aircraft engines. +
 (2) Be proactive in predictive maintenance on engines, and faster discovery-to-fix in new engine designs. +
 
@@ -26,7 +26,7 @@ This will be a three-phase plan: +
 To do this, we’re going to build a data warehouse & data lakehouse to create reports that engineers can use to improve our engines.  The following people will get to work: +
 
 
-We will dive into this Scenario to show Cloudera Data Warehouse (CDW) is used to enable GE Aircraft to gain competitive advantage - and at the same time it highlights the performance and automation capabilities that help ensure performance is maintained while controlling costs. +
+We will dive into this Scenario to show Cloudera Data Warehouse (CDW) is used to enable the Aircraft company to gain competitive advantage - and at the same time it highlights the performance and automation capabilities that help ensure performance is maintained while controlling costs. +
 
 The Hands on Labs will take you through how to use the Cloudera Data Warehouse service to quickly explore raw data, create curated versions of the data for simple reporting and dashboarding, and then scale up usage of the curated data by exposing it to more users. +
 
@@ -73,6 +73,11 @@ Below are the high-level steps for what we will be doing in the workshop. +
 
     (a) Check on the lineage to enable governance/audit.
     (b) Row level security to make sure only relevant party can see data.
+
+*[Step 7]:* Cloudera Data Visualization +
+
+    (a) Data Modeling for the lakehouse.
+    (b) Data Visualization for insights.
 
 
 == Step 1: Getting Started
@@ -1080,7 +1085,7 @@ image:images/step7/19-2.png[] +
 image:images/step7/20.png[] +
 
 
-- Now we will creare join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airlines`. +
+- Now we will create join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airlines`. +
 image:images/step7/22.png[] +
 image:images/step7/23.png[] +
 
