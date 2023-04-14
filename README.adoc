@@ -9,7 +9,14 @@ Version : 1.0.0 `27th March 2023` +
 '''
 
 == Important URLs
-1. 
+1. https://[Update your details here]. +
+2. https://bit.ly/3TZqmTs[Workshop login]. +
+3. https://[CDW Workshop (Recording)]. +
+
+4. https://bit.ly/3nATx2R[End-to-End Workshop (GitHub)]. +
+5. https://[End-to-End Workshop (Recording)]. +
+
+6. https://github.com/mmehra12/Impact24[Partner Handbook]. +
 
 
 == Pre-requisites
