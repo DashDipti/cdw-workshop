@@ -11,10 +11,10 @@ Version : 1.0.0 `27th March 2023` +
 == Important URLs
 1. https://[Venky to Provide - Update your details here]. +
 2. https://bit.ly/3TZqmTs[Workshop login]. +
-3. https://[Gab to Provide - CDW Workshop (Recording)]. +
+3. ttps://bit.ly/3KEp3oQ[CDW Workshop (Recording)]. +
 
 4. https://bit.ly/3nATx2R[End-to-End Workshop (GitHub)]. +
-5. https://[Gab to Provide - End-to-End Workshop (Recording)]. +
+5. https://bit.ly/3UCsXDa[End-to-End Workshop (Recording)]. +
 
 == Partner Handbook
 https://github.com/mmehra12/Impact24[Partner Handbook]. +
