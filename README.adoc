@@ -906,7 +906,7 @@ image:images/step5/56-4.png[] +
 - Click on the first query as shown below. Make sure that this is the latest query. You can look at the `Start Time' field here to know if it's the latest or not. +
 image:images/step5/56-5.png[] +
 
-- This is where you can analyze queries at a deep level.  For this lab let’s take a look at the explain details, by clicking on `Visual Explain` tab. +
+- This is where you can analyze queries at a deep level.  For this lab let’s take a look at the explain details, by clicking on `Visual Explain` tab. It might take a while to appear, please click on refresh. +
 image:images/step5/56-6.png[] +
 
 - This plan shows that this query needs to Read `flights` (86M rows) and `airlines` (1.5K rows) with hash join, group, and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
