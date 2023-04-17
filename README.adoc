@@ -277,7 +277,8 @@ image:images/step3/33-3.png[] +
 - Go back to the CDP Console and observe the Impala Virtual Warehouse `1-10impala`. +
 image:images/step3/33-4.png[] +
 
-Here, you'll notice that the warehouse is now at a state where it is not executing any queries and hence, the node count would be low and as the users will run their queries it will scale up or down depending upon the need of resources or lack of it when queries are not run.
+Here, you'll notice that the warehouse is now at a state where it is not executing any queries and hence, the node count would be low and as the users will run their queries it will scale up or down depending upon the need of resources or lack of it when queries are not run. +
+`Note: Since, this workshop has many users logged in and the virtual impala warehouse is always ON at this point, the actual behavior might differ from what you see in the screenshot. The idea is to convey that the virtual warehouse scale up and scale down capability.` +
 
 
 - Run the following query to start analysing the data - “Find the needle in the haystack” query.
