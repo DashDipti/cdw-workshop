@@ -9,7 +9,7 @@ Version : 1.0.0 `27th March 2023` +
 '''
 
 == Important URLs
-1. https://tinyurl.com/2awfrsxa[Update your details here]. +
+1. https://tinyurl.com/2awfrsxa[PKO_Details]. +
 2. http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login]. +
 3. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)]. +
 
