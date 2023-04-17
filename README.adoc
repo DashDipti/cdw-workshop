@@ -333,7 +333,7 @@ In this step we will take steps to make use of Hive and Iceberg Table formats to
 *4.1* Create a curated layer from RAW CSV Tables (Created in Step 3). Curated layer will be created in <user_id>_airlines - This will be our 'Data Lakehouse'. Data Lakehouse will be combination of 2 Table Formats (Hive & Iceberg). +
 *4.2* Migrate over time from Hive to Iceberg Table format and hence have the choice to not have to migrate everything at once. +
     ** *4.2.1* Utilize the table Migration feature. +
-    ** *4.2.2* Use Create Table as Select (CTAS). 
+        ** *4.2.2* Use Create Table as Select (CTAS). 
 
 
 === 4.1 Curated layer creation +
