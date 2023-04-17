@@ -124,8 +124,8 @@ Enter the `Workshop Login Username` and `Workshop Login Password` shared by your
 (*Note*: Note that your username would be something like `wuser00@workshop.com` and not just `wuser00`). +
 image:images/step1b/1-1a.PNG[] +
 
-Update the password with your own password.
-image:images/step1b/1-1b.PNG[] +
+//Update the password with your own password.
+//image:images/step1b/1-1b.PNG[] +
 
 
 
