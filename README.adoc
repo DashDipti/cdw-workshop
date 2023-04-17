@@ -1032,7 +1032,7 @@ GROUP BY uniquecarrier;
 
 ----
 
-- You should now only see 1 row returned for this query - after the policy was applied you will only be able to access uniquecarrier = *UA* and no other carriers. It might take a while before it reflects. +
+- You should now only see 1 row returned for this query - after the policy was applied you will only be able to access uniquecarrier = *UA* and no other carriers.* It might take a while before it reflects.* +
 image:images/step6/6-16.png[] + 
 
 
