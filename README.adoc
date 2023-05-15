@@ -9,16 +9,16 @@ Version : 1.0.0 `27th March 2023` +
 '''
 
 == Important URLs
-1. https://tinyurl.com/2awfrsxa[PKO_Details] - Participants must fill their details here to get associated credentials and resources for the workshop. +
+1. https://tinyurl.com/2awfrsxa[HOL Credentials] - Participants must fill their details here to get associated credentials and resources for the workshop. +
 2. http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] - Use this URL to authenticate yourself and enter CDP. +
 3. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)] - Watch this video for the complete walkthrough of this CDW workshop. +
 
 == Partner Handbook
 https://github.com/mmehra12/Impact24[Partner Handbook]. +
 
-== Additional Labs/Videos
-1. https://github.com/DashDipti/partner-summit-2023[End-to-End Workshop (GitHub)] - This GitHub is a great way to familarize yourself with different CDP Data services. +
-2. https://www.youtube.com/watch?v=GcNeCGFdmDw[End-to-End Workshop (Recording)] - Watch this video for the End-to-End workshop walkthrough.  +
+//== Additional Labs/Videos
+//1. https://github.com/DashDipti/partner-summit-2023[End-to-End Workshop (GitHub)] - This GitHub is a great way to familarize yourself with different CDP Data services. +
+//2. https://www.youtube.com/watch?v=GcNeCGFdmDw[End-to-End Workshop (Recording)] - Watch this video for the End-to-End workshop walkthrough.  +
 
 
 == Pre-requisites
