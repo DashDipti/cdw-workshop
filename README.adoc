@@ -332,7 +332,7 @@ image:images/step3/33-7.png[] +
 
 == Step 4: Data Lakehouse - Hive & Iceberg Table Format +
 
-image:images/step4/41-0.png[] +
+image:images/step4/41-0.PNG[] +
 
 In this step we will take steps to make use of Hive and Iceberg Table formats to provide us with best of both world scenarios in our Data Lakehouse. We will - +
 *4.1* Create a curated layer from RAW CSV Tables (Created in Step 3). Curated layer will be created in `<user_id>_airlines` - This will be our 'Data Lakehouse'. Data Lakehouse will be combination of 2 Table Formats (Hive & Iceberg). +
