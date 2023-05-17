@@ -331,6 +331,7 @@ image:images/step3/33-7.png[] +
 
 
 == Step 4: Data Lakehouse - Hive & Iceberg Table Format +
+
 image:images/step4/41-0.png[] + 
 
 In this step we will take steps to make use of Hive and Iceberg Table formats to provide us with best of both world scenarios in our Data Lakehouse. We will - +
@@ -342,7 +343,7 @@ In this step we will take steps to make use of Hive and Iceberg Table formats to
 
 === 4.1 Curated layer creation +
 - Make sure that you are using the HUE of `1-10hive`. Else, click on `HUE` and go to the HUE browser. +
-image:images/step4/41-1.png[] + 
+image:images/step4/41-1.PNG[] + 
 
 - Create `planes` table in `Hive` table format and stored in `parquet` file format.
 
