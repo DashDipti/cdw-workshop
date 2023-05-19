@@ -343,7 +343,7 @@ In this step we will take steps to make use of Hive and Iceberg Table formats to
 
 === 4.1 Curated layer creation +
 - Make sure that you are using the HUE of `1-10hive`. Else, click on `HUE` and go to the HUE browser. +
-image:images/step4/41-1.PNG[] + 
+image:images/step4/41-1.png[] + 
 
 - Create `planes` table in `Hive` table format and stored in `parquet` file format.
 
