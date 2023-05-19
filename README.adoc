@@ -680,7 +680,7 @@ WHERE planes.tailnum IN
 
 image:images/step4/recap-5.png[] +
 The Data Lakehouse DW query performs significantly better than same query running against the CSV data. + 
-*`Note`: Please note that depending upon how the warehouse is comfigured (Auto suspend being set or unset), the query may take more time as the pods take time to start up* +
+*`Note: Please note that depending upon how the warehouse is comfigured (Auto suspend being set or unset), the query may take more time as the pods take time to start up`* +
 
 
 == Step 5: Performance Optimizations & Table maintenance Using Impala VW +
