@@ -413,7 +413,8 @@ DESCRIBE FORMATTED ${user_id}_airlines.planes;
 image:images/step4/41-9.png[] + 
 
 In the output look for the following. +
-(a) Location: `s3a://emeaworkshop/my-data/warehouse/tablespace/external/hive/wuser00_airlines.db/planes` +
+//(a) Location: `s3a://emeaworkshop/my-data/warehouse/tablespace/external/hive/wuser00_airlines.db/planes` +
+(a) Location: `s3a://.../warehouse/tablespace/external/hive/wuser00_airlines.db/planes` +
 (b) Table Type: `EXTERNAL_TABLE` +
 (c) SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe` +
 
