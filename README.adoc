@@ -13,14 +13,6 @@ Version : 1.0.0 `27th March 2023` +
 2. http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] - Open this in `incognitio` mode and authenticate yourself to enter CDP. +
 3. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)] - Watch this video for the complete walkthrough of this CDW workshop. +
 
-== Partner Handbook
-https://github.com/mmehra12/Impact24[Partner Handbook]. +
-
-//== Additional Labs/Videos
-//1. https://github.com/DashDipti/partner-summit-2023[End-to-End Workshop (GitHub)] - This GitHub is a great way to familarize yourself with different CDP Data services. +
-//2. https://www.youtube.com/watch?v=GcNeCGFdmDw[End-to-End Workshop (Recording)] - Watch this video for the End-to-End workshop walkthrough.  +
-
-
 == Pre-requisites
 
 . Laptop with a supported OS (Windows 7 not supported) or MacBook.
@@ -1211,4 +1203,10 @@ image:images/step7/55.png[] +
 - Click `enter title` and enter the title based on your user id as - `<user_id>- Routes with Highest Avg. Departure Delays`. Then click on `SAVE`.
 image:images/step7/56.png[] +
 
-=== This concludes the workshop. Hope you had a great time learning something new and useful.
+
+== Partner Handbook
+https://github.com/mmehra12/Impact24[Partner Handbook]. +
+
+//== Additional Labs/Videos
+//1. https://github.com/DashDipti/partner-summit-2023[End-to-End Workshop (GitHub)] - This GitHub is a great way to familarize yourself with different CDP Data services. +
+//2. https://www.youtube.com/watch?v=GcNeCGFdmDw[End-to-End Workshop (Recording)] - Watch this video for the End-to-End workshop walkthrough.  +
