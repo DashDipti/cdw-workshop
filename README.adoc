@@ -617,7 +617,7 @@ image:images/step4/43-6.png[] +
 
 Below is the summary of what we have done so far in the form of a screenshot.
 
-image:images/step4/updatedERD.PNG[] +
+image:images/step4/updatedERD.png[] +
 
 *(1).* Created a Raw Layer by defining Tables that point to CSV data files in an S3 bucket. We were then immediately able to query and run analytics against that data. +
 *(2).* Created a Curated Layer to be the basis of our Data Lakehouse. +
