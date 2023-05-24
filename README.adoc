@@ -8,15 +8,15 @@ Version : 1.0.0 `27th March 2023` +
 
 '''
 
-== Important URLs
-1. https://tinyurl.com/2awfrsxa[HOL Credentials] - Participants must fill their details here to get associated credentials and resources for the workshop. +
-2. http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] - Open this in `incognitio` mode and authenticate yourself to enter CDP. +
-3. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)] - Watch this video for the complete walkthrough of this CDW workshop. +
-
 == Pre-requisites
 
 . Laptop with a supported OS (Windows 7 not supported) or MacBook.
 . A modern browser - Google Chrome (IE, Firefox, Safari not supported).
+
+== Important URLs
+1. https://tinyurl.com/2awfrsxa[HOL Credentials] - Participants must fill their details here to get associated credentials and resources for the workshop. +
+2. http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] - Open this in `incognitio` mode and authenticate yourself to enter CDP. +
+3. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)] - Watch this video for the complete walkthrough of this CDW workshop. +
 
 == Preface
 
