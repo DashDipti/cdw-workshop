@@ -866,7 +866,7 @@ image:images/step5/53-4.png[] +
 image:images/step5/56-1hive.png[] +
 
 
-- Copy/paste the following, make sure to highlight the entire block, and execute the following. +
+- Up until this point we had 'airlines' table which was (Hive + orc). Now, we shall create the airlines table which is (Iceberg + orc). Copy/paste the following, make sure to highlight the entire block, and execute the following. +
 
 [source, sql]
 ----
