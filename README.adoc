@@ -920,7 +920,7 @@ image:images/step5/56-3.png[] +
 
 - Then click on `Hive Queries`. This is where an Admin will go when he wants to investigate the queries.  In our case for this lab, we’d like to look at the query we just executed to see how it ran and the steps taken to execute the query.  Administrators would also be able to perform other monitoring and maintenance tasks for what is running (or has been run).  Monitoring and maintenance tasks could include cancel (kill) queries, see what is running, analyze whether queries that have been executed are optimized, etc.
 
-image:images/step5/56-4a.png[] +
+image:images/step5/56-4a.PNG[] +
 
 - Click on the first query as shown below. Make sure that this is the latest query. You can look at the `Start Time' field here to know if it's the latest or not. +
 image:images/step5/56-5.png[] +
