@@ -499,6 +499,7 @@ Note that the `planes` table that we created earlier has `SerDe Library: org.apa
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
+image:images/step4/421-0.png[] + 
 
 ==== 4.2.1 (Option 1): Utilize the table Migration feature +
 - Run the following SQL and note what happens next. +
