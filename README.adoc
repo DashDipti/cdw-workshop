@@ -491,6 +491,15 @@ image:images/step4/41-14.png[] +
 === 4.2 Migrate Hive to Iceberg Table +
 If you already have created a Data Warehouse using the Hive Table Format but would like to take advantage of the features offered in the Iceberg Table Format, you have 2 options. We will see both the options as a part of this step. +
 
+Note that the `planes` table that we created earlier has `SerDe Library: org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe`. Note the 'ParquetHiveSerDe' part. You can check the same by running the command below. +
+
+[source, sql]
+----
+
+DESCRIBE FORMATTED ${user_id}_airlines.planes;
+
+----
+
 ==== 4.2.1 (Option 1): Utilize the table Migration feature +
 - Run the following SQL and note what happens next. +
 
