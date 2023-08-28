@@ -451,8 +451,7 @@ INSERT INTO ${user_id}_airlines.airlines_orc VALUES("PAW","Paradise Air");
 ----
 image:images/step4/41-13.png[] + 
 
-- Let's update an existing record to change the description of `United Airlines` to `Adrenaline Airlines` to see more of the `ACID` capablities provided by Hive ACID. Run the following SQL. +
-
+- Now, let's create a new table called  `airlines_dim_updates` and insert 2 new records for `United Airlines` with code `UA` and  `Get Out of My Airway!` with code `XX`. +
 
 [source, sql]
 ----
@@ -462,6 +461,17 @@ CREATE EXTERNAL TABLE ${user_id}_airlines.airlines_dim_updates(code string, desc
 
 INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("UA","Adrenaline Airlines");
 INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("XX","Get Out of My Airway!");
+
+----
+
+- At this point the 2 tables contain data for the specific airlines with code `UA, XX & PAW` as following. +
+image:images/step4/41-13a.png[] + 
+
+- Let's update an existing record to change the description of `United Airlines` to `Adrenaline Airlines` to see more of the `ACID` capablities provided by Hive ACID. Run the following SQL. +
+
+
+[source, sql]
+----
 
 -- Merge inserted records into Airlines_orc table
 MERGE INTO ${user_id}_airlines.airlines_orc USING (SELECT * FROM ${user_id}_airlines.airlines_dim_updates) AS s
