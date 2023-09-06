@@ -174,7 +174,8 @@ The objective of this step is to create External tables on top of raw CSV files 
 === 3.1 Open Hue for CDW Virtual Warehouse - `1-10hive` +
 
 - Click on the image:images/step3/hue.png[] button on the right upper corner of `1-10hive` as shown in the screenshot below. +
-image:images/step3/31-1.png[] +
+//image:images/step3/31-1.png[] +
+image:images/step3/31-1a.png[] +
 
 
 
@@ -249,7 +250,8 @@ image:images/step3/32-2.png[]
 === 3.3 Run the following DDL in HUE for the CDW Virtual Warehouse - `1-10impala`. +
 
 - Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for *`1-10impala`* as shown in the screenshot below.
-image:images/step3/33-1.png[] +
+//image:images/step3/33-1.png[] +
+image:images/step3/33-10a.png[] +
 
 - Make sure that you click to get `Impala` instead of `default` in the HUE browser as shown below and then click refresh button image:images/step3/33-2refresh.png[]. +
 image:images/step3/33-1a.png[] +
@@ -922,7 +924,7 @@ image:images/step5/56-3.png[] +
 
 image:images/step5/56-4a.PNG[] +
 
-- Click on the first query as shown below. Make sure that this is the latest query. You can look at the `Start Time' field here to know if it's the latest or not. +
+- Click on the first query as shown below. Make sure that this is the latest query. You can look at the `Start Time` field here to know if it's the latest or not. +
 image:images/step5/56-5.png[] +
 
 - This is where you can analyze queries at a deep level.  For this lab let’s take a look at the explain details, by clicking on `Visual Explain` tab. It might take a while to appear, please click on refresh. +
