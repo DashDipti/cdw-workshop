@@ -338,7 +338,9 @@ In this step we will take steps to make use of Hive and Iceberg Table formats to
 
 === 4.1 Curated layer creation +
 - Make sure that you are using the HUE of `1-10hive`. Else, click on `HUE` and go to the HUE browser. +
-image:images/step4/41-1.png[] + 
+//image:images/step4/41-1.png[] + 
+image:images/step4/41-1a.png[] + 
+
 
 - Create `planes` table in `Hive` table format and stored in `parquet` file format.
 
@@ -644,7 +646,8 @@ image:images/step4/updatedERD.png[] +
 As a final step here let's run the same analytic query we ran against the Raw layer now in our Data Lakehouse DW, to see what happens with performance. 
 From the cloudera console click on -  `1-10impala`. +
 
-image:images/step4/recap-1.png[] + 
+//image:images/step4/recap-1.png[] + 
+image:images/step4/recap-1a.png[] + 
 
 - Make sure that 'Unified Analytics' is *NOT* selected.+
 image:images/step4/recap-2.png[] + 
@@ -702,7 +705,8 @@ In this Step we will look at some of the performance optimization and table main
 
 === 5.1 Iceberg in-place Partition Evolution [Performance Optimization] +
 - Open HUE for the CDW `Hive` Virtual Warehouse - `1-10hive`
-image:images/step5/51-1.png[] +
+//image:images/step5/51-1.png[] +
+image:images/step5/51-1a.png[] +
 
 - One of the key features for Iceberg tables is the ability to evolve the partition that is being used *over time*. +
 
@@ -738,7 +742,8 @@ WHERE year = 2007;
 image:images/step5/51-4.png[] +
 
 - Open HUE for the CDW `Impala` Virtual Warehouse - `1-10impala`. +
-image:images/step5/51-5impala.png[] +
+//image:images/step5/51-5impala.png[] +
+image:images/step5/51-5impalaa.png[] +
 
 - In the Hue editor look make sure `Impala` is selected as the engine else follow the screenshot to change it to impala. +
 image:images/step5/impala-1.png[] +
@@ -885,7 +890,8 @@ image:images/step5/53-4.png[] +
 === 5.6 Materialized Views [Performance Optimization] +
 - This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `1-10hive`. Click on the `Hue` button on the right upper corner of `1-10hive` as shown in the screenshot below. +
 
-image:images/step5/56-1hive.png[] +
+//image:images/step5/56-1hive.png[] +
+image:images/step5/56-1hivea.png[] +
 
 
 - Up until this point we had `airlines` table which was (Hive + orc). Now, we shall create the airlines table which is (Iceberg + orc). Copy/paste the following, make sure to highlight the entire block, and execute the following. +
