@@ -843,7 +843,7 @@ FROM ${user_id}_airlines.flights
 GROUP BY year
 ORDER BY year desc;
 
--- SELECT DATA USING TIMESTAMP FOR SNAPSHOT
+-- SELECT DATA USING SNAPSHOT ID FOR SNAPSHOT
 SELECT year, count(*) 
 FROM ${user_id}_airlines.flights
   FOR SYSTEM_VERSION AS OF ${snapshot_id}
