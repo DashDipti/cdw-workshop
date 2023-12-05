@@ -29,10 +29,10 @@ This will be a three-phase plan: +
 *(2) Phase Two:*  Implement an ongoing reporting service to support ongoing engineering efforts to continuously improve engines based on delay data. +
 *(3) Phase Three:*  Move to real-time analysis to fix things before they break both in engines already sold, and in new engine designs. +
 
-To do this, we’re going to build a data warehouse & data lakehouse to create reports that engineers can use to improve our engines.  The following people will get to work: +
+To do this, we’re going to build a data warehouse & data lakehouse to create reports that engineers can use to improve our engines. +
 
 
-We will dive into this Scenario to show Cloudera Data Warehouse (CDW) is used to enable the Aircraft company to gain competitive advantage - and at the same time it highlights the performance and automation capabilities that help ensure performance is maintained while controlling costs. +
+We will dive into this scenario to show Cloudera Data Warehouse (CDW) is used to enable the Aircraft company to gain competitive advantage - and at the same time it highlights the performance and automation capabilities that help ensure performance is maintained while controlling costs. +
 
 The Hands on Labs will take you through how to use the Cloudera Data Warehouse service to quickly explore raw data, create curated versions of the data for simple reporting and dashboarding, and then scale up usage of the curated data by exposing it to more users. +
 
