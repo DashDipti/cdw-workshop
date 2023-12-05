@@ -73,12 +73,12 @@ Below are the high-level steps for what we will be doing in the workshop. +
     (a) Loading more data - change partitioning to maintain performance (NOTE:  Ongoing ELT = CDE?).
     (b) Bad data is loaded - use time travel to detect, and rollback to resolve.
     (c) Introduce materialized views to support scaling to 1000’s of simultaneous users.
-    (d) As an admin:  Monitor, report, kill queries that run amock, etc.
+    (d) As an admin:  Monitor, report, kill queries that run amok, etc.
     
 *[Step 6]:* Security & Governance. +
 
     (a) Check on the lineage to enable governance/audit.
-    (b) Row level security to make sure only relevant party can see data.
+    (b) Row level security to make sure only relevant parties can see data.
 
 *[Step 7]:* Cloudera Data Visualization +
 
@@ -88,7 +88,7 @@ Below are the high-level steps for what we will be doing in the workshop. +
 
 == Step 1: Getting Started
 
-WARNING: Please make sure that you are working on the browser (Chrome) image:images/step1a/chrome.png[] in *INCOGNITIO MODE* image:images/step1a/incog.png[] only for the entirety of the workshop. +
+WARNING: Please make sure that you are working on the browser (Chrome) image:images/step1a/chrome.png[] in *INCOGNITO MODE* image:images/step1a/incog.png[] only for the entirety of the workshop. +
 
 === Step 1(a): You'll need the following
 
@@ -109,7 +109,7 @@ In the labs when you see: +
 
 === Step 1(b): Define CDP Workload Password
 
-*`Suggestion:`* `Ideal way to work through this workshop will be to have 2 Incognitio mode browers opened. One to be used in a way that you can follow instructions using GitHub and the other one to be used for the workshop related screens.` +
+*`Suggestion:`* `Ideal way to work through this workshop will be to have 2 Incognito mode browsers opened. One to be used in a way that you can follow instructions using GitHub and the other one to be used for the workshop related screens.` +
 
 Please use the login URL: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login]. +
 Enter the `Workshop Login Username` and `Workshop Login Password` shared by your instructor. +
@@ -125,7 +125,7 @@ image:images/step1b/1-1a.PNG[] +
 You should be able to get the following home page of CDP Public Cloud.
 image:images/step1b/1-2.PNG[] +
 
-You will need to define your `CDP Workload Password` that will be used to acess non-SSO interfaces. You may read more about it https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html[here].
+You will need to define your `CDP Workload Password` that will be used to access non-SSO interfaces. You may read more about it https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html[here].
 Please keep it with you. If you have forgotten it, you will be able to repeat this process and define another one.
 
 . Click on your `user name (Ex: wuser00@workshop.com`) at the lower left corner.
@@ -135,7 +135,7 @@ image:images/step1b/1.PNG[] +
 
 . Click option `Set Workload Password`.
 . Enter a suitable `Password` and `Confirm Password`.
-. Click button `Set Workload Password`.
+. Click the button `Set Workload Password`.
 
 
 image:images/step1b/2.PNG[] +
@@ -273,10 +273,10 @@ image:images/step3/33-3.png[] +
 image:images/step3/33-4.png[] +
 
 Here, you'll notice that the warehouse is now at a state where it is not executing any queries and hence, the node count would be low and as the users will run their queries it will scale up or down depending upon the need of resources or lack of it when queries are not run. +
-`Note: Since, this workshop has many users logged in and the virtual impala warehouse is always ON at this point, the actual behavior might differ from what you see in the screenshot. The idea is to convey that the virtual warehouse scale up and scale down capability.` +
+`Note: Since this workshop has many users logged in and the virtual impala warehouse is always ON at this point, the actual behavior might differ from what you see in the screenshot. The idea is to convey that the virtual warehouse scales up and scales down.` +
 
 
-- Run the following query to start analysing the data - “Find the needle in the haystack” query.
+- Run the following query to start analyzing the data - “Find the needle in the haystack” query.
 
 [source, sql]
 ----
@@ -316,10 +316,10 @@ WHERE planes_csv.tailnum IN
 
 image:images/step3/33-5.png[] +
 
-- Go back to the CDP console to observe the behaviour of scaling up/down of virtual warehouse. +
+- Go back to the CDP console to observe the behavior of scaling up/down of virtual warehouses. +
 image:images/step3/33-6.png[] +
 
-- Check in the Hue browser and the query show up the result as following. Observe the amount of time taken to run this query. +
+- Check in the Hue browser and the query shows the result as follows. Observe the amount of time taken to run this query. +
 image:images/step3/33-7.png[] + 
 
 
@@ -330,7 +330,7 @@ image:images/step4/41-0.PNG[] +
 
 In this step we will take steps to make use of Hive and Iceberg Table formats to provide us with best of both world scenarios in our Data Lakehouse. We will - +
 
-*4.1* Create a curated layer from RAW CSV Tables (Created in Step 3). Curated layer will be created in `<user_id>_airlines` - This will be our 'Data Lakehouse'. Data Lakehouse will be combination of 2 Table Formats (Hive & Iceberg). +
+*4.1* Create a curated layer from RAW CSV Tables (Created in Step 3). Curated layer will be created in `<user_id>_airlines` - This will be our 'Data Lakehouse'. Data Lakehouse will be a combination of 2 Table Formats (Hive & Iceberg). +
 *4.2* Migrate over time from Hive to Iceberg Table format and hence have the choice to not have to migrate everything at once. +
       4.2.1 Utilize the table Migration feature. +
       4.2.2 Use Create Table as Select (CTAS). +
@@ -468,10 +468,10 @@ INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("XX","Get Out of My 
 
 ----
 
-- At this point the 2 tables contain data for the specific airlines with code `UA, XX & PAW` as following. +
+- At this point the 2 tables contain data for the specific airlines with code `UA, XX & PAW` as follows. +
 image:images/step4/41-13a.png[] + 
 
-- Let's update an existing record to change the description of `United Airlines` to `Adrenaline Airlines` to see more of the `ACID` capablities provided by Hive ACID. Run the following SQL. +
+- Let's update an existing record to change the description of `United Airlines` to `Adrenaline Airlines` to see more of the `ACID` capabilities provided by Hive ACID. Run the following SQL. +
 
 
 [source, sql]
@@ -521,7 +521,7 @@ DESCRIBE FORMATTED ${user_id}_airlines.planes;
 image:images/step4/421-1.png[] + 
 
 The following happened. +
-*(a).* This migration to Iceberg happened in-place & there was no re-writing of data that occurred as part of this process.  It retained the File Format of `parquet` for the Iceberg table as well.  There was a Metadata file that is created, which you can see when you run the `DESCRIBE FORMATTED`. +
+*(a).* This migration to Iceberg happened in-place & there was no re-writing of data that occurred as part of this process.  It retained the File Format of `parquet` for the Iceberg table as well.  There was a Metadata file that was created, which you can see when you run the `DESCRIBE FORMATTED`. +
 
 *(b).* In the output look for the following fields - look for the following (see image with highlighted fields) key values: 
     `Table Type`, `Location` (location of where table data is stored), `SerDe Library`, and in Table Parameters look for properties `MIGRATED_TO_ICEBERG`, `storage_handler`, `metadata_location`, and `table_type`. 
@@ -530,7 +530,7 @@ The following happened. +
 `Table Type`: Indicates that it is an `EXTERNAL TABLE`. +
 `MIGRATED_TO_ICEBERG`: Indicates that the table has migrated to `ICEBERG`. +
 `table_type`: Indicates `ICEBERG` table format. +
-`metadata_location`: Indicates the location of `metadata` which is path to cloud storage. +
+`metadata_location`: Indicates the location of `metadata` which is the path to cloud storage. +
 `storage_handler`: `org.apache.iceberg.mr.hive.HiveIcebergStorageHandler`. +
 `SerDe Library`: `org.apache.iceberg.mr.hive.HiveIcebergSerDe`. +
 
@@ -587,14 +587,14 @@ SHOW CREATE TABLE ${user_id}_airlines.flights;
 ----
 image:images/step4/43-1.png[] + 
 
-The `SHOW CREATE TABLE` command is the unformatted version of `DESCRIBE FORMATTED` command. Pay attention to the `PARTITIONED BY SPEC`, where we have partitioned the `flights` table using `year` column. +
+The `SHOW CREATE TABLE` command is the unformatted version of `DESCRIBE FORMATTED` command. Pay attention to the `PARTITIONED BY SPEC`, where we have partitioned the `flights` table using the `year` column. +
 
 image:images/step4/43-2.png[] +  
 
 image:images/step4/43-3.png[] +  
 
 
-- We insert data into this table it will write data together within the same partition (ie. all 2006 data is written to the same location, all 2005 data is written to the same location, etc.). `This command will take some time to run`. +
+- We will insert data into this table and it will write data together within the same partition (i.e. all 2006 data is written to the same location, all 2005 data is written to the same location, etc.). `This command will take some time to run`. +
 
 
 [source, sql]
@@ -643,7 +643,7 @@ image:images/step4/updatedERD.png[] +
 ** *(2.3).* Created the `airports` table in Iceberg Table Format using a `CTAS` statement querying the Raw CSV data to take advantage of the features of Iceberg. +
 ** *(2.4).* Created the flights table in Iceberg Table Format and partitioned the table by the year column. Inserted data into the table up to year 2006.
     
-As a final step here let's run the same analytic query we ran against the Raw layer now in our Data Lakehouse DW, to see what happens with performance. 
+As a final step here, let's run the same analytic query we ran against the Raw layer now in our Data Lakehouse DW, to see what happens with performance. 
 From the cloudera console click on -  `1-10impala`. +
 
 //image:images/step4/recap-1.png[] + 
@@ -696,7 +696,7 @@ WHERE planes.tailnum IN
 ----
 
 image:images/step4/recap-5.png[] +
-The Data Lakehouse DW query performs significantly better than same query running against the CSV data. + 
+The Data Lakehouse DW query performs significantly better than the same query running against the CSV data. + 
 *`Note: Please note that depending upon how the warehouse is comfigured (Auto suspend being set or unset), the query may take more time as the pods take time to start up`* +
 
 
@@ -793,11 +793,11 @@ ORDER BY year desc, month asc;
 image:images/step5/51-8.png[] +
 
 In the output notice the amount of data that needs to be scanned for this query, about 11 MB, is significantly less than that of the first, 138 MB.  This shows an important capability of Iceberg, Partition Pruning.  Meaning that much less data is scanned for this query and only the selected month of data needs to be processed.  This should result in much faster query execution times. +
-image:images/step5/51-9.png[] +
+image:images/step5/51-9.png[] + 
 
 
 === 5.2 Iceberg Snapshots [Table Maintenance] +
-- In the previous steps we have loaded data into the `flights` iceberg table. We will insert more data into it. Each time we add (update or delete) data a `snapshot` is captured. The snapshot is important for `eventual consistency` & to allow multiple read/writes concurrently (from various engines or same engine).
+- In the previous steps we have loaded data into the `flights` iceberg table. We will insert more data into it. Each time we add (update or delete) data a `snapshot` is captured. The snapshot is important for `eventual consistency` & to allow multiple read/writes concurrently (from various engines or the same engine).
 
 [source, sql]
 ----
@@ -859,10 +859,10 @@ image:images/step5/53-1.png[] +
 image:images/step5/53-2.png[] +
 
 
-- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2023-04-04 06:51:14.360000000`. Then execute the higlighted query only (*1st query*).
+- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2023-04-04 06:51:14.360000000`. Then execute the highlighted query only (*1st query*).
 image:images/step5/53-3.png[] +
 
-- From the notepad just copy the second value of the snapshot id. In our case the value was `6341506406760449831`. Paste it in the `snapshot_id` box. Then execute the higlighted query only (*2nd query*).
+- From the notepad just copy the second value of the snapshot id. In our case the value was `6341506406760449831`. Paste it in the `snapshot_id` box. Then execute the highlighted query only (*2nd query*).
 image:images/step5/53-4.png[] +
 
 === 5.4 (Don't Run, FYI ONLY) - Iceberg Rollback [Table Maintenance]  +
@@ -936,7 +936,7 @@ image:images/step5/56-5.png[] +
 - This is where you can analyze queries at a deep level.  For this lab let’s take a look at the explain details, by clicking on `Visual Explain` tab. It might take a while to appear, please click on refresh. +
 image:images/step5/56-6.png[] +
 
-- This plan shows that this query needs to Read `flights` (86M rows) and `airlines` (1.5K rows) with hash join, group, and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
+- This plan shows that this query needs to read `flights` (86M rows) and `airlines` (1.5K rows) with hash join, group, and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
 image:images/step5/56-7.png[] +
 
 - Click on the `Editor` option on the left side as shown. +
@@ -984,7 +984,7 @@ order by airlines.code;
 
 image:images/step5/56-10.png[] +
 
-- Let’s look at the Query Plan that was used to execute this query. On the left menu select `Jobs`. On the Jobs Browser - select the `Queries` tab to the right of the `Job` browser header. Hover over & click on the Query just executed (should be the first row). Click on `Visual Explain` tab. With query rewrite the materialized view is used and the new plan just reads the MV and sorts the data vs. reading `flights (86M rows)` and `airlines (1.5K rows)` with hash join, group and sorts.  This results in significant reduction in run time for this query. +
+- Let’s look at the Query Plan that was used to execute this query. On the left menu select `Jobs`. On the Jobs Browser - select the `Queries` tab to the right of the `Job` browser header. Hover over & click on the Query just executed (should be the first row). Click on the `Visual Explain` tab. With query rewrite the materialized view is used and the new plan just reads the MV and sorts the data vs. reading `flights (86M rows)` and `airlines (1.5K rows)` with hash join, group and sorts.  This results in significant reduction in run time for this query. +
 
 image:images/step5/56-11.png[] +
 
@@ -1024,7 +1024,7 @@ The lineage shows: +
 - Click on the Policy tab to see what security policies have been applied on this table. Click on the arrow next `all - database, table` `Policy Name` to the number as shown in the screenshot+
 image:images/step6/6-9.png[] + 
 
-- It will open `Ranger` which is for access management. Using Security (Ranger) - we can modify and create security policies for the various CDP Data Services. Click on `Hadoop SQL` link in the upper right corner - to view the security policies in place for CDW.  Here, will stick to the CDW related security features. +
+- It will open `Ranger` which is for access management. Using Security (Ranger) - we can modify and create security policies for the various CDP Data Services. Click on `Hadoop SQL` link in the upper right corner - to view the security policies in place for CDW.  Here we will stick to the CDW related security features. +
 image:images/step6/6-10.png[] + 
 
 - This screen shows the general Access related security policies - who has access to which Data Lakehouse databases, tables, views, etc.  Click on the `Row Level Filter` tab to see the policies to restrict access to portions of data. +
@@ -1074,7 +1074,7 @@ In this step you will build a Logistics Dashboard using Cloudera Data Visualizat
 - If you are not on the CDP home page, then go there and click on the following CDW icon to go into Cloudera Data Warehouse. +
 image:images/step7/0.png[] +
 
-- Then click on `Data Visualization` option in the left windowpane. You'll see an option `Data VIZ` next to the data-viz application with the name `emeaworkshop-dataviz`. It should open a new window.+
+- Then click on the `Data Visualization` option in the left window pane. You'll see an option `Data VIZ` next to the data-viz application with the name `emeaworkshop-dataviz`. It should open a new window.+
 image:images/step7/1.png[] +
 
 - There are 4 areas of CDV - `HOME, SQL, VISUALS, DATA` - these are the tabs at the top of the screen in the black bar to the right of the Cloudera Data Visualization banner.
@@ -1090,7 +1090,7 @@ image:images/step7/3.png[] +
     Hostname or IP address: Gets automatically selected. +
     Port: `Gets automatically filled up`. +
     Username: `Gets automatically filled up`. +
-    Passowrd: `Blank` +
+    Password: `Blank` +
 
 image:images/step7/4.png[] +
 image:images/step7/5.png[] +
@@ -1102,7 +1102,7 @@ image:images/step7/6.png[] +
 image:images/step7/7.png[] +
 image:images/step7/8.png[] +
 
-- Fill the details as following and click `CREATE`. `airline_logistics` gets created +
+- Fill the details as follows and click `CREATE`. `airline_logistics` gets created +
     Dataset title - `airline_logistics`. +
     Dataset Source - Select `From Table` (however, you could choose to directly enter a SQL statement instead). +
     Select Database - `<user_id>_airlines` (Make Sure you select the database that is associated with your <user_id>). +
@@ -1122,13 +1122,13 @@ image:images/step7/13.png[] +
 - Click on `EDIT DATA MODEL`. +
 image:images/step7/14.png[] +
 
-- Click on the `+` icon next to `flights` table option. +
+- Click on the `+` icon next to the `flights` table option. +
 image:images/step7/15.png[] +
 
-- Select the appropriate `Database Name` base on your user id (Ex: `wuser00_airlines`) and table name `planes`.  
+- Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `planes`.  
 image:images/step7/16.png[] +
 
-- Then click on the image:images/step7/joinicon.png[] `join` icon and see that there are 2 join options `tailnum` & `year`. Click on `EDIT JOIN` and then remove the `year` join by clicking little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`. +
+- Then click on the image:images/step7/joinicon.png[] `join` icon and see that there are 2 join options `tailnum` & `year`. Click on `EDIT JOIN` and then remove the `year` join by clicking the little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`. +
 image:images/step7/17.png[] +
 image:images/step7/18.png[] +
 image:images/step7/19-1.png[] +
@@ -1136,24 +1136,24 @@ image:images/step7/19-2.png[] +
 image:images/step7/20.png[] +
 
 
-- Now we will create join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airlines`. +
+- Now we will create a join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airlines`. +
 image:images/step7/22.png[] +
 image:images/step7/23.png[] +
 
-- Make sure you select the column `uniquecarrier` from `flights` and column `code` from `airlines` table. Click `APPLY`. +
+- Make sure you select the column `uniquecarrier` from `flights` and column `code` from the `airlines` table. Click `APPLY`. +
 image:images/step7/24.png[] +
 image:images/step7/25.png[] +
 
 - Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airports`. +
 image:images/step7/26.png[] +
 
-- Make sure you select the column `origin` from `flights` and column `iata` from `airports` table. Click `APPLY`. +
+- Make sure you select the column `origin` from `flights` and column `iata` from the `airports` table. Click `APPLY`. +
 image:images/step7/27.png[] +
 
 - Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airports`. +
 image:images/step7/28.png[] +
 
-- Make sure you select the column `dest` from `flights` and column `iata` from `airports` table. Click `APPLY`. Then click on `SAVE`. +
+- Make sure you select the column `dest` from `flights` and column `iata` from the `airports` table. Click `APPLY`. Then click on `SAVE`. +
 image:images/step7/29.png[] +
 image:images/step7/30.png[] +
 
@@ -1167,7 +1167,7 @@ image:images/step7/30.png[] +
 image:images/step7/30showdata-1.png[] + 
 image:images/step7/30showdata-2.png[] +
 
-- Click on `Fields` column on the left window pane. Then click on `EDIT FIELDS`. Make sure that you click on the highlighted area to change `#` (measures icon) next to each column to `Dim` (dimension icon). The columns are as following. +
+- Click on the `Fields` column on the left window pane. Then click on `EDIT FIELDS`. Make sure that you click on the highlighted area to change `#` (measures icon) next to each column to `Dim` (dimension icon). The columns are as follows. +
 a. `flights` table: Columns (`month`, `dayofmonth`, `dayofweek`, `deptime`, `crsdeptime`, `arrtime`, `crsarrtime`, `flightnum` & `year`) +
 b. `planes` table: `All columns` +
 c. `airports` table: `All columns` +
@@ -1178,15 +1178,15 @@ image:images/step7/35.png[] +
 image:images/step7/36.png[] +
 image:images/step7/37.png[] +
 
-- Click on `TITLE CASE`. And notice that the column names changes to be `Camel case`. Click on the `pencil` icon next to `Depdelay` icon. +
+- Click on `TITLE CASE`. And notice that the column names changes to be `Camel case`. Click on the `pencil` icon next to the `Depdelay` icon. +
 image:images/step7/38.png[] +
 image:images/step7/39.png[] +
 
-- Change the `Default Aggregation` to `Average`. Click on the `Display Format` and then change `Category` to be `Integer`. Check mark the box next the `Use 1000 separator`. Click on `APPLY`. +
+- Change the `Default Aggregation` to `Average`. Click on the `Display Format` and then change `Category` to be `Integer`. Check mark the box next to the `Use 1000 separator`. Click on `APPLY`. +
 image:images/step7/40.png[] +
 image:images/step7/41.png[] +
 
-- Click on `down arrow` shown against the `Origin` column and the click on `Clone`. A column `Copy of Origin` is created. Click on the 'pencil' icon next to it. +
+- Click on the `down arrow` shown against the `Origin` column and then click on `Clone`. A column `Copy of Origin` is created. Click on the 'pencil' icon next to it. +
 image:images/step7/42.png[] +
 image:images/step7/43.png[] +
 
@@ -1200,29 +1200,29 @@ concat([Origin], '-', [Dest])
 image:images/step7/44.png[] +
 image:images/step7/45.png[] +
 
-- Click on `SAVE`. We have completed the step of data modeling and now we will created data visualization. +
+- Click on `SAVE`. We have completed the step of data modeling and now we will create data visualization. +
 image:images/step7/46.png[] +
 
 
 === Step 7(b): Creating Dashboard +
 
-- Now we will create a dashboard page to based on the data model that we just created. Click on `NEW DASHBOARD`. +
+- Now we will create a dashboard page based on the data model that we just created. Click on `NEW DASHBOARD`. +
 
 image:images/step7/47.png[] +
 
 - You will see the following.
 image:images/step7/50.png[] +
 
-- A quick overview of the screen that you are seeing is as following. On the right side of the screen there will be a VISUALS menu.  At the top of this menu, there is a series of Visual Types to choose from.  There will be 30+ various visuals to choose from.  Below the Visual Types you will see what are called Shelves.  The Shelves that are present depend on the Visual Type that is selected.  Shelves with a `*` are required, all other Shelves are optional.  On the far right of the page there is a DATA menu, which identifies the Connection & Dataset used for this visual.  Underneath that is the Fields from the Dataset broken down by Dimensions and Measures.  With each of these Categories you can see that it is subdivided by each Table in the Dataset. +
+- A quick overview of the screen that you are seeing is as follows. On the right side of the screen there will be a VISUALS menu.  At the top of this menu, there is a series of Visual Types to choose from.  There will be 30+ various visuals to choose from.  Below the Visual Types you will see what are called Shelves.  The Shelves that are present depend on the Visual Type that is selected.  Shelves with a `*` are required, all other Shelves are optional.  On the far right of the page there is a DATA menu, which identifies the Connection & Dataset used for this visual.  Underneath that is the Fields from the Dataset broken down by Dimensions and Measures.  With each of these Categories you can see that it is subdivided by each Table in the Dataset. +
 
 image:images/step7/51.png[] +
 
-- Let's build 1st visual - `Top 25 Routes by Avg Departure Delay`. CDV will add a Table visual displaying a sample of the data from the Dataset as the default visualization when you create a new Dashboard or new Visuals on the Dashboard (see New Dashboard screen above).  The next step is to modify (Edit) the default visualization to suit your needs.   +
+- Let's build the 1st visual - `Top 25 Routes by Avg Departure Delay`. CDV will add a Table visual displaying a sample of the data from the Dataset as the default visualization when you create a new Dashboard or new Visuals on the Dashboard (see New Dashboard screen above).  The next step is to modify (Edit) the default visualization to suit your needs.   +
 
-- Pick the Visual Type - Select the `Stacked Bar` chart visual on the top right as shown below. Make sure `Build` is selected for it to appear in the right side. +
+- Pick the Visual Type - Select the `Stacked Bar` chart visual on the top right as shown below. Make sure `Build` is selected for it to appear on the right side. +
 image:images/step7/52.png[] +
 
-- Find `Route` under `Dimensions -> flights`. Drag to `X-Axis`. Similarly, find `DepDelay` under `Measures -> flights`. Drag to `Y-Axis`. By default the aggergation selected is average and hence you would see `avg(Depdelay)`. +
+- Find `Route` under `Dimensions -> flights`. Drag to `X-Axis`. Similarly, find `DepDelay` under `Measures -> flights`. Drag to `Y-Axis`. By default the aggregation selected is average and hence you would see `avg(Depdelay)`. +
 image:images/step7/53.png[] +
 
 -  Click on the arrow next to `avg(Depdelay)`. Enter `25` against the text box labeled `Top K`. Click on `REFRESH VISUAL`. +
