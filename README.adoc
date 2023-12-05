@@ -1045,7 +1045,7 @@ image:images/step6/6-13.png[] +
 
 Click  *`Add`* button to accept this Policy. +
 
-
+image:images/step6/6-14.png[] + 
 
 - The new policy is added to the `Row Level Filter` policies (as below). +
 image:images/step6/6-15.png[] + 
