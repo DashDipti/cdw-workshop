@@ -1024,6 +1024,10 @@ The lineage shows: +
 - Click on the Policy tab to see what security policies have been applied on this table. Click on the arrow next `all - database, table` `Policy Name` to the number as shown in the screenshot+
 image:images/step6/6-9.png[] + 
 
+- If you are not seeing the above screenshot and see something like below then click on `Cloudera Data Catalog` on the top left corner. Then click on `Ranger` on top right corner. +
+image:images/step6/6-9a.png[] + 
+image:images/step6/6-9b.png[] + 
+
 - It will open `Ranger` which is for access management. Using Security (Ranger) - we can modify and create security policies for the various CDP Data Services. Click on `Hadoop SQL` link in the upper right corner - to view the security policies in place for CDW.  Here we will stick to the CDW related security features. +
 image:images/step6/6-10.png[] + 
 
