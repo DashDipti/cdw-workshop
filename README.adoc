@@ -8,15 +8,23 @@ Version : 1.0.2 `5th Dec 2023` +
 
 '''
 
+
+== Recording
+The entire lab is recorded and you can watch the same to have a better understanding of the lab. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)][CDW Workshop (Recording)].
+
 == Pre-requisites
 
-. Laptop with a supported OS (Windows 7 not supported) or MacBook.
-. A modern browser - Google Chrome (IE, Firefox, Safari not supported).
+. Laptop with a supported OS (Windows 7 not supported) or MacBook. Please disable any VPNs. +
+. A modern browser - Google Chrome (IE, Firefox, Safari not supported). +
+. Wi-Fi Internet connection with minimal security firewall on laptop and network. +
+and *please do not copy/paste strings with trailing characters while executing the workshop*.
 
-== Important URLs
-1. https://tinyurl.com/2awfrsxa[HOL Credentials] - Participants must fill their details here to get associated credentials and resources for the workshop. +
-2. http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] - Open this in `incognitio` mode and authenticate yourself to enter CDP. +
-3. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)] - Watch this video for the complete walkthrough of this CDW workshop. +
+
+== Access Details
+
+Your instructor will guide you through the following. +
+1. https://tinyurl.com/2awfrsxa[HOL Credentials] - Participants must enter their `First Name`, `Last Name` & `Company` details and make a note of corresponding `Workshop Login Username`, `Workshop Login Password` and `CDP Workload User` to be used in this workshop. +
+2. http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] - Using the details in the previous step make sure you are able to login here. +
 
 == Preface
 
