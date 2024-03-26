@@ -11,7 +11,7 @@ Version : 1.0.3 `26th March 2024` +
 
 == Recording
 The entire lab is recorded and you can watch the same to have a better understanding of the lab. +
-https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)].
+https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)]
 
 == Pre-requisites
 
