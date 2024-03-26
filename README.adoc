@@ -4,13 +4,13 @@ image::images/dash/hol.PNG[]
 
 '''
 
-Version : 1.0.2 `5th Dec 2023` +
+Version : 1.0.3 `26th March 2024` +
 
 '''
 
 
 == Recording
-The entire lab is recorded and you can watch the same to have a better understanding of the lab. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)][CDW Workshop (Recording)].
+The entire lab is recorded and you can watch the same to have a better understanding of the lab. https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)].
 
 == Pre-requisites
 
