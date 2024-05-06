@@ -1246,6 +1246,11 @@ image:images/step7/55.png[] +
 image:images/step7/56.png[] +
 
 
+=== Cloudera Partners
+(1). https://github.com/cloudera-labs/cdp-validation?tab=readme-ov-file#register-on-cloudera-sso[Register on Cloudera SSO] + 
+(2). https://github.com/cloudera-labs/cdp-validation?tab=readme-ov-file#register-on-cloudera-partner-portal[Register on Cloudera Partner Portal] +
+(3). https://github.com/cloudera-labs/cdp-validation#request-for-development-license[Request for developer License] +
+
 image:images/misc/thankyou1.PNG[] +
 
 
