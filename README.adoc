@@ -1246,10 +1246,12 @@ image:images/step7/55.png[] +
 image:images/step7/56.png[] +
 
 
+image:images/misc/thankyou1.PNG[] +
 
-== Partner Handbook
-https://github.com/mmehra12/Impact24[Partner Handbook]. +
 
 //== Additional Labs/Videos
 //1. https://github.com/DashDipti/partner-summit-2023[End-to-End Workshop (GitHub)] - This GitHub is a great way to familarize yourself with different CDP Data services. +
 //2. https://www.youtube.com/watch?v=GcNeCGFdmDw[End-to-End Workshop (Recording)] - Watch this video for the End-to-End workshop walkthrough.  +
+
+//== Partner Handbook
+//https://github.com/mmehra12/Impact24[Partner Handbook]. +
