@@ -25,7 +25,7 @@ and *please do not copy/paste strings with trailing characters while executing t
 
 Your instructor will guide you through the following. +
 1. https://tinyurl.com/2awfrsxa[HOL Credentials] - Participants must enter their `First Name`, `Last Name` & `Company` details and make a note of corresponding `Workshop Login Username`, `Workshop Login Password` and `CDP Workload User` to be used in this workshop. +
-2. http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login] - Using the details in the previous step make sure you are able to login here. +
+2. http://18.216.174.235/realms/master/protocol/saml/clients/cdp-sso[Workshop login] - Using the details in the previous step make sure you are able to login here. +
 
 == Preface
 
