@@ -4,7 +4,6 @@ image::images/dash/u-c.png[]
 
 image::images/dash/landing.png[]
 
-
 '''
 
 Version : 1.1 `20th March 2025` +
@@ -349,7 +348,7 @@ image:images/step3/3-15.png[] +
 
 == Step 4: Data Lakehouse - Hive & Iceberg Table Format +
 
-image:images/step4/41-0.PNG[] +
+image:images/step4/iceberg.png[] +
 
 In this step we will take steps to make use of Hive and Iceberg Table formats to provide us with best of both world scenarios in our Data Lakehouse. We will - +
 
@@ -361,8 +360,8 @@ In this step we will take steps to make use of Hive and Iceberg Table formats to
 
 === 4.1 Curated layer creation +
 - Make sure that you are using the HUE of `emerging-hive-1`. Else, click on `HUE` and go to the HUE browser. +
-//image:images/step4/41-1.png[] + 
-image:images/step4/41-1a.png[] + 
+image:images/step4/4-1.png[] + 
+image:images/step4/4-2.png[] + 
 
 
 - Create `planes` table in `Hive` table format and stored in `parquet` file format.
@@ -380,7 +379,7 @@ STORED AS PARQUET
 TBLPROPERTIES ('external.table.purge'='true');
 
 ----
-image:images/step4/41-2.png[] + 
+image:images/step4/4-3.png[] + 
 
 
 - Load `planes` table with data from the Raw layer table `planes_csv`.
@@ -393,15 +392,15 @@ INSERT INTO ${user_id}_airlines.planes
 
 ----
 
-image:images/step4/41-3.png[] + 
+image:images/step4/4-4.png[] + 
 
-- Switch to `<user_id>_airlines` database by clicking the `<` option to the left of `default` database. Click on `<user_id>_airlines` database. You should see the `planes` table. +
+//- Switch to `<user_id>_airlines` database by clicking the `<` option to the left of `default` database. Click on `<user_id>_airlines` database. You should see the `planes` table. +
 
-image:images/step4/41-4.png[] + 
+//image:images/step4/41-4.png[] + 
 
-image:images/step4/41-5.png[] +
+//image:images/step4/41-5.png[] +
 
-image:images/step4/41-6.png[] +
+//image:images/step4/41-6.png[] +
 
 - Run the SQL to see if the `planes` table was loaded correctly. Since, `parquet` uses highly efficient column-wise compression which occupies much disk space than CSV file and hence makes it faster to scan data in the `parquet` file. +
 
@@ -415,10 +414,10 @@ SELECT * FROM ${user_id}_airlines.planes LIMIT 100;
 
 Scroll down to see more values for the data.
 
-image:images/step4/41-7.png[] +
+image:images/step4/4-5.png[] +
 
 Scroll down to see more values. 
-image:images/step4/41-8.png[] +
+image:images/step4/4-6.png[] +
 
 - Execute the following command. +
 
@@ -429,7 +428,7 @@ image:images/step4/41-8.png[] +
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
-image:images/step4/41-9.png[] + 
+image:images/step4/4-7.png[] + 
 
 In the output look for the following. +
 //(a) Location: `s3a://emeaworkshop/my-data/warehouse/tablespace/external/hive/emerging01_airlines.db/planes` +
@@ -437,7 +436,8 @@ In the output look for the following. +
 (b) Table Type: `EXTERNAL_TABLE` +
 (c) SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe` +
 
-image:images/step4/41-10.png[] + 
+
+image:images/step4/4-8.png[] + 
 
 
 - Create `airlines` table in `Hive` table format and `orc` file format. This table should also be fully `ACID` capable. We will use `Create Table As Select (CTAS)`. Since, `airlines` table can change we need the ability to `Insert/Update/Delete` records. +
@@ -454,7 +454,7 @@ AS
 
 ----
 
-image:images/step4/41-11.png[] + 
+image:images/step4/4-9.png[] + 
 
 - Run the following query to check data in the `airlines_orc` table and it should return only 1 row for code 'UA'. +
 
@@ -465,7 +465,7 @@ image:images/step4/41-11.png[] +
 SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
 
 ----
-image:images/step4/41-12.png[] + 
+image:images/step4/4-10.png[] + 
 
 - We shall now add a new record to the `airlines_orc` table to see some Hive ACID capabilities. +
 
@@ -476,7 +476,7 @@ image:images/step4/41-12.png[] +
 INSERT INTO ${user_id}_airlines.airlines_orc VALUES("PAW","Paradise Air");
 
 ----
-image:images/step4/41-13.png[] + 
+image:images/step4/4-11.png[] + 
 
 - Now, let's create a new table called  `airlines_dim_updates` and insert 2 new records for `United Airlines` with code `UA` and  `Get Out of My Airway!` with code `XX`. +
 
@@ -490,9 +490,28 @@ INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("UA","Adrenaline Air
 INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("XX","Get Out of My Airway!");
 
 ----
+image:images/step4/4-12.png[] +
 
 - At this point the 2 tables contain data for the specific airlines with code `UA, XX & PAW` as follows. +
-image:images/step4/41-13a.png[] + 
+
+
+[source, sql]
+----
+
+select * from ${user_id}_airlines.airlines_dim_updates where code in ('UA','PAW','XX');
+
+----
+image:images/step4/4-13.png[] +
+
+[source, sql]
+----
+
+select * from ${user_id}_airlines.airlines_dim_updates where code in ('UA','PAW','XX');
+
+----
+
+image:images/step4/4-14.png[] +
+
 
 - Let's update an existing record to change the description of `United Airlines` to `Adrenaline Airlines` to see more of the `ACID` capabilities provided by Hive ACID. Run the following SQL. +
 
@@ -510,9 +529,10 @@ SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
 
 
 ----
+image:images/step4/4-15.png[] +
 
 The final `SELECT` statement should return the following result - codes `XX` and `PAW` were inserted rows, and code `UA` which had its description value changed from `United Air Lines Inc.` to `Adrenaline Airlines`.
-image:images/step4/41-14.png[] + 
+image:images/step4/4-16.png[] +
 
 
 === 4.2 Migrate Hive to Iceberg Table +
@@ -526,7 +546,7 @@ Note that the `planes` table that we created earlier has `SerDe Library: org.apa
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
-image:images/step4/421-0.png[] + 
+image:images/step4/4-17.png[] +
 
 ==== 4.2.1 (Option 1): Utilize the table Migration feature +
 - Run the following SQL and note what happens next. +
@@ -541,7 +561,7 @@ SET TBLPROPERTIES ('storage_handler'='org.apache.iceberg.mr.hive.HiveIcebergStor
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
-image:images/step4/421-1.png[] + 
+image:images/step4/4-18.png[] +
 
 The following happened. +
 *(a).* This migration to Iceberg happened in-place & there was no re-writing of data that occurred as part of this process.  It retained the File Format of `parquet` for the Iceberg table as well.  There was a Metadata file that was created, which you can see when you run the `DESCRIBE FORMATTED`. +
@@ -557,7 +577,8 @@ The following happened. +
 `storage_handler`: `org.apache.iceberg.mr.hive.HiveIcebergStorageHandler`. +
 `SerDe Library`: `org.apache.iceberg.mr.hive.HiveIcebergSerDe`. +
 
-image:images/step4/421-2.png[] +  
+image:images/step4/4-19.png[] +
+image:images/step4/4-20.png[] +
 
 
 ==== 4.2.2 (Option 2): Use Create Table as Select (CTAS) +
@@ -577,9 +598,9 @@ DESCRIBE FORMATTED ${user_id}_airlines.airports;
 
 Look for:  `Table Type`, `Location` (location of where table data is stored), `SerDe Library`, and in Table Parameters look for properties `storage_handler`, `metadata_location`, and `table_type`.
 
-image:images/step4/422-3.png[] +  
-
-image:images/step4/422-4.png[] +  
+image:images/step4/4-21.png[] +
+image:images/step4/4-22.png[] +
+image:images/step4/4-23.png[] +
 
 
 === 4.3 Create Iceberg Table (Partitioned, Parquet File Format) +
@@ -608,14 +629,11 @@ tblproperties ('format-version'='2');
 SHOW CREATE TABLE ${user_id}_airlines.flights;
 
 ----
-image:images/step4/43-1.png[] + 
+image:images/step4/4-24.png[] +
 
 The `SHOW CREATE TABLE` command is the unformatted version of `DESCRIBE FORMATTED` command. Pay attention to the `PARTITIONED BY SPEC`, where we have partitioned the `flights` table using the `year` column. +
 
-image:images/step4/43-2.png[] +  
-
-image:images/step4/43-3.png[] +  
-
+image:images/step4/4-25.png[] +
 
 - We will insert data into this table and it will write data together within the same partition (i.e. all 2006 data is written to the same location, all 2005 data is written to the same location, etc.). `This command will take some time to run`. +
 
@@ -629,7 +647,7 @@ WHERE year <= 2006;
 
 
 ----
-image:images/step4/43-4.png[] + 
+image:images/step4/4-26.png[] + 
 
 
 
@@ -646,11 +664,11 @@ ORDER BY year desc;
 
 ----
 
-image:images/step4/43-5.png[] + 
+image:images/step4/4-27.png[] + 
 
 - Now, make sure that the following *5 tables* are created up until this point as shown in the screenshot below. +
 
-image:images/step4/43-6.png[] + 
+image:images/step4/4-28.png[] + 
 
 == Recap
 
@@ -669,15 +687,15 @@ image:images/step4/updatedERD.png[] +
 As a final step here, let's run the same analytic query we ran against the Raw layer now in our Data Lakehouse DW, to see what happens with performance. 
 From the cloudera console click on -  `emerging-impala-1`. +
 
-//image:images/step4/recap-1.png[] + 
-image:images/step4/recap-1a.png[] + 
+image:images/step4/4-29.png[] +
+//image:images/step4/recap-1a.png[] + 
 
-- Make sure that 'Unified Analytics' is *NOT* selected.+
-image:images/step4/recap-2.png[] + 
+//- Make sure that 'Unified Analytics' is *NOT* selected.+
+//image:images/step4/recap-2.png[] + 
 
-- Instead click on the `Editor` option in the left top corner and select `Impala` editor. +
-image:images/step4/recap-3.png[] +
-image:images/step4/recap-4.png[] +
+//- Instead click on the `Editor` option in the left top corner and select `Impala` editor. +
+//image:images/step4/recap-3.png[] +
+//image:images/step4/recap-4.png[] +
 
 - Now run the following query again.
 
@@ -718,9 +736,9 @@ WHERE planes.tailnum IN
 
 ----
 
-image:images/step4/recap-5.png[] +
+image:images/step4/4-30.png[] +
 The Data Lakehouse DW query performs significantly better than the same query running against the CSV data. + 
-*`Note: Please note that depending upon how the warehouse is comfigured (Auto suspend being set or unset), the query may take more time as the pods take time to start up`* +
+*`Note: Please note that depending upon how the warehouse is configured (Auto suspend being set or unset), the query may take more time as the pods take time to start up`* +
 
 
 == Step 5: Performance Optimizations & Table maintenance Using Impala VW +
