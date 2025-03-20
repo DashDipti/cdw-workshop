@@ -348,7 +348,7 @@ image:images/step3/3-15.png[] +
 
 == Step 4: Data Lakehouse - Hive & Iceberg Table Format +
 
-image:images/step4/iceberg.png[] +
+image:images/step4/4-0.png[] +
 
 In this step we will take steps to make use of Hive and Iceberg Table formats to provide us with best of both world scenarios in our Data Lakehouse. We will - +
 
@@ -506,12 +506,13 @@ image:images/step4/4-13.png[] +
 [source, sql]
 ----
 
-select * from ${user_id}_airlines.airlines_dim_updates where code in ('UA','PAW','XX');
+select * from ${user_id}_airlines.airlines_orc where code in ('UA','PAW','XX');
 
 ----
 
 image:images/step4/4-14.png[] +
-
+- Just another representation of the 2 tables that contain data for the specific airlines with code `UA, XX & PAW`. +
+image:images/step4/4-14a.png[] +
 
 - Let's update an existing record to change the description of `United Airlines` to `Adrenaline Airlines` to see more of the `ACID` capabilities provided by Hive ACID. Run the following SQL. +
 
