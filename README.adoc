@@ -284,10 +284,10 @@ select count(*) from ${user_id}_airlines_raw.flights_csv;
 ----
 
 image:images/step3/3-14.png[] +
+Notice that `the flights_csv table has over 86 million records`. +
 
 //Notice that while the query is executing, continue to the next step.  Once the query returns you will see the following in the Results - `the flights_csv table has over 86 million records`.
-Notice that `the flights_csv table has over 86 million records`.
-image:images/step3/33-3.png[] +
+//image:images/step3/33-3.png[] +
 
 //- Go back to the CDP Console and observe the Impala Virtual Warehouse `emerging-impala-1`. +
 //image:images/step3/33-4.png[] +
@@ -296,7 +296,7 @@ image:images/step3/33-3.png[] +
 //`Note: Since this workshop has many users logged in and the virtual impala warehouse is always ON at this point, the actual behavior might differ from what you see in the screenshot. The idea is to convey that the virtual warehouse scales up and scales down.` +
 
 
-- Run the following query to start analyzing the data - “Find the needle in the haystack” query.
+- Run the following query to start analyzing the data - `Find the needle in the haystack` query.
 
 [source, sql]
 ----
@@ -334,7 +334,7 @@ WHERE planes_csv.tailnum IN
 
 ----
 
-image:images/step3/3-15.png[] + +
+image:images/step3/3-15.png[] +
 
 //- Go back to the CDP console to observe the behavior of scaling up/down of virtual warehouses. +
 //image:images/step3/33-6.png[] +
