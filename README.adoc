@@ -186,17 +186,17 @@ image:images/step3/3-1.png[] +
 image:images/step3/3-2.png[] +
 
 If you see the message `! Having trouble connecting to server` just click the cross icon next to it and proceed. +
-image:images/step3/3-2.png[] +
+image:images/step3/3-3.png[] +
 
-=== 3.1 Open Hue for CDW Virtual Warehouse - `1-10hive` +
+=== 3.1 Open Hue for CDW Virtual Warehouse - `emerging-hive-1` +
 
-- Click on the image:images/step3/hue.png[] button on the right upper corner of `1-10hive` as shown in the screenshot below. +
+- Click on the image:images/step3/hue.png[] button on the right upper corner of `emerging-hive-1` as shown in the screenshot below. +
 image:images/step3/3-4.png[] +
 
 
 
 - Create new databases.
-Enter the following query and then make sure that you enter the user assigned to you. In the screenshot the user is `wuser00`.
+Enter the following query and then make sure that you enter the user assigned to you. In the screenshot the user is `emerging01`.
 
 [,sql]
 ----
@@ -218,7 +218,7 @@ SHOW DATABASES;
 
 image:images/step3/31-3.png[] + 
 
-=== 3.2 Run the following DDL in HUE for the CDW Virtual Warehouse - `1-10hive` +
+=== 3.2 Run the following DDL in HUE for the CDW Virtual Warehouse - `emerging-hive-1` +
 This will create External Tables on CSV Data Files that have been uploaded previously by your instructor in AWS S3. This provides a fast way to allow SQL layer on top of data in cloud storage.
 
 - Copy paste the following into HUE. +
@@ -263,9 +263,9 @@ Make sure that 4 tables (`airlines_csv`, `airports_csv`, `flights_csv`, `planes_
 
 image:images/step3/32-2.png[] 
 
-=== 3.3 Run the following DDL in HUE for the CDW Virtual Warehouse - `1-10impala`. +
+=== 3.3 Run the following DDL in HUE for the CDW Virtual Warehouse - `emerging-impala-1`. +
 
-- Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for *`1-10impala`* as shown in the screenshot below.
+- Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for *`emerging-impala-1`* as shown in the screenshot below.
 //image:images/step3/33-1.png[] +
 image:images/step3/33-10a.png[] +
 
@@ -285,7 +285,7 @@ image:images/step3/33-2.png[] +
 Notice that while the query is executing, continue to the next step.  Once the query returns you will see the following in the Results - `the flights_csv table has over 86 million records`.
 image:images/step3/33-3.png[] +
 
-- Go back to the CDP Console and observe the Impala Virtual Warehouse `1-10impala`. +
+- Go back to the CDP Console and observe the Impala Virtual Warehouse `emerging-impala-1`. +
 image:images/step3/33-4.png[] +
 
 Here, you'll notice that the warehouse is now at a state where it is not executing any queries and hence, the node count would be low and as the users will run their queries it will scale up or down depending upon the need of resources or lack of it when queries are not run. +
@@ -353,7 +353,7 @@ In this step we will take steps to make use of Hive and Iceberg Table formats to
 
 
 === 4.1 Curated layer creation +
-- Make sure that you are using the HUE of `1-10hive`. Else, click on `HUE` and go to the HUE browser. +
+- Make sure that you are using the HUE of `emerging-hive-1`. Else, click on `HUE` and go to the HUE browser. +
 //image:images/step4/41-1.png[] + 
 image:images/step4/41-1a.png[] + 
 
@@ -425,8 +425,8 @@ DESCRIBE FORMATTED ${user_id}_airlines.planes;
 image:images/step4/41-9.png[] + 
 
 In the output look for the following. +
-//(a) Location: `s3a://emeaworkshop/my-data/warehouse/tablespace/external/hive/wuser00_airlines.db/planes` +
-(a) Location: `s3a://.../warehouse/tablespace/external/hive/wuser00_airlines.db/planes` +
+//(a) Location: `s3a://emeaworkshop/my-data/warehouse/tablespace/external/hive/emerging01_airlines.db/planes` +
+(a) Location: `s3a://.../warehouse/tablespace/external/hive/emerging01_airlines.db/planes` +
 (b) Table Type: `EXTERNAL_TABLE` +
 (c) SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe` +
 
@@ -660,7 +660,7 @@ image:images/step4/updatedERD.png[] +
 ** *(2.4).* Created the flights table in Iceberg Table Format and partitioned the table by the year column. Inserted data into the table up to year 2006.
     
 As a final step here, let's run the same analytic query we ran against the Raw layer now in our Data Lakehouse DW, to see what happens with performance. 
-From the cloudera console click on -  `1-10impala`. +
+From the cloudera console click on -  `emerging-impala-1`. +
 
 //image:images/step4/recap-1.png[] + 
 image:images/step4/recap-1a.png[] + 
@@ -720,7 +720,7 @@ The Data Lakehouse DW query performs significantly better than the same query ru
 In this Step we will look at some of the performance optimization and table maintenance tasks that can be performed to ensure the best possible TCO, while ensuring the best performance. +
 
 === 5.1 Iceberg in-place Partition Evolution [Performance Optimization] +
-- Open HUE for the CDW `Hive` Virtual Warehouse - `1-10hive`
+- Open HUE for the CDW `Hive` Virtual Warehouse - `emerging-hive-1`
 //image:images/step5/51-1.png[] +
 image:images/step5/51-1a.png[] +
 
@@ -757,7 +757,7 @@ WHERE year = 2007;
 ----
 image:images/step5/51-4.png[] +
 
-- Open HUE for the CDW `Impala` Virtual Warehouse - `1-10impala`. +
+- Open HUE for the CDW `Impala` Virtual Warehouse - `emerging-impala-1`. +
 //image:images/step5/51-5impala.png[] +
 image:images/step5/51-5impalaa.png[] +
 
@@ -904,7 +904,7 @@ image:images/step5/53-4.png[] +
 ----
 
 === 5.6 Materialized Views [Performance Optimization] +
-- This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `1-10hive`. Click on the `Hue` button on the right upper corner of `1-10hive` as shown in the screenshot below. +
+- This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `emerging-hive-1`. Click on the `Hue` button on the right upper corner of `emerging-hive-1` as shown in the screenshot below. +
 
 //image:images/step5/56-1hive.png[] +
 image:images/step5/56-1hivea.png[] +
@@ -1055,8 +1055,8 @@ image:images/step6/6-12.png[] +
 image:images/step6/6-13.png[] + 
 
 - Fill out the form as follows. +
-`Policy Name`: <user_id>_RowLevelFilter (Ex: wuser00_RowLevelFilter) +
-`Hive Database`: <user_id>_airlines (Ex: wuser00_airlines) +
+`Policy Name`: <user_id>_RowLevelFilter (Ex: emerging01_RowLevelFilter) +
+`Hive Database`: <user_id>_airlines (Ex: emerging01_airlines) +
 `Hive Table`: flights (start typing, once you see this table in the list, select it) +
 `Row Filtering Conditions`: +
     (a) `Select User`: <user_id> +
@@ -1070,7 +1070,7 @@ image:images/step6/6-14.png[] +
 - The new policy is added to the `Row Level Filter` policies (as below). +
 image:images/step6/6-15.png[] + 
 
-- Test the policy is working - Open `HUE` for the CDW Impala Virtual Warehouse - `1-10impala` and execute the following query. +
+- Test the policy is working - Open `HUE` for the CDW Impala Virtual Warehouse - `emerging-impala-1` and execute the following query. +
 
 [source, sql]
 ----
@@ -1105,7 +1105,7 @@ image:images/step7/3.png[] +
 
 - Create a connection - click on the NEW CONNECTION button on the left menu. Enter the details as shown in the screenshot and click on `TEST`.  +
     Connection type: Select `CDW Impala`. +
-    Connection name: `<user_id>-airlines-lakehouse` (Ex-`wuser00-airlines-lakehouse`). +
+    Connection name: `<user_id>-airlines-lakehouse` (Ex-`emerging01-airlines-lakehouse`). +
     CDW Warehouse: `Make Sure you select the warehouse that is associated with your <user_id>`. +
     Hostname or IP address: Gets automatically selected. +
     Port: `Gets automatically filled up`. +
@@ -1145,7 +1145,7 @@ image:images/step7/14.png[] +
 - Click on the `+` icon next to the `flights` table option. +
 image:images/step7/15.png[] +
 
-- Select the appropriate `Database Name` based on your user id (Ex: `wuser00_airlines`) and table name `planes`.  
+- Select the appropriate `Database Name` based on your user id (Ex: `emerging01_airlines`) and table name `planes`.  
 image:images/step7/16.png[] +
 
 - Then click on the image:images/step7/joinicon.png[] `join` icon and see that there are 2 join options `tailnum` & `year`. Click on `EDIT JOIN` and then remove the `year` join by clicking the little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`. +
@@ -1156,7 +1156,7 @@ image:images/step7/19-2.png[] +
 image:images/step7/20.png[] +
 
 
-- Now we will create a join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airlines`. +
+- Now we will create a join between another table. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `emerging01_airlines`) and table name `airlines`. +
 image:images/step7/22.png[] +
 image:images/step7/23.png[] +
 
@@ -1164,13 +1164,13 @@ image:images/step7/23.png[] +
 image:images/step7/24.png[] +
 image:images/step7/25.png[] +
 
-- Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airports`. +
+- Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `emerging01_airlines`) and table name `airports`. +
 image:images/step7/26.png[] +
 
 - Make sure you select the column `origin` from `flights` and column `iata` from the `airports` table. Click `APPLY`. +
 image:images/step7/27.png[] +
 
-- Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `wuser00_airlines`) and table name `airports`. +
+- Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `emerging01_airlines`) and table name `airports`. +
 image:images/step7/28.png[] +
 
 - Make sure you select the column `dest` from `flights` and column `iata` from the `airports` table. Click `APPLY`. Then click on `SAVE`. +
