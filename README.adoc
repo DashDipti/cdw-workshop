@@ -124,7 +124,7 @@ Please use the login URL: http://18.194.72.243/realms/master/protocol/saml/clien
 Enter the `Workshop Login Username` and `Workshop Login Password` shared by your instructor. +
 
 (*Note*: Note that your username would be something like `emerging01`. +
-image:images/step1b/1b-1.PNG[] +
+image:images/step1b/1b-1.png[] +
 
 //Update the password with your own password.
 //image:images/step1b/1-1b.PNG[] +
