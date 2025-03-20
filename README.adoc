@@ -1,6 +1,7 @@
+image::images/dash/u-c.png[]
+
 = Cloudera Data Warehouse - Workshop Student Guide
 
-image::images/dash/u-c.png[]
 image::images/dash/landing.png[]
 
 
