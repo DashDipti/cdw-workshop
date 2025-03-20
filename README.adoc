@@ -118,9 +118,12 @@ In the labs when you see: +
 
 === Step 1(b): Define CDP Workload Password
 
-*`Suggestion:`* `Ideal way to work through this workshop will be to have 2 Incognito mode browsers opened. One to be used in a way that you can follow instructions using GitHub and the other one to be used for the workshop related screens.` +
+*`Suggestion:`* `Ideal way to work through this workshop will be to have 2 browsers opened. One to be used in a way that you can follow instructions using GitHub and the other one to be used for the workshop related screens.` +
 
 Please use the login URL: http://18.194.72.243/realms/master/protocol/saml/clients/cdp-sso[Workshop login]. +
+If you have opened in Incognito mode then you might see the following screen. Just click on `Continue to site` and proceed. +
+image:images/step1b/1-1a-Incog.png[] +
+
 Enter the `Workshop Login Username` and `Workshop Login Password` shared by your instructor. +
 
 (*Note*: Note that your username would be something like `emerging01`.) +
@@ -135,7 +138,7 @@ image:images/step1b/1b-3.png[] +
 You will need to define your `CDP Workload Password` that will be used to access non-SSO interfaces. You may read more about it https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html[here].
 Please keep it with you. If you have forgotten it, you will be able to repeat this process and define another one.
 
-. Click on your `user name (Ex: wuser00@workshop.com`) at the lower left corner.
+. Click on your `user name (Ex: User-emerging01 emerging01`) at the upper right top corner.
 . Click on the `Profile` option.
 
 image:images/step1b/1b-4.png[] +
