@@ -193,11 +193,11 @@ image:images/step3/3-3.png[] +
 - Click on the image:images/step3/hue.png[] button on the right upper corner of `emerging-hive-1` as shown in the screenshot below. +
 image:images/step3/3-4.png[] +
 
-The following page should open. +
+- The following page should open with Hive query editor. +
 image:images/step3/3-5.png[]  +
 
 - Create new databases. +
-Enter the following query and then make sure that you enter the user assigned to you. In the screenshot the user is `emerging01`.
+Enter the following query and then make sure that you enter the user assigned to you. Click on Run icon. In the screenshot the query is run using the user `emerging01`.
 
 [,sql]
 ----
@@ -272,7 +272,7 @@ image:images/step3/3-11.png[] +
 - Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for *`emerging-impala-1`* as shown in the screenshot below. +
 image:images/step3/3-12.png[] +
 
-- Make sure that you click to get `Impala` instead of `default` in the HUE browser as shown below and then click refresh button image:images/step3/33-2refresh.png[]. +
+- Make sure that you click to get `Impala` query editor in the HUE browser as shown below. +
 image:images/step3/3-13.png[] +
 
 Now, copy paste the following in the HUE browser and click on Run as shown below.
@@ -285,14 +285,15 @@ select count(*) from ${user_id}_airlines_raw.flights_csv;
 
 image:images/step3/3-14.png[] +
 
-Notice that while the query is executing, continue to the next step.  Once the query returns you will see the following in the Results - `the flights_csv table has over 86 million records`.
+//Notice that while the query is executing, continue to the next step.  Once the query returns you will see the following in the Results - `the flights_csv table has over 86 million records`.
+Notice that `the flights_csv table has over 86 million records`.
 image:images/step3/33-3.png[] +
 
-- Go back to the CDP Console and observe the Impala Virtual Warehouse `emerging-impala-1`. +
-image:images/step3/33-4.png[] +
+//- Go back to the CDP Console and observe the Impala Virtual Warehouse `emerging-impala-1`. +
+//image:images/step3/33-4.png[] +
 
-Here, you'll notice that the warehouse is now at a state where it is not executing any queries and hence, the node count would be low and as the users will run their queries it will scale up or down depending upon the need of resources or lack of it when queries are not run. +
-`Note: Since this workshop has many users logged in and the virtual impala warehouse is always ON at this point, the actual behavior might differ from what you see in the screenshot. The idea is to convey that the virtual warehouse scales up and scales down.` +
+//Here, you'll notice that the warehouse is now at a state where it is not executing any queries and hence, the node count would be low and as the users will run their queries it will scale up or down depending upon the need of resources or lack of it when queries are not run. +
+//`Note: Since this workshop has many users logged in and the virtual impala warehouse is always ON at this point, the actual behavior might differ from what you see in the screenshot. The idea is to convey that the virtual warehouse scales up and scales down.` +
 
 
 - Run the following query to start analyzing the data - “Find the needle in the haystack” query.
@@ -335,11 +336,11 @@ WHERE planes_csv.tailnum IN
 
 image:images/step3/3-15.png[] + +
 
-- Go back to the CDP console to observe the behavior of scaling up/down of virtual warehouses. +
-image:images/step3/33-6.png[] +
+//- Go back to the CDP console to observe the behavior of scaling up/down of virtual warehouses. +
+//image:images/step3/33-6.png[] +
 
-- Check in the Hue browser and the query shows the result as follows. Observe the amount of time taken to run this query. +
-image:images/step3/33-7.png[] + 
+//- Check in the Hue browser and the query shows the result as follows. Observe the amount of time taken to run this query. +
+//image:images/step3/33-7.png[] + 
 
 
 
