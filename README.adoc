@@ -1,8 +1,6 @@
 = Cloudera Data Warehouse - Workshop Student Guide
-<iframe src="https://free.timeanddate.com/countdown/i9tbqnog/n776/cf12/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pcfff/tcfff/fs100/szw320/szh135/tatTime%20left%20to%20Event%20in/tac000/tptPage%20will%20be%20updated%20by.../tpc000/mac000/mpc000/iso2025-03-27T00:00:00" allowtransparency="true" frameborder="0" width="180" height="69"></iframe>
 
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/CsCons" frameborder="0"></iframe>
-
+image::images/dash/u-c.png[]
 image::images/dash/landing.png[]
 
 
