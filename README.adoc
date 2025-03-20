@@ -25,7 +25,7 @@ and *please do not copy/paste strings with trailing characters while executing t
 
 Your instructor will guide you through the following. +
 1. https://tinyurl.com/2awfrsxa[HOL Credentials] - Participants must enter their `First Name`, `Last Name` & `Company` details and make a note of corresponding `Workshop Login Username`, `Workshop Login Password` and `CDP Workload User` to be used in this workshop. +
-2. http://18.216.174.235/realms/master/protocol/saml/clients/cdp-sso[Workshop login] - Using the details in the previous step make sure you are able to login here. +
+2. http://18.194.72.243/realms/master/protocol/saml/clients/cdp-sso[Workshop login] - Using the details in the previous step make sure you are able to login here. +
 
 == Preface
 
@@ -120,11 +120,11 @@ In the labs when you see: +
 
 *`Suggestion:`* `Ideal way to work through this workshop will be to have 2 Incognito mode browsers opened. One to be used in a way that you can follow instructions using GitHub and the other one to be used for the workshop related screens.` +
 
-Please use the login URL: http://3.109.161.118/auth/realms/workshop/protocol/saml/clients/samlclient[Workshop login]. +
+Please use the login URL: http://18.194.72.243/realms/master/protocol/saml/clients/cdp-sso[Workshop login]. +
 Enter the `Workshop Login Username` and `Workshop Login Password` shared by your instructor. +
 
-(*Note*: Note that your username would be something like `wuser00@workshop.com` and not just `wuser00`). +
-image:images/step1b/1-1a.PNG[] +
+(*Note*: Note that your username would be something like `emerging01`. +
+image:images/step1b/1b-1.PNG[] +
 
 //Update the password with your own password.
 //image:images/step1b/1-1b.PNG[] +
