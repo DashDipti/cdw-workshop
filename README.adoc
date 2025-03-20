@@ -748,7 +748,7 @@ In this Step we will look at some of the performance optimization and table main
 === 5.1 Iceberg in-place Partition Evolution [Performance Optimization] +
 - Open HUE for the CDW `Hive` Virtual Warehouse - `emerging-hive-1`
 //image:images/step5/51-1.png[] +
-image:images/step5/51-1a.png[] +
+image:images/step5/5-1.png[] +
 
 - One of the key features for Iceberg tables is the ability to evolve the partition that is being used *over time*. +
 
@@ -765,10 +765,10 @@ SHOW CREATE TABLE ${user_id}_airlines.flights;
 ----
 
 
-image:images/step5/51-2.png[] +
+image:images/step5/5-2.png[] +
 
 - Check for the following where now the partition is by `year, month`. +
-image:images/step5/51-3.png[] +
+image:images/step5/5-3.png[] +
 
 - Load new data into the flights table using the *NEW* partition definition. `This query will take a while to run`. +
 
@@ -781,16 +781,16 @@ WHERE year = 2007;
 
 
 ----
-image:images/step5/51-4.png[] +
+image:images/step5/5-4.png[] +
 
 - Open HUE for the CDW `Impala` Virtual Warehouse - `emerging-impala-1`. +
 //image:images/step5/51-5impala.png[] +
-image:images/step5/51-5impalaa.png[] +
+image:images/step5/5-5.png[] +
 
 - In the Hue editor look make sure `Impala` is selected as the engine else follow the screenshot to change it to impala. +
-image:images/step5/impala-1.png[] +
-image:images/step5/impala-2.png[] +
-image:images/step5/impala-3.png[] +
+image:images/step5/5-6.png[] +
+//image:images/step5/impala-2.png[] +
+//image:images/step5/impala-3.png[] +
 
 - Copy/paste the following in the HUE Editor, but *`DO NOT`* execute the query. +
 
@@ -808,9 +808,9 @@ ORDER BY year desc, month asc;
 ----
 
 - Run `Explain Plans` against some typical analytic queries we might run to see what happens with this new Partition. +
-image:images/step5/51-6.png[] +
+image:images/step5/5-7.png[] +
 
-image:images/step5/51-7.png[] +
+image:images/step5/5-8.png[] +
 
 
 
@@ -832,10 +832,10 @@ ORDER BY year desc, month asc;
 ----
 
 - Run `Explain Plans` against some typical analytic queries we might run to see what happens with this new Partition. +
-image:images/step5/51-8.png[] +
+image:images/step5/5-9.png[] +
 
 In the output notice the amount of data that needs to be scanned for this query, about 11 MB, is significantly less than that of the first, 138 MB.  This shows an important capability of Iceberg, Partition Pruning.  Meaning that much less data is scanned for this query and only the selected month of data needs to be processed.  This should result in much faster query execution times. +
-image:images/step5/51-9.png[] + 
+image:images/step5/5-10.png[] + 
 
 
 === 5.2 Iceberg Snapshots [Table Maintenance] +
@@ -850,7 +850,7 @@ WHERE year >= 2008;
 
 
 ----
-image:images/step5/52-1.png[] +
+image:images/step5/5-11.png[] +
 
 - To see snapshots, execute the following SQL.
 
@@ -862,14 +862,14 @@ DESCRIBE HISTORY ${user_id}_airlines.flights;
 
 ----
 
-image:images/step5/52-2.png[] +
+image:images/step5/5-12.png[] +
 
 In the output there should be *3 Snapshots*, described below.  Note that we have been reading/writing data from/to the Iceberg table from both Hive & Impala. It is an important aspect of Iceberg Tables that they support *`multi-function analytics`* - ie. many engines can work with Iceberg tables (`Cloudera Data Warehouse [Hive & Impala]`, `Cloudera Data Engineering [Spark]`, `Cloudera Machine Learning [Spark]`, `Cloudera DataFlow [NiFi]`, and `DataHub Clusters`).
 
 - Get the details of the `snapshots` and store it in a notepad. +
-image:images/step5/52-3.png[] +
+image:images/step5/5-13.png[] +
 
-image:images/step5/52-4.png[] +
+image:images/step5/5-14.png[] +
 
 === 5.3 Iceberg Time Travel [Table Maintenance] +
 - Copy/paste the following data into the Impala Editor, but *`DO NOT`* execute.  
@@ -894,18 +894,18 @@ ORDER BY year desc;
 
 
 ----
-image:images/step5/53-1.png[] +
+image:images/step5/5-15.png[] +
 
 
 - After copying you will see 2 parameters as below. +
-image:images/step5/53-2.png[] +
+image:images/step5/5-16.png[] +
 
 
-- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2023-04-04 06:51:14.360000000`. Then execute the highlighted query only (*1st query*).
-image:images/step5/53-3.png[] +
+- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2025-03-20 08:13:59.519000000`. Then execute the highlighted query only (*1st query*).
+image:images/step5/5-17.png[] +
 
-- From the notepad just copy the second value of the snapshot id. In our case the value was `6341506406760449831`. Paste it in the `snapshot_id` box. Then execute the highlighted query only (*2nd query*).
-image:images/step5/53-4.png[] +
+- From the notepad just copy the second value of the snapshot id. In our case the value was `3083108260821741161`. Paste it in the `snapshot_id` box. Then execute the highlighted query only (*2nd query*).
+image:images/step5/5-18.png[] +
 
 === 5.4 (Don't Run, FYI ONLY) - Iceberg Rollback [Table Maintenance]  +
 - Sometimes data can be loaded incorrectly, due to many common issues - missing fields, only part of the data was loaded, bad data, etc.  In situations like this data would need to be removed, corrected, and reloaded.  Iceberg can help with the Rollback command to remove the “unwanted” data.  This leverages Snapshot IDs to perform this action by using a simple ALTER TABLE command as follows.  We will *`NOT RUN`* this command in this lab. +
@@ -933,7 +933,7 @@ image:images/step5/53-4.png[] +
 - This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `emerging-hive-1`. Click on the `Hue` button on the right upper corner of `emerging-hive-1` as shown in the screenshot below. +
 
 //image:images/step5/56-1hive.png[] +
-image:images/step5/56-1hivea.png[] +
+image:images/step5/5-19.png[] +
 
 
 - Up until this point we had `airlines` table which was (Hive + orc). Now, we shall create the airlines table which is (Iceberg + orc). Copy/paste the following, make sure to highlight the entire block, and execute the following. +
@@ -959,30 +959,33 @@ group by airlines.code, flights.month;
 
 ----
 
-image:images/step5/56-2.png[] +
+image:images/step5/5-20.png[] +
 
 *Note*: Hive has built in performance improvements, such as a Query Cache that stores results of queries run so that similar queries don’t have to retrieve data, they can just get the results from the cache.  In this step we are turning that off using the *SET* statement, this will ensure when we look at the query plan, we will not retrieve the data from the cache. +
 *Note*: With this query you are combining an Iceberg Table Format (`flight` table) with a Hive Table Format (`airlines ORC` table) in the same query.
 
 - Let’s look at the Query Plan that was used to execute this query. On the left side click on `Jobs`, as shown in the screenshot below.  +
 
-image:images/step5/56-3.png[] +
+image:images/step5/5-21.png[] +
 
-- Then click on `Hive Queries`. This is where an Admin will go when he wants to investigate the queries.  In our case for this lab, we’d like to look at the query we just executed to see how it ran and the steps taken to execute the query.  Administrators would also be able to perform other monitoring and maintenance tasks for what is running (or has been run).  Monitoring and maintenance tasks could include cancel (kill) queries, see what is running, analyze whether queries that have been executed are optimized, etc.
+- Then click on `Hive Queries`. This is where an Admin will go when he wants to investigate the queries.  In our case for this lab, we’d like to look at the query we just executed to see how it ran and the steps taken to execute the query.  Administrators would also be able to perform other monitoring and maintenance tasks for what is running (or has been run).  Monitoring and maintenance tasks could include cancel (kill) queries, see what is running, analyze whether queries that have been executed are optimized, etc. +
+- In case you see some queries still coming up as shown below click the `Refresh` button on the top right corner. Then, you will see `green tick mark` next to the queries. +
 
-image:images/step5/56-4a.PNG[] +
+image:images/step5/5-22.png[] +
+image:images/step5/5-23.png[] +
+//image:images/step5/56-4a.PNG[] +
 
 - Click on the first query as shown below. Make sure that this is the latest query. You can look at the `Start Time` field here to know if it's the latest or not. +
-image:images/step5/56-5.png[] +
+image:images/step5/5-23.png[] +
 
 - This is where you can analyze queries at a deep level.  For this lab let’s take a look at the explain details, by clicking on `Visual Explain` tab. It might take a while to appear, please click on refresh. +
-image:images/step5/56-6.png[] +
+image:images/step5/5-24.png[] +
 
 - This plan shows that this query needs to read `flights` (86M rows) and `airlines` (1.5K rows) with hash join, group, and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
-image:images/step5/56-7.png[] +
+image:images/step5/5-25.png[] +
 
 - Click on the `Editor` option on the left side as shown. +
-image:images/step5/56-8.png[] +
+image:images/step5/5-26.png[] +
 
 - *Create Materialized View (MV)* - Queries will transparently be rewritten, when possible, to use the MV instead of the base tables.  Copy/paste the following, highlight the entire block, and execute. +
 
@@ -1004,7 +1007,7 @@ SHOW MATERIALIZED VIEWS in ${user_id}_airlines;
 
 ----
 
-image:images/step5/56-9.png[] +
+image:images/step5/5-27.png[] +
 
 - Run Dashboard Query again to see usage of the MV - Copy/paste the following, make sure to highlight the entire block, and execute the following.  This time an `order by` was added to make this query must do more work.
 
@@ -1024,11 +1027,12 @@ order by airlines.code;
 
 ----
 
-image:images/step5/56-10.png[] +
+image:images/step5/5-28.png[] +
 
 - Let’s look at the Query Plan that was used to execute this query. On the left menu select `Jobs`. On the Jobs Browser - select the `Queries` tab to the right of the `Job` browser header. Hover over & click on the Query just executed (should be the first row). Click on the `Visual Explain` tab. With query rewrite the materialized view is used and the new plan just reads the MV and sorts the data vs. reading `flights (86M rows)` and `airlines (1.5K rows)` with hash join, group and sorts.  This results in significant reduction in run time for this query. +
 
-image:images/step5/56-11.png[] +
+image:images/step5/5-29.png[] +
+image:images/step5/5-30.png[] +
 
 
 
