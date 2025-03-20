@@ -193,9 +193,10 @@ image:images/step3/3-3.png[] +
 - Click on the image:images/step3/hue.png[] button on the right upper corner of `emerging-hive-1` as shown in the screenshot below. +
 image:images/step3/3-4.png[] +
 
+The following page should open. +
+image:images/step3/3-5.png[]  +
 
-
-- Create new databases.
+- Create new databases. +
 Enter the following query and then make sure that you enter the user assigned to you. In the screenshot the user is `emerging01`.
 
 [,sql]
@@ -206,7 +207,7 @@ CREATE DATABASE ${user_id}_airlines_raw;
 CREATE DATABASE ${user_id}_airlines;
 ----
 
-image:images/step3/3-5.png[]  +
+
 image:images/step3/3-6.png[]  +
 image:images/step3/3-7.png[]  +
 
