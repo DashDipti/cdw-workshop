@@ -834,7 +834,7 @@ ORDER BY year desc, month asc;
 - Run `Explain Plans` against some typical analytic queries we might run to see what happens with this new Partition. +
 image:images/step5/5-9.png[] +
 
-In the output notice the amount of data that needs to be scanned for this query, about 11 MB, is significantly less than that of the first, 138 MB.  This shows an important capability of Iceberg, Partition Pruning.  Meaning that much less data is scanned for this query and only the selected month of data needs to be processed.  This should result in much faster query execution times. +
+In the output notice the amount of data that needs to be scanned for this query, about `11 MB`, is significantly less than that of the first, `138 MB`.  This shows an important capability of Iceberg, Partition Pruning.  Meaning that much less data is scanned for this query and only the selected month of data needs to be processed.  This should result in much faster query execution times. +
 image:images/step5/5-10.png[] + 
 
 
@@ -1042,47 +1042,39 @@ In this step you will experience the combination of what the Data Warehouse and 
 
 - Go to the Cloudera Data Platform Console and click on Data Catalog +
 image:images/step6/6-1.png[] + 
-
-
-- Change the radio button to select appropriate data lake. In this case it is `emeaworkshop-environ`. +
 image:images/step6/6-2.png[] + 
-//image:images/step6/6-3.png[] + 
 
-- Filter for Assets we created - below the Data Lakes on the left of the screen under Filters, select `TYPE` to be `Hive Table`.  The right side of the screen will update to reflect this selection. +
+
+- Click on the `Search` option and make sure the appropriate data lake is selected. In this case it is `emerging-aw-dl`. +
+image:images/step6/6-3.png[] + 
+
+- Filter for Assets we created - On the drop down filter search for `Iceberg` and select the radio button next to be `Iceberg Table`. +
 image:images/step6/6-4.png[] + 
 
-- Under `DATABASE`, click `Add new Value`.  In the box that appears start typing your `<user_id>` when you see the `<user_id>_airlines` database pop up select it.
+- Scroll down to locate the 'flights' table and click on it. +
 image:images/step6/6-5.png[] + 
-image:images/step6/6-6.png[] + 
-
-- You should now see the tables and materialized views that have been created in the `<user_id>_airlines` database.  Click on *`flights`* in the `Name` column to view more details on the table. +
-image:images/step6/6-7.png[] + 
 
 - This page shows information about the `flights` table such as the table owner, when the table was created, when it was last accessed, and other properties.  Below the summary details is the Overview tab which shows the lineage - hover over the flights click on the “i” icon that appears to see more detail on this table.
-image:images/step6/6-8.png[] + 
+image:images/step6/6-6.png[] + 
 
 The lineage shows: +
-*[blue box]* - `flights` data file residing in an s3 folder. +
-*[green box]* - is showing how the `flights_csv` Hive table is created, this table was created and points to the data location of `flights` (blue box) s3 folder. +
-*[orange box]*- is showing the `flights Iceberg` table and how it is created, it uses data from flights_csv Hive table (CTAS). +
-*[red box]* - `traffic_cancel_airlines` is a Materialized View that uses data from the flights Iceberg table. +
+`blue box` - `flights` data file residing in an s3 folder. +
+`green box`- is showing how the `flights_csv` Hive table is created, this table was created and points to the data location of `flights` `blue box` s3 folder. +
+`orange box`- is showing the `flights Iceberg` table and how it is created, it uses data from flights_csv Hive table (CTAS). +
+`red box` - `traffic_cancel_airlines` is a Materialized View that uses data from the flights Iceberg table. +
+`grey box` - This shouldn't appear in your flow. +
 
-- Click on the Policy tab to see what security policies have been applied on this table. Click on the arrow next `all - database, table` `Policy Name` to the number as shown in the screenshot+
+- Click on the Policy tab to see what security policies have been applied on this table. Click on the arrow next to any of the `Policy Id` number as shown in the screenshot. +
+image:images/step6/6-7.png[] + 
+
+- This screen shows the general Access related security policies based on the Policy Id that you clicked earlier. +
+image:images/step6/6-8.png[] + 
+
+- Click on `Row Level Filter`. Currently, there are no row level filters. You will create a new one here. +
 image:images/step6/6-9.png[] + 
 
-- If you are not seeing the above screenshot and see something like below then click on `Cloudera Data Catalog` on the top left corner. Then click on `Ranger` on top right corner. +
-image:images/step6/6-9a.png[] + 
-image:images/step6/6-9b.png[] + 
-
-- It will open `Ranger` which is for access management. Using Security (Ranger) - we can modify and create security policies for the various CDP Data Services. Click on `Hadoop SQL` link in the upper right corner - to view the security policies in place for CDW.  Here we will stick to the CDW related security features. +
+- Click on the `Add New Policy` button on top right corner. +
 image:images/step6/6-10.png[] + 
-
-- This screen shows the general Access related security policies - who has access to which Data Lakehouse databases, tables, views, etc.  Click on the `Row Level Filter` tab to see the policies to restrict access to portions of data. +
-image:images/step6/6-11.png[] + 
-image:images/step6/6-12.png[] + 
-
-- There are currently no policies defined.  Click on the `Add New Policy` button on top right corner. +
-image:images/step6/6-13.png[] + 
 
 - Fill out the form as follows. +
 `Policy Name`: <user_id>_RowLevelFilter (Ex: emerging01_RowLevelFilter) +
@@ -1092,15 +1084,17 @@ image:images/step6/6-13.png[] +
     (a) `Select User`: <user_id> +
     (b) `Access Types`: select +
     (c) `Row Level Filter`:  uniquecarrier="UA" +
+Click on `Save` to save the policy at the end. +
 
-Click  *`Add`* button to accept this Policy. +
-
-image:images/step6/6-14.png[] + 
+image:images/step6/6-11.png[] +
+image:images/step6/6-12.png[] +
+image:images/step6/6-13.png[] +
 
 - The new policy is added to the `Row Level Filter` policies (as below). +
-image:images/step6/6-15.png[] + 
+image:images/step6/6-14.png[] +
 
-- Test the policy is working - Open `HUE` for the CDW Impala Virtual Warehouse - `emerging-impala-1` and execute the following query. +
+- Now we shall test if the policy is working or not. Open `HUE` for the CDW Impala Virtual Warehouse - `emerging-impala-1` and execute the following query. +
+
 
 [source, sql]
 ----
@@ -1113,7 +1107,7 @@ GROUP BY uniquecarrier;
 
 - You should now only see 1 row returned for this query - after the policy was applied you will only be able to access uniquecarrier = *UA* and no other carriers.* It might take a while before it reflects.* +
 
-image:images/step6/6-16.png[] + 
+image:images/step6/6-15.png[] + 
 
 
 == Step 7: Cloudera Data Visualization +
