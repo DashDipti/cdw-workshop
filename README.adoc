@@ -51,7 +51,7 @@ The Hands on Labs will take you through how to use the Cloudera Data Warehouse s
 *(1) Fact Table:*  flights (86M rows) +
 *(2) Dimension Table:*  airlines (1.5k rows), airports (3.3k rows) and planes (5k rows) +
 
-image::images/misc/ER1.PNG[]
+image::images/misc/ER1.PNG[] +
 
 == High-Level Steps
 
@@ -185,6 +185,7 @@ The objective of this step is to create External tables on top of raw CSV files 
 
 To go to Cloudera Data Warehouse, click the following options as shown in the screenshots below. +
 image:images/step3/3-1.png[] +
+
 image:images/step3/3-2.png[] +
 
 If you see the message `! Having trouble connecting to server` just click the cross icon next to it and proceed. +
@@ -211,6 +212,7 @@ CREATE DATABASE ${user_id}_airlines;
 
 
 image:images/step3/3-6.png[]  +
+
 image:images/step3/3-7.png[]  +
 
 - There may be many databases, look for the 2 that start with your *`<user_id>`*. Run the following SQL to see the 2 databases that you created just now.
@@ -251,7 +253,8 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n'
 STORED AS TEXTFILE LOCATION 's3a://emerging-buk-6830e020/my-data/meta-cdw-workshop/airlines-raw/airlines-csv/airports' tblproperties("skip.header.line.count"="1");
 ----
 
-Notice the following screenshot corresponding to the above SQL.
+Notice the following screenshot corresponding to the above SQL. +
+
 image:images/step3/3-9.png[] + 
 
 - Check all the 4 tables were created.
@@ -267,14 +270,17 @@ SHOW TABLES;
 Make sure that 4 tables (`airlines_csv`, `airports_csv`, `flights_csv`, `planes_csv`) are created as shown below. 
 
 image:images/step3/3-10.png[] +
+
 image:images/step3/3-11.png[] +
 
 === 3.3 Run the following DDL in HUE for the CDW Virtual Warehouse - `emerging-impala-1`. +
 
 - Go to the page where now you will access HUE of an Impala virtual warehouse. Click on `HUE` for *`emerging-impala-1`* as shown in the screenshot below. +
+
 image:images/step3/3-12.png[] +
 
 - Make sure that you click to get `Impala` query editor in the HUE browser as shown below. +
+
 image:images/step3/3-13.png[] +
 
 Now, copy paste the following in the HUE browser and click on Run as shown below.
