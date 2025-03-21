@@ -11,10 +11,8 @@ Version : 2.0 `20th March 2025` +
 == Pre-requisites
 
 . Laptop with a supported OS (Windows 7 not supported) or MacBook. Please disable any VPNs. +
-. A modern browser - Google Chrome (IE, Firefox, Safari not supported). +
+. A modern browser - Google Chrome (The workshop hasn't been tested on IE, Firefox, Safari or any other browser. Please stick to Chrome to avoid any unseen issues). +
 . Wi-Fi Internet connection with minimal security firewall on laptop and network. +
-and *please do not copy/paste strings with trailing characters while executing the workshop*.
-
 
 == Access Details
 
@@ -47,6 +45,10 @@ The Hands on Labs will take you through how to use the Cloudera Data Warehouse s
 image::images/icons/er.png[]
 
 image::images/icons/table-size.png[]
+
+> The data is already uploaded in S3 buckets as shown below.
+
+image::images/icons/s3.png[]
 
 == High-Level Steps
 
