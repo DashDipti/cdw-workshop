@@ -36,8 +36,6 @@ To do this, we’re going to build a data warehouse & data lakehouse to create r
 
 We will dive into this scenario to show Cloudera Data Warehouse (CDW) is used to enable the Aircraft company to gain competitive advantage - and at the same time it highlights the performance and automation capabilities that help ensure performance is maintained while controlling costs. +
 
-The Hands on Labs will take you through how to use the Cloudera Data Warehouse service to quickly explore raw data, create curated versions of the data for simple reporting and dashboarding, and then scale up usage of the curated data by exposing it to more users. +
-
 > From a technical stand point you will discover the integration of Apache Iceberg to support all Open Data Lakehouse initiatives of Cloudera to benefit from better performance, reducedmaintenance, multifunctional analysis without having numerous data copies, and greater control over data. You will be exploring the Data Catalog lineage and also work on row level security. Towards the end you will be creating data model and visualization to derive insights. In this technical session, you will be guided step-by-step through a number of practical exercises, grouped into Labs. The workshop is based on a dataset of flights in the United States. +
 
 *ER - Diagram of the data* +
