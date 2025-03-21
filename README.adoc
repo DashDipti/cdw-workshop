@@ -1182,18 +1182,15 @@ image:images/step7/7-16.png[] +
 
 - Select the appropriate `Database Name` based on your user id (Ex: `emerging01_airlines`) and table name `planes`. +
 
-image:images/step7/16.png[] +
+image:images/step7/7-17.png[] +
 
 - In the `Edit Join` window delete the `[x]` against the `year` column to have only one join condition for `tailnum` and then click on `Apply`. +
-
-image:images/step7/7-17.png[] +
 
 image:images/step7/7-18.png[] +
 
 - Now click on image:images/step7/joinicon.png[] to make sure `Left Join` condition is selected. +
 
 image:images/step7/7-19.png[] +
-
 
 - Now we will create a join with another table `airlines`. Click on `+` icon next to `flights` as shown below. Select the appropriate `Database Name` based on your <user_id> (Ex: `emerging01_airlines`) and table name `airlines`. +
 
