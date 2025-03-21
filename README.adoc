@@ -49,7 +49,7 @@ The Hands on Labs will take you through how to use the Cloudera Data Warehouse s
 *(1) Fact Table:*  flights (86M rows) +
 *(2) Dimension Table:*  airlines (1.5k rows), airports (3.3k rows) and planes (5k rows) +
 
-image::images/icons/er.PNG[] +
+image::images/icons/er.png[]
 
 == High-Level Steps
 
@@ -1335,7 +1335,7 @@ image:images/step7/7-56.png[] +
 (2). https://github.com/cloudera-labs/cdp-validation?tab=readme-ov-file#register-on-cloudera-partner-portal[Register on Cloudera Partner Portal] +
 (3). https://github.com/cloudera-labs/cdp-validation#request-for-development-license[Request for developer License] +
 
-image:images/icons/thank-you.png] +
+image::images/icons/thank-you.png[]
 
 
 //== Additional Labs/Videos
