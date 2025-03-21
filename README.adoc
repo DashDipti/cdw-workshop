@@ -1335,12 +1335,4 @@ image:images/step7/7-56.png[] +
 (2). https://github.com/cloudera-labs/cdp-validation?tab=readme-ov-file#register-on-cloudera-partner-portal[Register on Cloudera Partner Portal] +
 (3). https://github.com/cloudera-labs/cdp-validation#request-for-development-license[Request for developer License] +
 
-image::images/icons/thank-you.png[]
-
-
-//== Additional Labs/Videos
-//1. https://github.com/DashDipti/partner-summit-2023[End-to-End Workshop (GitHub)] - This GitHub is a great way to familarize yourself with different CDP Data services. +
-//2. https://www.youtube.com/watch?v=GcNeCGFdmDw[End-to-End Workshop (Recording)] - Watch this video for the End-to-End workshop walkthrough.  +
-
-//== Partner Handbook
-//https://github.com/mmehra12/Impact24[Partner Handbook]. +
+image::images/icons/banner-orange.png[] +
