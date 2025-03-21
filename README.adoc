@@ -1091,6 +1091,7 @@ image:images/step6/6-12.png[] +
 image:images/step6/6-13.png[] +
 
 - The new policy is added to the `Row Level Filter` policies (as below). +
+
 image:images/step6/6-14.png[] +
 
 - Now we shall test if the policy is working or not. Open `HUE` for the CDW Impala Virtual Warehouse - `emerging-impala-1` and execute the following query. +
