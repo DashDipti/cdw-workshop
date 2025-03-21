@@ -292,19 +292,10 @@ select count(*) from ${user_id}_airlines_raw.flights_csv;
 ----
 
 image:images/step3/3-14.png[] +
+
 Notice that `the flights_csv table has over 86 million records`. +
 
-//Notice that while the query is executing, continue to the next step.  Once the query returns you will see the following in the Results - `the flights_csv table has over 86 million records`.
-//image:images/step3/33-3.png[] +
-
-//- Go back to the CDP Console and observe the Impala Virtual Warehouse `emerging-impala-1`. +
-//image:images/step3/33-4.png[] +
-
-//Here, you'll notice that the warehouse is now at a state where it is not executing any queries and hence, the node count would be low and as the users will run their queries it will scale up or down depending upon the need of resources or lack of it when queries are not run. +
-//`Note: Since this workshop has many users logged in and the virtual impala warehouse is always ON at this point, the actual behavior might differ from what you see in the screenshot. The idea is to convey that the virtual warehouse scales up and scales down.` +
-
-
-- Run the following query to start analyzing the data - `Find the needle in the haystack` query.
+- Run the following query to start analyzing the data - `Find the needle in the haystack` query. +
 
 [source, sql]
 ----
@@ -344,14 +335,6 @@ WHERE planes_csv.tailnum IN
 
 image:images/step3/3-15.png[] +
 
-//- Go back to the CDP console to observe the behavior of scaling up/down of virtual warehouses. +
-//image:images/step3/33-6.png[] +
-
-//- Check in the Hue browser and the query shows the result as follows. Observe the amount of time taken to run this query. +
-//image:images/step3/33-7.png[] + 
-
-
-
 == Step 4: Data Lakehouse - Hive & Iceberg Table Format +
 
 image:images/step4/4-0.png[] +
@@ -366,7 +349,9 @@ In this step we will take steps to make use of Hive and Iceberg Table formats to
 
 === 4.1 Curated layer creation +
 - Make sure that you are using the HUE of `emerging-hive-1`. Else, click on `HUE` and go to the HUE browser. +
+
 image:images/step4/4-1.png[] + 
+
 image:images/step4/4-2.png[] + 
 
 
@@ -385,8 +370,7 @@ STORED AS PARQUET
 TBLPROPERTIES ('external.table.purge'='true');
 
 ----
-image:images/step4/4-3.png[] + 
-
+image:images/step4/4-3.png[] +
 
 - Load `planes` table with data from the Raw layer table `planes_csv`.
 
@@ -398,18 +382,9 @@ INSERT INTO ${user_id}_airlines.planes
 
 ----
 
-image:images/step4/4-4.png[] + 
-
-//- Switch to `<user_id>_airlines` database by clicking the `<` option to the left of `default` database. Click on `<user_id>_airlines` database. You should see the `planes` table. +
-
-//image:images/step4/41-4.png[] + 
-
-//image:images/step4/41-5.png[] +
-
-//image:images/step4/41-6.png[] +
+image:images/step4/4-4.png[] +
 
 - Run the SQL to see if the `planes` table was loaded correctly. Since, `parquet` uses highly efficient column-wise compression which occupies much disk space than CSV file and hence makes it faster to scan data in the `parquet` file. +
-
 
 [source, sql]
 ----
@@ -418,15 +393,15 @@ SELECT * FROM ${user_id}_airlines.planes LIMIT 100;
 
 ----
 
-Scroll down to see more values for the data.
+Scroll down to see more values for the data. +
 
 image:images/step4/4-5.png[] +
 
-Scroll down to see more values. 
+Scroll down to see more values. +
+
 image:images/step4/4-6.png[] +
 
 - Execute the following command. +
-
 
 [source, sql]
 ----
@@ -434,6 +409,7 @@ image:images/step4/4-6.png[] +
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
+
 image:images/step4/4-7.png[] + 
 
 In the output look for the following. +
@@ -442,9 +418,7 @@ In the output look for the following. +
 (b) Table Type: `EXTERNAL_TABLE` +
 (c) SerDe Library: `org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe` +
 
-
 image:images/step4/4-8.png[] + 
-
 
 - Create `airlines` table in `Hive` table format and `orc` file format. This table should also be fully `ACID` capable. We will use `Create Table As Select (CTAS)`. Since, `airlines` table can change we need the ability to `Insert/Update/Delete` records. +
 
@@ -460,7 +434,7 @@ AS
 
 ----
 
-image:images/step4/4-9.png[] + 
+image:images/step4/4-9.png[] +
 
 - Run the following query to check data in the `airlines_orc` table and it should return only 1 row for code 'UA'. +
 
@@ -471,6 +445,7 @@ image:images/step4/4-9.png[] +
 SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
 
 ----
+
 image:images/step4/4-10.png[] + 
 
 - We shall now add a new record to the `airlines_orc` table to see some Hive ACID capabilities. +
@@ -496,6 +471,7 @@ INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("UA","Adrenaline Air
 INSERT INTO ${user_id}_airlines.airlines_dim_updates VALUES("XX","Get Out of My Airway!");
 
 ----
+
 image:images/step4/4-12.png[] +
 
 - At this point the 2 tables contain data for the specific airlines with code `UA, XX & PAW` as follows. +
@@ -507,6 +483,7 @@ image:images/step4/4-12.png[] +
 select * from ${user_id}_airlines.airlines_dim_updates where code in ('UA','PAW','XX');
 
 ----
+
 image:images/step4/4-13.png[] +
 
 [source, sql]
@@ -517,7 +494,9 @@ select * from ${user_id}_airlines.airlines_orc where code in ('UA','PAW','XX');
 ----
 
 image:images/step4/4-14.png[] +
+
 - Just another representation of the 2 tables that contain data for the specific airlines with code `UA, XX & PAW`. +
+
 image:images/step4/4-14a.png[] +
 
 - Let's update an existing record to change the description of `United Airlines` to `Adrenaline Airlines` to see more of the `ACID` capabilities provided by Hive ACID. Run the following SQL. +
@@ -536,9 +515,11 @@ SELECT * FROM ${user_id}_airlines.airlines_orc WHERE code IN ("UA","XX","PAW");
 
 
 ----
+
 image:images/step4/4-15.png[] +
 
-The final `SELECT` statement should return the following result - codes `XX` and `PAW` were inserted rows, and code `UA` which had its description value changed from `United Air Lines Inc.` to `Adrenaline Airlines`.
+The final `SELECT` statement should return the following result - codes `XX` and `PAW` were inserted rows, and code `UA` which had its description value changed from `United Air Lines Inc.` to `Adrenaline Airlines`. +
+
 image:images/step4/4-16.png[] +
 
 
@@ -553,6 +534,7 @@ Note that the `planes` table that we created earlier has `SerDe Library: org.apa
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
+
 image:images/step4/4-17.png[] +
 
 ==== 4.2.1 (Option 1): Utilize the table Migration feature +
@@ -568,6 +550,7 @@ SET TBLPROPERTIES ('storage_handler'='org.apache.iceberg.mr.hive.HiveIcebergStor
 DESCRIBE FORMATTED ${user_id}_airlines.planes;
 
 ----
+
 image:images/step4/4-18.png[] +
 
 The following happened. +
@@ -585,8 +568,8 @@ The following happened. +
 `SerDe Library`: `org.apache.iceberg.mr.hive.HiveIcebergSerDe`. +
 
 image:images/step4/4-19.png[] +
-image:images/step4/4-20.png[] +
 
+image:images/step4/4-20.png[] +
 
 ==== 4.2.2 (Option 2): Use Create Table as Select (CTAS) +
 - Run the following SQL to create `airports` table using CTAS. Notice the syntax to create an Iceberg Table within Hive is `Stored by Iceberg`. +
@@ -603,12 +586,13 @@ DESCRIBE FORMATTED ${user_id}_airlines.airports;
 
 ----
 
-Look for:  `Table Type`, `Location` (location of where table data is stored), `SerDe Library`, and in Table Parameters look for properties `storage_handler`, `metadata_location`, and `table_type`.
+Look for:  `Table Type`, `Location` (location of where table data is stored), `SerDe Library`, and in Table Parameters look for properties `storage_handler`, `metadata_location`, and `table_type`. +
 
 image:images/step4/4-21.png[] +
-image:images/step4/4-22.png[] +
-image:images/step4/4-23.png[] +
 
+image:images/step4/4-22.png[] +
+
+image:images/step4/4-23.png[] +
 
 === 4.3 Create Iceberg Table (Partitioned, Parquet File Format) +
 - In this step we will create a partitioned table, in `Iceberg` *Table Format*, stored in `Parquet` *File Format*.  Other than that we could specify other file formats that are supported for Iceberg which are: `ORC and Avro`. +
@@ -636,6 +620,7 @@ tblproperties ('format-version'='2');
 SHOW CREATE TABLE ${user_id}_airlines.flights;
 
 ----
+
 image:images/step4/4-24.png[] +
 
 The `SHOW CREATE TABLE` command is the unformatted version of `DESCRIBE FORMATTED` command. Pay attention to the `PARTITIONED BY SPEC`, where we have partitioned the `flights` table using the `year` column. +
@@ -654,9 +639,8 @@ WHERE year <= 2006;
 
 
 ----
+
 image:images/step4/4-26.png[] + 
-
-
 
 - Run the following SQL and notice that each of the years have a range of data within a few million flights (each record in the flights table counts as a flight). +
 
@@ -671,11 +655,11 @@ ORDER BY year desc;
 
 ----
 
-image:images/step4/4-27.png[] + 
+image:images/step4/4-27.png[] +
 
 - Now, make sure that the following *5 tables* are created up until this point as shown in the screenshot below. +
 
-image:images/step4/4-28.png[] + 
+image:images/step4/4-28.png[] +
 
 == Recap
 
@@ -695,14 +679,6 @@ As a final step here, let's run the same analytic query we ran against the Raw l
 From the cloudera console click on -  `emerging-impala-1`. +
 
 image:images/step4/4-29.png[] +
-//image:images/step4/recap-1a.png[] + 
-
-//- Make sure that 'Unified Analytics' is *NOT* selected.+
-//image:images/step4/recap-2.png[] + 
-
-//- Instead click on the `Editor` option in the left top corner and select `Impala` editor. +
-//image:images/step4/recap-3.png[] +
-//image:images/step4/recap-4.png[] +
 
 - Now run the following query again.
 
@@ -744,7 +720,9 @@ WHERE planes.tailnum IN
 ----
 
 image:images/step4/4-30.png[] +
+
 The Data Lakehouse DW query performs significantly better than the same query running against the CSV data. + 
+
 *`Note: Please note that depending upon how the warehouse is configured (Auto suspend being set or unset), the query may take more time as the pods take time to start up`* +
 
 
@@ -752,12 +730,11 @@ The Data Lakehouse DW query performs significantly better than the same query ru
 In this Step we will look at some of the performance optimization and table maintenance tasks that can be performed to ensure the best possible TCO, while ensuring the best performance. +
 
 === 5.1 Iceberg in-place Partition Evolution [Performance Optimization] +
-- Open HUE for the CDW `Hive` Virtual Warehouse - `emerging-hive-1`
-//image:images/step5/51-1.png[] +
+- Open HUE for the CDW `Hive` Virtual Warehouse - `emerging-hive-1` +
+
 image:images/step5/5-1.png[] +
 
 - One of the key features for Iceberg tables is the ability to evolve the partition that is being used *over time*. +
-
 
 [source, sql]
 ----
@@ -770,10 +747,10 @@ SHOW CREATE TABLE ${user_id}_airlines.flights;
 
 ----
 
-
 image:images/step5/5-2.png[] +
 
 - Check for the following where now the partition is by `year, month`. +
+
 image:images/step5/5-3.png[] +
 
 - Load new data into the flights table using the *NEW* partition definition. `This query will take a while to run`. +
@@ -787,19 +764,18 @@ WHERE year = 2007;
 
 
 ----
+
 image:images/step5/5-4.png[] +
 
 - Open HUE for the CDW `Impala` Virtual Warehouse - `emerging-impala-1`. +
-//image:images/step5/51-5impala.png[] +
+
 image:images/step5/5-5.png[] +
 
 - In the Hue editor look make sure `Impala` is selected as the engine else follow the screenshot to change it to impala. +
+
 image:images/step5/5-6.png[] +
-//image:images/step5/impala-2.png[] +
-//image:images/step5/impala-3.png[] +
 
 - Copy/paste the following in the HUE Editor, but *`DO NOT`* execute the query. +
-
 
 [source, sql]
 ----
@@ -814,13 +790,10 @@ ORDER BY year desc, month asc;
 ----
 
 - Run `Explain Plans` against some typical analytic queries we might run to see what happens with this new Partition. +
+
 image:images/step5/5-7.png[] +
 
 image:images/step5/5-8.png[] +
-
-
-
-
 
 - Copy/paste the following in the HUE Editor, but *`DO NOT`* execute the query. +
 
@@ -838,14 +811,16 @@ ORDER BY year desc, month asc;
 ----
 
 - Run `Explain Plans` against some typical analytic queries we might run to see what happens with this new Partition. +
+
 image:images/step5/5-9.png[] +
 
 In the output notice the amount of data that needs to be scanned for this query, about `11 MB`, is significantly less than that of the first, `138 MB`.  This shows an important capability of Iceberg, Partition Pruning.  Meaning that much less data is scanned for this query and only the selected month of data needs to be processed.  This should result in much faster query execution times. +
+
 image:images/step5/5-10.png[] + 
 
 
 === 5.2 Iceberg Snapshots [Table Maintenance] +
-- In the previous steps we have loaded data into the `flights` iceberg table. We will insert more data into it. Each time we add (update or delete) data a `snapshot` is captured. The snapshot is important for `eventual consistency` & to allow multiple read/writes concurrently (from various engines or the same engine).
+- In the previous steps we have loaded data into the `flights` iceberg table. We will insert more data into it. Each time we add (update or delete) data a `snapshot` is captured. The snapshot is important for `eventual consistency` & to allow multiple read/writes concurrently (from various engines or the same engine). +
 
 [source, sql]
 ----
@@ -854,12 +829,11 @@ INSERT INTO ${user_id}_airlines.flights
 SELECT * FROM ${user_id}_airlines_raw.flights_csv 
 WHERE year >= 2008;
 
-
 ----
+
 image:images/step5/5-11.png[] +
 
-- To see snapshots, execute the following SQL.
-
+- To see snapshots, execute the following SQL. +
 
 [source, sql]
 ----
@@ -873,6 +847,7 @@ image:images/step5/5-12.png[] +
 In the output there should be *3 Snapshots*, described below.  Note that we have been reading/writing data from/to the Iceberg table from both Hive & Impala. It is an important aspect of Iceberg Tables that they support *`multi-function analytics`* - ie. many engines can work with Iceberg tables (`Cloudera Data Warehouse [Hive & Impala]`, `Cloudera Data Engineering [Spark]`, `Cloudera Machine Learning [Spark]`, `Cloudera DataFlow [NiFi]`, and `DataHub Clusters`).
 
 - Get the details of the `snapshots` and store it in a notepad. +
+
 image:images/step5/5-13.png[] +
 
 image:images/step5/5-14.png[] +
@@ -902,15 +877,17 @@ ORDER BY year desc;
 ----
 image:images/step5/5-15.png[] +
 
-
 - After copying you will see 2 parameters as below. +
+
 image:images/step5/5-16.png[] +
 
 
-- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2025-03-20 08:13:59.519000000`. Then execute the highlighted query only (*1st query*).
+- From the notepad just copy the first value of the timestamp. It could be the date or the timestamp. Paste it in the `create_ts` box. In our case the value was `2025-03-20 08:13:59.519000000`. Then execute the highlighted query only (*1st query*). +
+
 image:images/step5/5-17.png[] +
 
-- From the notepad just copy the second value of the snapshot id. In our case the value was `3083108260821741161`. Paste it in the `snapshot_id` box. Then execute the highlighted query only (*2nd query*).
+- From the notepad just copy the second value of the snapshot id. In our case the value was `3083108260821741161`. Paste it in the `snapshot_id` box. Then execute the highlighted query only (*2nd query*). +
+
 image:images/step5/5-18.png[] +
 
 === 5.4 (Don't Run, FYI ONLY) - Iceberg Rollback [Table Maintenance]  +
@@ -938,9 +915,7 @@ image:images/step5/5-18.png[] +
 === 5.6 Materialized Views [Performance Optimization] +
 - This can be used for both Iceberg tables and Hive Tables to improve performance. Go to the Cloudera console and look for `emerging-hive-1`. Click on the `Hue` button on the right upper corner of `emerging-hive-1` as shown in the screenshot below. +
 
-//image:images/step5/56-1hive.png[] +
 image:images/step5/5-19.png[] +
-
 
 - Up until this point we had `airlines` table which was (Hive + orc). Now, we shall create the airlines table which is (Iceberg + orc). Copy/paste the following, make sure to highlight the entire block, and execute the following. +
 
@@ -967,7 +942,8 @@ group by airlines.code, flights.month;
 
 image:images/step5/5-20.png[] +
 
-*Note*: Hive has built in performance improvements, such as a Query Cache that stores results of queries run so that similar queries don’t have to retrieve data, they can just get the results from the cache.  In this step we are turning that off using the *SET* statement, this will ensure when we look at the query plan, we will not retrieve the data from the cache. +
+*Note*: Hive has built in performance improvements, such as a Query Cache that stores results of queries run so that similar queries don’t have to retrieve data, they can just get the results from the cache.  In this step we are turning that off using the *SET* statement, this will ensure when we look at the query plan, we will not retrieve the data from the cache. 
+
 *Note*: With this query you are combining an Iceberg Table Format (`flight` table) with a Hive Table Format (`airlines ORC` table) in the same query.
 
 - Let’s look at the Query Plan that was used to execute this query. On the left side click on `Jobs`, as shown in the screenshot below.  +
@@ -978,19 +954,23 @@ image:images/step5/5-21.png[] +
 - In case you see some queries still coming up as shown below click the `Refresh` button on the top right corner. Then, you will see `green tick mark` next to the queries. +
 
 image:images/step5/5-22.png[] +
+
 image:images/step5/5-23.png[] +
-//image:images/step5/56-4a.PNG[] +
 
 - Click on the first query as shown below. Make sure that this is the latest query. You can look at the `Start Time` field here to know if it's the latest or not. +
+
 image:images/step5/5-23.png[] +
 
 - This is where you can analyze queries at a deep level.  For this lab let’s take a look at the explain details, by clicking on `Visual Explain` tab. It might take a while to appear, please click on refresh. +
+
 image:images/step5/5-24.png[] +
 
 - This plan shows that this query needs to read `flights` (86M rows) and `airlines` (1.5K rows) with hash join, group, and sort.  This is a lot of data processing and if we run this query constantly it would be good to reduce the time this query takes to execute. +
+
 image:images/step5/5-25.png[] +
 
 - Click on the `Editor` option on the left side as shown. +
+
 image:images/step5/5-26.png[] +
 
 - *Create Materialized View (MV)* - Queries will transparently be rewritten, when possible, to use the MV instead of the base tables.  Copy/paste the following, highlight the entire block, and execute. +
@@ -1038,29 +1018,34 @@ image:images/step5/5-28.png[] +
 - Let’s look at the Query Plan that was used to execute this query. On the left menu select `Jobs`. On the Jobs Browser - select the `Queries` tab to the right of the `Job` browser header. Hover over & click on the Query just executed (should be the first row). Click on the `Visual Explain` tab. With query rewrite the materialized view is used and the new plan just reads the MV and sorts the data vs. reading `flights (86M rows)` and `airlines (1.5K rows)` with hash join, group and sorts.  This results in significant reduction in run time for this query. +
 
 image:images/step5/5-29.png[] +
+
 image:images/step5/5-30.png[] +
-
-
 
 == Step 6: Data Security & Governance +
 
 In this step you will experience the combination of what the Data Warehouse and the Shared Data Experience (SDX) offers.  SDX enables you to provide Security and Governance tooling to ensure that you will be able to manage what is in the CDP Platform without having to stitch together multiple tools. Read more about SDX by clicking https://www.cloudera.com/products/sdx.html[here].
 
 - Go to the Cloudera Data Platform Console and click on Data Catalog +
+
 image:images/step6/6-1.png[] + 
+
 image:images/step6/6-2.png[] + 
 
 
 - Click on the `Search` option and make sure the appropriate data lake is selected. In this case it is `emerging-aw-dl`. +
+
 image:images/step6/6-3.png[] + 
 
 - Filter for Assets we created - On the drop down filter search for `Iceberg` and select the radio button next to be `Iceberg Table`. +
+
 image:images/step6/6-4.png[] + 
 
 - Scroll down to locate the 'flights' table and click on it. +
+
 image:images/step6/6-5.png[] + 
 
-- This page shows information about the `flights` table such as the table owner, when the table was created, when it was last accessed, and other properties.  Below the summary details is the Overview tab which shows the lineage - hover over the flights click on the “i” icon that appears to see more detail on this table.
+- This page shows information about the `flights` table such as the table owner, when the table was created, when it was last accessed, and other properties.  Below the summary details is the Overview tab which shows the lineage - hover over the flights click on the “i” icon that appears to see more detail on this table. +
+
 image:images/step6/6-6.png[] + 
 
 The lineage shows: +
@@ -1071,15 +1056,19 @@ The lineage shows: +
 `grey box` - This shouldn't appear in your flow. +
 
 - Click on the Policy tab to see what security policies have been applied on this table. Click on the arrow next to any of the `Policy Id` number as shown in the screenshot. +
+
 image:images/step6/6-7.png[] + 
 
 - This screen shows the general Access related security policies based on the Policy Id that you clicked earlier. +
+
 image:images/step6/6-8.png[] + 
 
 - Click on `Row Level Filter`. Currently, there are no row level filters. You will create a new one here. +
+
 image:images/step6/6-9.png[] + 
 
 - Click on the `Add New Policy` button on top right corner. +
+
 image:images/step6/6-10.png[] + 
 
 - Fill out the form as follows. +
@@ -1093,7 +1082,9 @@ image:images/step6/6-10.png[] +
 Click on `Save` to save the policy at the end. +
 
 image:images/step6/6-11.png[] +
+
 image:images/step6/6-12.png[] +
+
 image:images/step6/6-13.png[] +
 
 - The new policy is added to the `Row Level Filter` policies (as below). +
@@ -1123,15 +1114,19 @@ In this step you will build a Logistics Dashboard using Cloudera Data Visualizat
 
 === Step 7(a): Data Modeling +
 - If you are not on the CDP home page, then go there and click on the following CDW icon to go into Cloudera Data Warehouse. +
+
 image:images/step7/0.png[] +
 
-- Then click on the `Data Visualization` option in the left window pane. You'll see an option `Data VIZ` next to the data-viz application with the name `emeaworkshop-dataviz`. It should open a new window.+
+- Then click on the `Data Visualization` option in the left window pane. You'll see an option `Data VIZ` next to the data-viz application with the name `emeaworkshop-dataviz`. It should open a new window. +
+
 image:images/step7/1.png[] +
 
-- There are 4 areas of CDV - `HOME, SQL, VISUALS, DATA` - these are the tabs at the top of the screen in the black bar to the right of the Cloudera Data Visualization banner.
+- There are 4 areas of CDV - `HOME, SQL, VISUALS, DATA` - these are the tabs at the top of the screen in the black bar to the right of the Cloudera Data Visualization banner. +
+
 image:images/step7/2.png[] +
 
 - Build a Dataset (aka. Metadata Layer or Data Model) - click on `DATA` in the top banner.  A Dataset is a Semantic Layer where you can create a business view on top of the data - data is not copied; this is just a logical layer. +
+
 image:images/step7/3.png[] +
 
 - Create a connection - click on the NEW CONNECTION button on the left menu. Enter the details as shown in the screenshot and click on `TEST`.  +
@@ -1144,13 +1139,17 @@ image:images/step7/3.png[] +
     Password: `Blank` +
 
 image:images/step7/4.png[] +
+
 image:images/step7/5.png[] +
 
 - Click on `CONNECT`. +
+
 image:images/step7/6.png[] +
 
 - You will see your connection in the list of connections on the left menu. On the right side of the screen you will see Datasets and the Connection Explorer. Click on `NEW DATASET`. +
+
 image:images/step7/7.png[] +
+
 image:images/step7/8.png[] +
 
 - Fill the details as follows and click `CREATE`. `airline_logistics` gets created +
@@ -1162,28 +1161,40 @@ image:images/step7/8.png[] +
 image:images/step7/9.png[] +
 
 - Edit the Dataset - click on `airline_logistics` on the right of the screen.  This will open the details page, showing you information about the Dataset, such as connection details, and options that are set. Click on `Fields` option in the left window pane. +
+
 image:images/step7/10.png[] +
+
 image:images/step7/11.png[] +
+
 image:images/step7/12.png[] +
 
 
 - Click on `Data Model` - for our Dataset we need to join additional data to the flights table including the `planes`, `airlines`, and `airports` tables. +
+
 image:images/step7/13.png[] + 
 
 - Click on `EDIT DATA MODEL`. +
+
 image:images/step7/14.png[] +
 
 - Click on the `+` icon next to the `flights` table option. +
+
 image:images/step7/15.png[] +
 
-- Select the appropriate `Database Name` based on your user id (Ex: `emerging01_airlines`) and table name `planes`.  
+- Select the appropriate `Database Name` based on your user id (Ex: `emerging01_airlines`) and table name `planes`. +
+
 image:images/step7/16.png[] +
 
 - Then click on the image:images/step7/joinicon.png[] `join` icon and see that there are 2 join options `tailnum` & `year`. Click on `EDIT JOIN` and then remove the `year` join by clicking the little `-` (minus) icon to the right next to the `year` column. Click on `APPLY`. +
+
 image:images/step7/17.png[] +
+
 image:images/step7/18.png[] +
+
 image:images/step7/19-1.png[] +
+
 image:images/step7/19-2.png[] +
+
 image:images/step7/20.png[] +
 
 
