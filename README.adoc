@@ -46,7 +46,6 @@ image:images/icons/er.png[] +
 
 image:images/icons/table-size.png[] +
 
-
 > The data is already uploaded in S3 buckets as shown below.
 
 image:images/icons/s3.png[] +
