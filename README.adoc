@@ -8,11 +8,6 @@ Version : 2.0 `20th March 2025` +
 
 '''
 
-
-== &#x25B6; Recording
-The entire lab is recorded and you can watch the same to have a better understanding of the lab. +
-https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)]
-
 == Pre-requisites
 
 . Laptop with a supported OS (Windows 7 not supported) or MacBook. Please disable any VPNs. +
@@ -198,6 +193,8 @@ image:images/step3/3-4.png[] +
 
 - The following page should open with Hive query editor. +
 image:images/step3/3-5.png[]  +
+
+*Note*: From here on you will be entering numerous SQL statements. Use the copy option next to the SQL statement by clicking the image:images/icons/copy-icon.png[] icon.
 
 - Create new databases. +
 Enter the following query and then make sure that you enter the user assigned to you. Click on Run icon. In the screenshot the query is run using the user `emerging01`.
@@ -1339,5 +1336,10 @@ image:images/step7/7-56.png[] +
 (1). https://github.com/cloudera-labs/cdp-validation?tab=readme-ov-file#register-on-cloudera-sso[Register on Cloudera SSO] + 
 (2). https://github.com/cloudera-labs/cdp-validation?tab=readme-ov-file#register-on-cloudera-partner-portal[Register on Cloudera Partner Portal] +
 (3). https://github.com/cloudera-labs/cdp-validation#request-for-development-license[Request for developer License] +
+
+
+== &#x25B6; Recording
+The entire lab is recorded and you can watch the same to have a better understanding of the lab. +
+https://www.youtube.com/watch?v=2pvxWb2vvGo[CDW Workshop (Recording)]
 
 image:images/icons/banner-orange.png[] +
