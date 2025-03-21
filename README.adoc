@@ -194,7 +194,7 @@ image:images/step3/3-4.png[] +
 - The following page should open with Hive query editor. +
 image:images/step3/3-5.png[]  +
 
-*Note*: From here on you will be entering numerous SQL statements. Use the copy option next to the SQL statement by clicking the image:images/icons/copy-icon.png[] icon.
+> *Note*: From here on you will be entering numerous SQL statements. Use the copy option next to the SQL statement by clicking the image:images/icons/copy-icon.png[] icon.
 
 - Create new databases. +
 Enter the following query and then make sure that you enter the user assigned to you. Click on Run icon. In the screenshot the query is run using the user `emerging01`.
