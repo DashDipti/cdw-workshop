@@ -1303,7 +1303,8 @@ image:images/step7/7-48.png[] +
 
 image:images/step7/7-49.png[] +
 
-- You will see the following.
+- You will see the following. +
+
 image:images/step7/7-50.png[] +
 
 - A quick overview of the screen that you are seeing is as follows. On the right side of the screen there will be a VISUALS menu.  At the top of this menu, there is a series of Visual Types to choose from.  There will be 30+ various visuals to choose from.  Below the Visual Types you will see what are called Shelves.  The Shelves that are present depend on the Visual Type that is selected.  Shelves with a `*` are required, all other Shelves are optional.  On the far right of the page there is a DATA menu, which identifies the Connection & Dataset used for this visual.  Underneath that is the Fields from the Dataset broken down by Dimensions and Measures.  With each of these Categories you can see that it is subdivided by each Table in the Dataset. +
