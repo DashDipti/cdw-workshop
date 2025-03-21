@@ -1335,4 +1335,4 @@ image:images/step7/7-56.png[] +
 (2). https://github.com/cloudera-labs/cdp-validation?tab=readme-ov-file#register-on-cloudera-partner-portal[Register on Cloudera Partner Portal] +
 (3). https://github.com/cloudera-labs/cdp-validation#request-for-development-license[Request for developer License] +
 
-image::images/icons/banner-orange.png[] +
+image:images/step7/banner-orange.png[] +
