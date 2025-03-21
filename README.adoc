@@ -51,6 +51,8 @@ The Hands on Labs will take you through how to use the Cloudera Data Warehouse s
 
 image::images/icons/er.png[]
 
+image::images/icons/table-size.png[]
+
 == High-Level Steps
 
 Below are the high-level steps for what we will be doing in the workshop. +
