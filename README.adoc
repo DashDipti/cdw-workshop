@@ -1278,11 +1278,14 @@ image:images/step7/7-43.png[] +
 image:images/step7/7-44.png[] +
 
 - Change the `Display Name` to `Route`. Then click on `Expression` and enter the following in the `Expression` editor.  Click on `APPLY`. +
+
 [source, sql]
 ----
 
-concat([Origin], '-', [Dest])
+concat([Origin], '-', [Dest]);
+
 ----
+
 
 image:images/step7/7-45.png[] +
 
