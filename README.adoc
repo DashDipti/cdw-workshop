@@ -1,6 +1,6 @@
 = Cloudera Data Warehouse - Workshop Student Guide
 
-image::images/icons/banner-purple.png[]
+image:images/icons/banner-purple.png[] +
 
 '''
 
@@ -38,19 +38,20 @@ We will dive into this scenario to show Cloudera Data Warehouse (CDW) is used to
 
 The Hands on Labs will take you through how to use the Cloudera Data Warehouse service to quickly explore raw data, create curated versions of the data for simple reporting and dashboarding, and then scale up usage of the curated data by exposing it to more users. +
 
-You will discover the integration of Apache Iceberg to support all Open Data Lakehouse initiatives of Cloudera to benefit from better performance, reducedmaintenance, multifunctional analysis without having numerous data copies, and greater control over data. You will be exploring the Data Catalog lineage and also work on row level security. Towards the end you will be creating data model and visualization to derive insights. In this technical session, you will be guided step-by-step through a number of practical exercises, grouped into Labs. The workshop is based on a dataset of flights in the United States. +
+> From a technical stand point you will discover the integration of Apache Iceberg to support all Open Data Lakehouse initiatives of Cloudera to benefit from better performance, reducedmaintenance, multifunctional analysis without having numerous data copies, and greater control over data. You will be exploring the Data Catalog lineage and also work on row level security. Towards the end you will be creating data model and visualization to derive insights. In this technical session, you will be guided step-by-step through a number of practical exercises, grouped into Labs. The workshop is based on a dataset of flights in the United States. +
 
 *ER - Diagram of the data* +
 *(1) Fact Table:*  flights (86M rows) +
 *(2) Dimension Table:*  airlines (1.5k rows), airports (3.3k rows) and planes (5k rows) +
 
-image::images/icons/er.png[]
+image:images/icons/er.png[] +
 
-image::images/icons/table-size.png[]
+image:images/icons/table-size.png[] +
+
 
 > The data is already uploaded in S3 buckets as shown below.
 
-image::images/icons/s3.png[]
+image:images/icons/s3.png[] +
 
 == Step 1: Getting Started
 
