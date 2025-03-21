@@ -1,12 +1,10 @@
-image::images/dash/u-c.png[]
-
 = Cloudera Data Warehouse - Workshop Student Guide
 
-image::images/dash/landing.png[]
+image::images/icons/banner-purple.png[]
 
 '''
 
-Version : 1.1 `20th March 2025` +
+Version : 2.0 `20th March 2025` +
 
 '''
 
@@ -1337,7 +1335,7 @@ image:images/step7/7-56.png[] +
 (2). https://github.com/cloudera-labs/cdp-validation?tab=readme-ov-file#register-on-cloudera-partner-portal[Register on Cloudera Partner Portal] +
 (3). https://github.com/cloudera-labs/cdp-validation#request-for-development-license[Request for developer License] +
 
-image:images/misc/thankyou1.PNG[] +
+image:images/icons/thank-you.png] +
 
 
 //== Additional Labs/Videos
