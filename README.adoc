@@ -1282,7 +1282,7 @@ image:images/step7/7-44.png[] +
 [source, sql]
 ----
 
-concat([Origin], '-', [Dest]);
+concat([Origin], '-', [Dest])
 
 ----
 
