@@ -123,7 +123,7 @@ WARNING: INSTRUCTOR WILL WALK YOU THROUGH THE ENVIRONMENT. +
 
 === Step 2(b): Useful Information for Self Reads/Tours
 Click the below for *`Virtual Tour`* Experience(s): +
-(a) https://www.cloudera.com/users/cdp-tour-cdw-intro.html[CDW Virtual Tour] +
+(a) https://www.cloudera.com/products/data-warehouse/cdp-tour-data-warehouse.html[CDW Virtual Tour] +
 (b) https://www.cloudera.com/users.html#tours[Virtual Tour of CDP & Other Data Services] +
 
 Click the below for *`Detailed Documentation(s)`*: +
