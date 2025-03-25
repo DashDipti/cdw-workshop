@@ -42,7 +42,7 @@ We will dive into this scenario to show Cloudera Data Warehouse (CDW) is used to
 
 image:images/icons/er.png[] +
 
-*Underlying Tables details* +
+*Underlying Tables* +
 
 image:images/icons/table-size.png[] + 
 
@@ -87,7 +87,7 @@ image:images/step1b/1b-1.png[] +
 If asked update the password with your own password.
 image:images/step1b/1b-2.png[] +
 
-You should be able to get the following home page of CDP Public Cloud.
+You should be able to get the following home page of CDP Public Cloud. In case you see a different landing page then make sure you click on `Enable New Ui` option. +
 image:images/step1b/1b-3.png[] +
 
 You will need to define your `CDP Workload Password` that will be used to access non-SSO interfaces. You may read more about it https://docs.cloudera.com/management-console/cloud/user-management/topics/mc-access-paths-to-cdp.html[here].
@@ -726,7 +726,7 @@ image:images/step5/5-4.png[] +
 
 image:images/step5/5-5.png[] +
 
-- In the Hue editor look make sure `Impala` is selected as the engine else follow the screenshot to change it to impala. +
+- In the Hue editor look make sure `Impala` is selected as the engine. +
 
 image:images/step5/5-6.png[] +
 
