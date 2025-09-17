@@ -4,7 +4,7 @@ image:images/icons/banner-purple.png[] +
 
 '''
 
-Version : 2.1 `20th March 2026` +
+Version : 2.2 `20th March 2026` +
 
 '''
 
